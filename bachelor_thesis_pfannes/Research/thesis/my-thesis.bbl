@@ -1,0 +1,2390 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.2 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{nty/global//global/global}
+    \entry{aframe}{online}{}
+      \field{sortinit}{A}
+      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{A-Frame}
+      \field{month}{8}
+      \field{note}{[Online; accessed 30. Oct. 2022]}
+      \field{title}{{A-Frame {–} Make WebVR}}
+      \field{year}{2022}
+      \verb{urlraw}
+      \verb https://aframe.io
+      \endverb
+      \verb{url}
+      \verb https://aframe.io
+      \endverb
+    \endentry
+    \entry{Bergwerf2022Oct}{online}{}
+      \name{author}{1}{}{%
+        {{hash=91c10be8430e1de3090bcbe3af7872e3}{%
+           family={Bergwerf},
+           familyi={B\bibinitperiod},
+           given={Herman},
+           giveni={H\bibinitperiod}}}%
+      }
+      \strng{namehash}{91c10be8430e1de3090bcbe3af7872e3}
+      \strng{fullhash}{91c10be8430e1de3090bcbe3af7872e3}
+      \strng{bibnamehash}{91c10be8430e1de3090bcbe3af7872e3}
+      \strng{authorbibnamehash}{91c10be8430e1de3090bcbe3af7872e3}
+      \strng{authornamehash}{91c10be8430e1de3090bcbe3af7872e3}
+      \strng{authorfullhash}{91c10be8430e1de3090bcbe3af7872e3}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{10}
+      \field{note}{[Online; accessed 29. Oct. 2022]}
+      \field{title}{MolView}
+      \field{year}{2022}
+      \verb{urlraw}
+      \verb https://molview.org/?cid=10635
+      \endverb
+      \verb{url}
+      \verb https://molview.org/?cid=10635
+      \endverb
+    \endentry
+    \entry{biochem-fan2022Oct}{online}{}
+      \name{author}{1}{}{%
+        {{hash=84d4dcdbc4626e1d67bce687a24928d2}{%
+           family={biochem-fan},
+           familyi={b\bibinithyphendelim f\bibinitperiod}}}%
+      }
+      \strng{namehash}{84d4dcdbc4626e1d67bce687a24928d2}
+      \strng{fullhash}{84d4dcdbc4626e1d67bce687a24928d2}
+      \strng{bibnamehash}{84d4dcdbc4626e1d67bce687a24928d2}
+      \strng{authorbibnamehash}{84d4dcdbc4626e1d67bce687a24928d2}
+      \strng{authornamehash}{84d4dcdbc4626e1d67bce687a24928d2}
+      \strng{authorfullhash}{84d4dcdbc4626e1d67bce687a24928d2}
+      \field{sortinit}{b}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{GitHub}
+      \field{month}{10}
+      \field{note}{[Online; accessed 30. Oct. 2022]}
+      \field{title}{{GLmol}}
+      \field{year}{2022}
+      \verb{urlraw}
+      \verb https://github.com/biochem-fan/GLmol
+      \endverb
+      \verb{url}
+      \verb https://github.com/biochem-fan/GLmol
+      \endverb
+    \endentry
+    \entry{10.1371/journal.pcbi.1007747}{article}{}
+      \name{author}{5}{}{%
+        {{hash=fc2feb86e2c48dbf167eac2888f0f752}{%
+           family={Cassidy},
+           familyi={C\bibinitperiod},
+           given={Kevin\bibnamedelima C.},
+           giveni={K\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
+        {{hash=90a3a445ff0033131e31d3153c138ddb}{%
+           family={Šefčík},
+           familyi={Š\bibinitperiod},
+           given={Jan},
+           giveni={J\bibinitperiod}}}%
+        {{hash=2254b2411a992c0dccb68bb98778fab8}{%
+           family={Raghav},
+           familyi={R\bibinitperiod},
+           given={Yogindra},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=1bcfd96267038e9393050491837a266f}{%
+           family={Chang},
+           familyi={C\bibinitperiod},
+           given={Alexander},
+           giveni={A\bibinitperiod}}}%
+        {{hash=2fa382bef9da57d1e5424cd2277049d1}{%
+           family={Durrant},
+           familyi={D\bibinitperiod},
+           given={Jacob\bibnamedelima D.},
+           giveni={J\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Public Library of Science}%
+      }
+      \strng{namehash}{e3db655a85f24ef1c0b23ca878bad43c}
+      \strng{fullhash}{333b9522ee1aa7150847ff6ba5f6e664}
+      \strng{bibnamehash}{333b9522ee1aa7150847ff6ba5f6e664}
+      \strng{authorbibnamehash}{333b9522ee1aa7150847ff6ba5f6e664}
+      \strng{authornamehash}{e3db655a85f24ef1c0b23ca878bad43c}
+      \strng{authorfullhash}{333b9522ee1aa7150847ff6ba5f6e664}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Protein structure determines biological function. Accurately conceptualizing 3D protein/ligand structures is thus vital to scientific research and education. Virtual reality (VR) enables protein visualization in stereoscopic 3D, but many VR molecular-visualization programs are expensive and challenging to use; work only on specific VR headsets; rely on complicated model-preparation software; and/or require the user to install separate programs or plugins. Here we introduce ProteinVR, a web-based application that works on various VR setups and operating systems. ProteinVR displays molecular structures within 3D environments that give useful biological context and allow users to situate themselves in 3D space. Our web-based implementation is ideal for hypothesis generation and education in research and large-classroom settings. We release ProteinVR under the open-source BSD-3-Clause license. A copy of the program is available free of charge from http://durrantlab.com/protein-vr/, and a working version can be accessed at http://durrantlab.com/pvr/.}
+      \field{journaltitle}{PLOS Computational Biology}
+      \field{month}{03}
+      \field{number}{3}
+      \field{title}{ProteinVR: Web-based molecular visualization in virtual reality}
+      \field{volume}{16}
+      \field{year}{2020}
+      \field{pages}{1\bibrangedash 17}
+      \range{pages}{17}
+      \verb{doi}
+      \verb 10.1371/journal.pcbi.1007747
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1371/journal.pcbi.1007747
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1371/journal.pcbi.1007747
+      \endverb
+    \endentry
+    \entry{10.3389/fpsyg.2018.02086}{article}{}
+      \name{author}{4}{}{%
+        {{hash=1bc6246c8e34b01d98ba049716491b9d}{%
+           family={Cipresso},
+           familyi={C\bibinitperiod},
+           given={Pietro},
+           giveni={P\bibinitperiod}}}%
+        {{hash=4e44835d352f6040c216ce1a6b12da93}{%
+           family={Giglioli},
+           familyi={G\bibinitperiod},
+           given={Irene\bibnamedelimb Alice\bibnamedelima Chicchi},
+           giveni={I\bibinitperiod\bibinitdelim A\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
+        {{hash=ae1168f5f332b6d073777456d3a13ace}{%
+           family={Raya},
+           familyi={R\bibinitperiod},
+           given={Mariano\bibnamedelima Alcañiz},
+           giveni={M\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+        {{hash=2730bcc70dd8b3f17abe4d333add003f}{%
+           family={Riva},
+           familyi={R\bibinitperiod},
+           given={Giuseppe},
+           giveni={G\bibinitperiod}}}%
+      }
+      \strng{namehash}{1fd53620bce337b8c7fc4579f8922dbc}
+      \strng{fullhash}{f8f4a75c46355141a3fbde06ee07185d}
+      \strng{bibnamehash}{f8f4a75c46355141a3fbde06ee07185d}
+      \strng{authorbibnamehash}{f8f4a75c46355141a3fbde06ee07185d}
+      \strng{authornamehash}{1fd53620bce337b8c7fc4579f8922dbc}
+      \strng{authorfullhash}{f8f4a75c46355141a3fbde06ee07185d}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{The recent appearance of low cost virtual reality (VR) technologies – like the Oculus Rift, the HTC Vive and the Sony PlayStation VR – and Mixed Reality Interfaces (MRITF) – like the Hololens – is attracting the attention of users and researchers suggesting it may be the next largest stepping stone in technological innovation. However, the history of VR technology is longer than it may seem: the concept of VR was formulated in the 1960s and the first commercial VR tools appeared in the late 1980s. For this reason, during the last 20 years, 100s of researchers explored the processes, effects, and applications of this technology producing 1000s of scientific papers. What is the outcome of this significant research work? This paper wants to provide an answer to this question by exploring, using advanced scientometric techniques, the existing research corpus in the field. We collected all the existent articles about VR in the Web of Science Core Collection scientific database, and the resultant dataset contained 21,667 records for VR and 9,944 for augmented reality (AR). The bibliographic record contained various fields, such as author, title, abstract, country, and all the references (needed for the citation analysis). The network and cluster analysis of the literature showed a composite panorama characterized by changes and evolutions over the time. Indeed, whether until 5 years ago, the main publication media on VR concerned both conference proceeding and journals, more recently journals constitute the main medium of communication. Similarly, if at first computer science was the leading research field, nowadays clinical areas have increased, as well as the number of countries involved in VR research. The present work discusses the evolution and changes over the time of the use of VR in the main areas of application with an emphasis on the future expected VR’s capacities, increases and challenges. We conclude considering the disruptive contribution that VR/AR/MRITF will be able to get in scientific fields, as well in human communication and interaction, as already happened with the advent of mobile phones by increasing the use and the development of scientific applications (e.g., in clinical areas) and by modifying the social communication and interaction among people.}
+      \field{issn}{1664-1078}
+      \field{journaltitle}{Frontiers in Psychology}
+      \field{title}{The Past, Present, and Future of Virtual and Augmented Reality Research: A Network and Cluster Analysis of the Literature}
+      \field{volume}{9}
+      \field{year}{2018}
+      \verb{doi}
+      \verb 10.3389/fpsyg.2018.02086
+      \endverb
+      \verb{urlraw}
+      \verb https://www.frontiersin.org/articles/10.3389/fpsyg.2018.02086
+      \endverb
+      \verb{url}
+      \verb https://www.frontiersin.org/articles/10.3389/fpsyg.2018.02086
+      \endverb
+    \endentry
+    \entry{DEGREVE2014384}{article}{}
+      \name{author}{3}{}{%
+        {{hash=9db53eac84411e7b06c268c6fd1531d6}{%
+           family={Degrève},
+           familyi={D\bibinitperiod},
+           given={Léo},
+           giveni={L\bibinitperiod}}}%
+        {{hash=e83810c5fd6e6919f54e6fe39bec0035}{%
+           family={Fuzo},
+           familyi={F\bibinitperiod},
+           given={Carlos\bibnamedelima A.},
+           giveni={C\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+        {{hash=369b571fa3d0ba1a719ab67028de37ab}{%
+           family={Caliri},
+           familyi={C\bibinitperiod},
+           given={Antonio},
+           giveni={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{5bc0d2b6c8830904c408a15bb3b40672}
+      \strng{fullhash}{d6b4962f856e1580a8c233a80d75d519}
+      \strng{bibnamehash}{d6b4962f856e1580a8c233a80d75d519}
+      \strng{authorbibnamehash}{d6b4962f856e1580a8c233a80d75d519}
+      \strng{authornamehash}{5bc0d2b6c8830904c408a15bb3b40672}
+      \strng{authorfullhash}{d6b4962f856e1580a8c233a80d75d519}
+      \field{sortinit}{D}
+      \field{sortinithash}{6f385f66841fb5e82009dc833c761848}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{1570-9639}
+      \field{journaltitle}{Biochimica et Biophysica Acta (BBA) - Proteins and Proteomics}
+      \field{number}{2}
+      \field{title}{Extended secondary structures in proteins}
+      \field{volume}{1844}
+      \field{year}{2014}
+      \field{pages}{384\bibrangedash 388}
+      \range{pages}{5}
+      \verb{doi}
+      \verb https://doi.org/10.1016/j.bbapap.2013.10.005
+      \endverb
+      \verb{urlraw}
+      \verb https://www.sciencedirect.com/science/article/pii/S1570963913003634
+      \endverb
+      \verb{url}
+      \verb https://www.sciencedirect.com/science/article/pii/S1570963913003634
+      \endverb
+      \keyw{Protein's structure,Secondary structure,Extended secondary structure}
+    \endentry
+    \entry{facebookarchive2022Oct}{online}{}
+      \name{author}{1}{}{%
+        {{hash=4f700cf27fae7184cfd695ca9d3348ee}{%
+           family={facebookarchive},
+           familyi={f\bibinitperiod}}}%
+      }
+      \strng{namehash}{4f700cf27fae7184cfd695ca9d3348ee}
+      \strng{fullhash}{4f700cf27fae7184cfd695ca9d3348ee}
+      \strng{bibnamehash}{4f700cf27fae7184cfd695ca9d3348ee}
+      \strng{authorbibnamehash}{4f700cf27fae7184cfd695ca9d3348ee}
+      \strng{authornamehash}{4f700cf27fae7184cfd695ca9d3348ee}
+      \strng{authorfullhash}{4f700cf27fae7184cfd695ca9d3348ee}
+      \field{sortinit}{f}
+      \field{sortinithash}{2638baaa20439f1b5a8f80c6c08a13b4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{GitHub}
+      \field{month}{10}
+      \field{note}{[Online; accessed 30. Oct. 2022]}
+      \field{title}{{react-360}}
+      \field{year}{2022}
+      \verb{urlraw}
+      \verb https://github.com/facebookarchive/react-360
+      \endverb
+      \verb{url}
+      \verb https://github.com/facebookarchive/react-360
+      \endverb
+    \endentry
+    \entry{felixmariotto2022Oct}{online}{}
+      \name{author}{1}{}{%
+        {{hash=21d41be822d038352aa1f4940a74d9b3}{%
+           family={felixmariotto},
+           familyi={f\bibinitperiod}}}%
+      }
+      \strng{namehash}{21d41be822d038352aa1f4940a74d9b3}
+      \strng{fullhash}{21d41be822d038352aa1f4940a74d9b3}
+      \strng{bibnamehash}{21d41be822d038352aa1f4940a74d9b3}
+      \strng{authorbibnamehash}{21d41be822d038352aa1f4940a74d9b3}
+      \strng{authornamehash}{21d41be822d038352aa1f4940a74d9b3}
+      \strng{authorfullhash}{21d41be822d038352aa1f4940a74d9b3}
+      \field{sortinit}{f}
+      \field{sortinithash}{2638baaa20439f1b5a8f80c6c08a13b4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{GitHub}
+      \field{month}{10}
+      \field{note}{[Online; accessed 30. Oct. 2022]}
+      \field{title}{{three-mesh-ui}}
+      \field{year}{2022}
+      \verb{urlraw}
+      \verb https://github.com/felixmariotto/three-mesh-ui
+      \endverb
+      \verb{url}
+      \verb https://github.com/felixmariotto/three-mesh-ui
+      \endverb
+    \endentry
+    \entry{HAMANN1994197}{article}{}
+      \name{author}{1}{}{%
+        {{hash=cf9456543034e2f1ea8e7e13b291d974}{%
+           family={Hamann},
+           familyi={H\bibinitperiod},
+           given={Bernd},
+           giveni={B\bibinitperiod}}}%
+      }
+      \strng{namehash}{cf9456543034e2f1ea8e7e13b291d974}
+      \strng{fullhash}{cf9456543034e2f1ea8e7e13b291d974}
+      \strng{bibnamehash}{cf9456543034e2f1ea8e7e13b291d974}
+      \strng{authorbibnamehash}{cf9456543034e2f1ea8e7e13b291d974}
+      \strng{authornamehash}{cf9456543034e2f1ea8e7e13b291d974}
+      \strng{authorfullhash}{cf9456543034e2f1ea8e7e13b291d974}
+      \field{sortinit}{H}
+      \field{sortinithash}{23a3aa7c24e56cfa16945d55545109b5}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Given a surface triangulation in three-dimensional space, an algorithm is developed to iteratively remove triangles from the triangulation. An underlying parametric or implicit surface representation is not required. An order is introduced on the set of triangles by considering curvature at their vertices. Triangles in nearly planar surface regions are prime candidates for removal. The degree of reduction can be specified by a percentage or, in the case of bivariate functions, by an error tolerance.}
+      \field{issn}{0167-8396}
+      \field{journaltitle}{Computer Aided Geometric Design}
+      \field{number}{2}
+      \field{title}{A data reduction scheme for triangulated surfaces}
+      \field{volume}{11}
+      \field{year}{1994}
+      \field{pages}{197\bibrangedash 214}
+      \range{pages}{18}
+      \verb{doi}
+      \verb https://doi.org/10.1016/0167-8396(94)90032-9
+      \endverb
+      \verb{urlraw}
+      \verb https://www.sciencedirect.com/science/article/pii/0167839694900329
+      \endverb
+      \verb{url}
+      \verb https://www.sciencedirect.com/science/article/pii/0167839694900329
+      \endverb
+      \keyw{Approximation,Curvature,Data reduction,Surface triangulation}
+    \endentry
+    \entry{Hamzah2022Jul}{article}{}
+      \name{author}{1}{}{%
+        {{hash=47d1588ff9f44abd94388c10ae88aa36}{%
+           family={Hamzah},
+           familyi={H\bibinitperiod},
+           given={K.},
+           giveni={K\bibinitperiod}}}%
+      }
+      \strng{namehash}{47d1588ff9f44abd94388c10ae88aa36}
+      \strng{fullhash}{47d1588ff9f44abd94388c10ae88aa36}
+      \strng{bibnamehash}{47d1588ff9f44abd94388c10ae88aa36}
+      \strng{authorbibnamehash}{47d1588ff9f44abd94388c10ae88aa36}
+      \strng{authornamehash}{47d1588ff9f44abd94388c10ae88aa36}
+      \strng{authorfullhash}{47d1588ff9f44abd94388c10ae88aa36}
+      \field{sortinit}{H}
+      \field{sortinithash}{23a3aa7c24e56cfa16945d55545109b5}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{PSIBERG}
+      \field{month}{7}
+      \field{title}{{Ball and Stick Model - A Convention - PSIBERG}}
+      \field{year}{2022}
+      \verb{urlraw}
+      \verb https://psiberg.com/ball-and-stick-model
+      \endverb
+      \verb{url}
+      \verb https://psiberg.com/ball-and-stick-model
+      \endverb
+    \endentry
+    \entry{BibEntry2022Jul}{online}{}
+      \field{sortinit}{I}
+      \field{sortinithash}{8d291c51ee89b6cd86bf5379f0b151d8}
+      \field{labeltitlesource}{title}
+      \field{month}{7}
+      \field{note}{[Online; accessed 29. Oct. 2022]}
+      \field{title}{{Immersive Web Working Group Charter}}
+      \field{year}{2022}
+      \verb{urlraw}
+      \verb https://www.w3.org/2018/09/immersive-web-wg-charter.html
+      \endverb
+      \verb{url}
+      \verb https://www.w3.org/2018/09/immersive-web-wg-charter.html
+      \endverb
+    \endentry
+    \entry{immersive-web2022Oct}{online}{}
+      \name{author}{1}{}{%
+        {{hash=7b33a8de145820f5959652c6a0619723}{%
+           family={immersive-web},
+           familyi={i\bibinithyphendelim w\bibinitperiod}}}%
+      }
+      \strng{namehash}{7b33a8de145820f5959652c6a0619723}
+      \strng{fullhash}{7b33a8de145820f5959652c6a0619723}
+      \strng{bibnamehash}{7b33a8de145820f5959652c6a0619723}
+      \strng{authorbibnamehash}{7b33a8de145820f5959652c6a0619723}
+      \strng{authornamehash}{7b33a8de145820f5959652c6a0619723}
+      \strng{authorfullhash}{7b33a8de145820f5959652c6a0619723}
+      \field{sortinit}{i}
+      \field{sortinithash}{8d291c51ee89b6cd86bf5379f0b151d8}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{GitHub}
+      \field{month}{10}
+      \field{note}{[Online; accessed 30. Oct. 2022]}
+      \field{title}{{layers}}
+      \field{year}{2022}
+      \verb{urlraw}
+      \verb https://github.com/immersive-web/layers/pull/293
+      \endverb
+      \verb{url}
+      \verb https://github.com/immersive-web/layers/pull/293
+      \endverb
+    \endentry
+    \entry{WebVRIntro}{online}{}
+      \field{sortinit}{I}
+      \field{sortinithash}{8d291c51ee89b6cd86bf5379f0b151d8}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Mozilla Hacks {–} the Web developer blog}
+      \field{month}{10}
+      \field{note}{[Online; accessed 29. Oct. 2022]}
+      \field{title}{{Introducing the WebVR 1.0 API Proposal {–} Mozilla Hacks - the Web developer blog}}
+      \field{year}{2022}
+      \verb{urlraw}
+      \verb https://hacks.mozilla.org/2016/03/introducing-the-webvr-1-0-api-proposal
+      \endverb
+      \verb{url}
+      \verb https://hacks.mozilla.org/2016/03/introducing-the-webvr-1-0-api-proposal
+      \endverb
+    \endentry
+    \entry{Iqbal2019Sep}{online}{}
+      \name{author}{1}{}{%
+        {{hash=4d587bd0612c994973710c30432f75b6}{%
+           family={Iqbal},
+           familyi={I\bibinitperiod},
+           given={Kashif},
+           giveni={K\bibinitperiod}}}%
+      }
+      \strng{namehash}{4d587bd0612c994973710c30432f75b6}
+      \strng{fullhash}{4d587bd0612c994973710c30432f75b6}
+      \strng{bibnamehash}{4d587bd0612c994973710c30432f75b6}
+      \strng{authorbibnamehash}{4d587bd0612c994973710c30432f75b6}
+      \strng{authornamehash}{4d587bd0612c994973710c30432f75b6}
+      \strng{authorfullhash}{4d587bd0612c994973710c30432f75b6}
+      \field{sortinit}{I}
+      \field{sortinithash}{8d291c51ee89b6cd86bf5379f0b151d8}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{9}
+      \field{note}{[Online; accessed 30. Oct. 2022]}
+      \field{title}{{OBJ File Format}}
+      \field{year}{2019}
+      \verb{urlraw}
+      \verb https://docs.fileformat.com/3d/obj
+      \endverb
+      \verb{url}
+      \verb https://docs.fileformat.com/3d/obj
+      \endverb
+    \endentry
+    \entry{BibEntry2022Mar}{online}{}
+      \field{sortinit}{J}
+      \field{sortinithash}{b2f54a9081ace9966a7cb9413811edb4}
+      \field{labeltitlesource}{title}
+      \field{month}{3}
+      \field{note}{[Online; accessed 29. Oct. 2022]}
+      \field{title}{{Jmol: an open-source Java viewer for chemical structures in 3D}}
+      \field{year}{2022}
+      \verb{urlraw}
+      \verb https://jmol.org/
+      \endverb
+      \verb{url}
+      \verb https://jmol.org/
+      \endverb
+    \endentry
+    \entry{10.3389/fbioe.2021.687426}{article}{}
+      \name{author}{5}{}{%
+        {{hash=4e599507ba0b6d89eb0f2fe9086e1f52}{%
+           family={Lyu},
+           familyi={L\bibinitperiod},
+           given={Zhiliang},
+           giveni={Z\bibinitperiod}}}%
+        {{hash=ea47d6317cb898619463f331c4d5eb1c}{%
+           family={Wang},
+           familyi={W\bibinitperiod},
+           given={Zhijin},
+           giveni={Z\bibinitperiod}}}%
+        {{hash=5ac78981aab2caa6a80cd29470c7cccf}{%
+           family={Luo},
+           familyi={L\bibinitperiod},
+           given={Fangfang},
+           giveni={F\bibinitperiod}}}%
+        {{hash=8d0ddb971ba447136b4c71b3321e9e2e}{%
+           family={Shuai},
+           familyi={S\bibinitperiod},
+           given={Jianwei},
+           giveni={J\bibinitperiod}}}%
+        {{hash=1644220f4f67f4b07bd4123ae69a18e6}{%
+           family={Huang},
+           familyi={H\bibinitperiod},
+           given={Yandong},
+           giveni={Y\bibinitperiod}}}%
+      }
+      \strng{namehash}{7b672e420c080486fa132bd80968ca00}
+      \strng{fullhash}{f259517faa3872506948e5503de7655d}
+      \strng{bibnamehash}{f259517faa3872506948e5503de7655d}
+      \strng{authorbibnamehash}{f259517faa3872506948e5503de7655d}
+      \strng{authornamehash}{7b672e420c080486fa132bd80968ca00}
+      \strng{authorfullhash}{f259517faa3872506948e5503de7655d}
+      \field{sortinit}{L}
+      \field{sortinithash}{7c47d417cecb1f4bd38d1825c427a61a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Protein secondary structures have been identified as the links in the physical processes of primary sequences, typically random coils, folding into functional tertiary structures that enable proteins to involve a variety of biological events in life science. Therefore, an efficient protein secondary structure predictor is of importance especially when the structure of an amino acid sequence fragment is not solved by high-resolution experiments, such as X-ray crystallography, cryo-electron microscopy, and nuclear magnetic resonance spectroscopy, which are usually time consuming and expensive. In this paper, a reductive deep learning model MLPRNN has been proposed to predict either 3-state or 8-state protein secondary structures. The prediction accuracy by the MLPRNN on the publicly available benchmark CB513 data set is comparable with those by other state-of-the-art models. More importantly, taking into account the reductive architecture, MLPRNN could be a baseline for future developments.}
+      \field{issn}{2296-4185}
+      \field{journaltitle}{Frontiers in Bioengineering and Biotechnology}
+      \field{title}{Protein Secondary Structure Prediction With a Reductive Deep Learning Method}
+      \field{volume}{9}
+      \field{year}{2021}
+      \verb{doi}
+      \verb 10.3389/fbioe.2021.687426
+      \endverb
+      \verb{urlraw}
+      \verb https://www.frontiersin.org/articles/10.3389/fbioe.2021.687426
+      \endverb
+      \verb{url}
+      \verb https://www.frontiersin.org/articles/10.3389/fbioe.2021.687426
+      \endverb
+    \endentry
+    \entry{Maxfield2011Oct}{article}{}
+      \name{author}{1}{}{%
+        {{hash=9a20ee54f08b63389aa95c68f46d68d1}{%
+           family={Maxfield},
+           familyi={M\bibinitperiod},
+           given={Clive},
+           giveni={C\bibinitperiod}}}%
+      }
+      \strng{namehash}{9a20ee54f08b63389aa95c68f46d68d1}
+      \strng{fullhash}{9a20ee54f08b63389aa95c68f46d68d1}
+      \strng{bibnamehash}{9a20ee54f08b63389aa95c68f46d68d1}
+      \strng{authorbibnamehash}{9a20ee54f08b63389aa95c68f46d68d1}
+      \strng{authornamehash}{9a20ee54f08b63389aa95c68f46d68d1}
+      \strng{authorfullhash}{9a20ee54f08b63389aa95c68f46d68d1}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{EE Times}
+      \field{month}{10}
+      \field{title}{{How it was: Paper tapes and punched cards - EE Times}}
+      \field{year}{2011}
+      \verb{urlraw}
+      \verb https://www.eetimes.com/how-it-was-paper-tapes-and-punched-cards
+      \endverb
+      \verb{url}
+      \verb https://www.eetimes.com/how-it-was-paper-tapes-and-punched-cards
+      \endverb
+    \endentry
+    \entry{article}{article}{}
+      \name{author}{2}{}{%
+        {{hash=6c4c48b2088b1a719da235f08e690bae}{%
+           family={Mchenry},
+           familyi={M\bibinitperiod},
+           given={Kenton},
+           giveni={K\bibinitperiod}}}%
+        {{hash=13c55b873931b03fa6bbe66693e346b6}{%
+           family={Bajcsy},
+           familyi={B\bibinitperiod},
+           given={Peter},
+           giveni={P\bibinitperiod}}}%
+      }
+      \strng{namehash}{c5cd810635ce52615d62e30a05826c61}
+      \strng{fullhash}{c5cd810635ce52615d62e30a05826c61}
+      \strng{bibnamehash}{c5cd810635ce52615d62e30a05826c61}
+      \strng{authorbibnamehash}{c5cd810635ce52615d62e30a05826c61}
+      \strng{authornamehash}{c5cd810635ce52615d62e30a05826c61}
+      \strng{authorfullhash}{c5cd810635ce52615d62e30a05826c61}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{12}
+      \field{title}{An overview of 3D data content, file formats and viewers}
+      \field{year}{2008}
+      \verb{urlraw}
+      \verb https://www.researchgate.net/publication/228976876_An_overview_of_3D_data_content_file_formats_and_viewers
+      \endverb
+      \verb{url}
+      \verb https://www.researchgate.net/publication/228976876_An_overview_of_3D_data_content_file_formats_and_viewers
+      \endverb
+    \endentry
+    \entry{10.1093/bioinformatics/bti818}{article}{}
+      \name{author}{4}{}{%
+        {{hash=e3999f964e1c6c495f240700845f9eb1}{%
+           family={Moll},
+           familyi={M\bibinitperiod},
+           given={Andreas},
+           giveni={A\bibinitperiod}}}%
+        {{hash=710f3f7a35d791a7de7473b3203e3edb}{%
+           family={Hildebrandt},
+           familyi={H\bibinitperiod},
+           given={Andreas},
+           giveni={A\bibinitperiod}}}%
+        {{hash=6b657b86855afcb6dd24d3b3bbfe63d9}{%
+           family={Lenhof},
+           familyi={L\bibinitperiod},
+           given={Hans-Peter},
+           giveni={H\bibinithyphendelim P\bibinitperiod}}}%
+        {{hash=569089e0d5a019d6333ea5f294769662}{%
+           family={Kohlbacher},
+           familyi={K\bibinitperiod},
+           given={Oliver},
+           giveni={O\bibinitperiod}}}%
+      }
+      \strng{namehash}{49efae8347691db6c5dc2f823fa21ac0}
+      \strng{fullhash}{7703523a17fa3007f26f24b56f8e1461}
+      \strng{bibnamehash}{7703523a17fa3007f26f24b56f8e1461}
+      \strng{authorbibnamehash}{7703523a17fa3007f26f24b56f8e1461}
+      \strng{authornamehash}{49efae8347691db6c5dc2f823fa21ac0}
+      \strng{authorfullhash}{7703523a17fa3007f26f24b56f8e1461}
+      \field{extraname}{1}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{{Summary: We present BALLView, a molecular viewer and modeling tool. It combines state-of-the-art visualization capabilities with powerful modeling functionality including implementations of force field methods and continuum electrostatics models. BALLView is a versatile and extensible tool for research in structural bioinformatics and molecular modeling. Furthermore, the convenient and intuitive graphical user interface offers novice users direct access to the full functionality, rendering it ideal for teaching. Through an interface to the object-oriented scripting language Python it is easily extensible.Availability: BALLView is an open source software and runs on all major platforms (Windows, MacOS X, Linux and most Unix flavors). It is available free of charge under the GNU Public License at Contact:amoll@bioinf.uni-saarland.de}}
+      \field{issn}{1367-4803}
+      \field{journaltitle}{Bioinformatics}
+      \field{month}{12}
+      \field{number}{3}
+      \field{title}{{BALLView: a tool for research and education in molecular modeling}}
+      \field{volume}{22}
+      \field{year}{2005}
+      \field{pages}{365\bibrangedash 366}
+      \range{pages}{2}
+      \verb{doi}
+      \verb 10.1093/bioinformatics/bti818
+      \endverb
+      \verb{eprint}
+      \verb https://academic.oup.com/bioinformatics/article-pdf/22/3/365/589349/bti818.pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1093/bioinformatics/bti818
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1093/bioinformatics/bti818
+      \endverb
+    \endentry
+    \entry{10.1007/s10822-005-9027-x}{article}{}
+      \name{author}{4}{}{%
+        {{hash=e3999f964e1c6c495f240700845f9eb1}{%
+           family={Moll},
+           familyi={M\bibinitperiod},
+           given={Andreas},
+           giveni={A\bibinitperiod}}}%
+        {{hash=710f3f7a35d791a7de7473b3203e3edb}{%
+           family={Hildebrandt},
+           familyi={H\bibinitperiod},
+           given={Andreas},
+           giveni={A\bibinitperiod}}}%
+        {{hash=6b657b86855afcb6dd24d3b3bbfe63d9}{%
+           family={Lenhof},
+           familyi={L\bibinitperiod},
+           given={Hans-Peter},
+           giveni={H\bibinithyphendelim P\bibinitperiod}}}%
+        {{hash=569089e0d5a019d6333ea5f294769662}{%
+           family={Kohlbacher},
+           familyi={K\bibinitperiod},
+           given={Oliver},
+           giveni={O\bibinitperiod}}}%
+      }
+      \strng{namehash}{49efae8347691db6c5dc2f823fa21ac0}
+      \strng{fullhash}{7703523a17fa3007f26f24b56f8e1461}
+      \strng{bibnamehash}{7703523a17fa3007f26f24b56f8e1461}
+      \strng{authorbibnamehash}{7703523a17fa3007f26f24b56f8e1461}
+      \strng{authornamehash}{49efae8347691db6c5dc2f823fa21ac0}
+      \strng{authorfullhash}{7703523a17fa3007f26f24b56f8e1461}
+      \field{extraname}{2}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{{Summary: We present BALLView, an extensible tool for visualizing and modeling bio-molecular structures. It provides a variety of different models for bio-molecular visualization, e.g. ball-and-stick models, molecular surfaces, or ribbon models. In contrast to most existing visualization tools, BALLView also offers rich functionality for molecular modeling and simulation, including molecular mechanics methods (AMBER and CHARMM force fields), continuum electrostatics methods employing a Finite-Difference Poisson Boltzmann solver, and secondary structure calculation. Results of these computations can be exported as publication quality images or as movies. Even unexperienced users have direct access to this functionality through an intuitive graphical user interface, which makes BALLView particularly useful for teaching. For more advanced users, BALLView is extensible in different ways. Owing to its framework design, extension on the level of C‰+‰‰+ code is very convenient. In addition, an interface to the scripting language Python allows the interactive rapid prototyping of new methods. BALLView is portable and runs on all major platforms (Windows, MacOS X, Linux, most Unix flavors). It is available free of charge under the GNU Public License (GPL) from our website http://www.ballview.org.}}
+      \field{issn}{1573-4951}
+      \field{journaltitle}{Computer-Aided Molecular Design}
+      \field{month}{11}
+      \field{number}{11}
+      \field{title}{BALLView: An object-oriented molecular visualization and modeling framework}
+      \field{volume}{19}
+      \field{year}{2005}
+      \field{pages}{791\bibrangedash 800}
+      \range{pages}{10}
+      \verb{doi}
+      \verb 10.1007/s10822-005-9027-x
+      \endverb
+      \verb{eprint}
+      \verb https://link.springer.com/article/10.1007/s10822-005-9027-x
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1007/s10822-005-9027-x
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1007/s10822-005-9027-x
+      \endverb
+    \endentry
+    \entry{mrdoob2022Oct}{online}{}
+      \name{author}{1}{}{%
+        {{hash=c7d06b0a852bcd88b5d4efb963eb45ce}{%
+           family={mrdoob},
+           familyi={m\bibinitperiod}}}%
+      }
+      \strng{namehash}{c7d06b0a852bcd88b5d4efb963eb45ce}
+      \strng{fullhash}{c7d06b0a852bcd88b5d4efb963eb45ce}
+      \strng{bibnamehash}{c7d06b0a852bcd88b5d4efb963eb45ce}
+      \strng{authorbibnamehash}{c7d06b0a852bcd88b5d4efb963eb45ce}
+      \strng{authornamehash}{c7d06b0a852bcd88b5d4efb963eb45ce}
+      \strng{authorfullhash}{c7d06b0a852bcd88b5d4efb963eb45ce}
+      \field{sortinit}{m}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{GitHub}
+      \field{month}{10}
+      \field{note}{[Online; accessed 29. Oct. 2022]}
+      \field{title}{{three.js}}
+      \field{year}{2022}
+      \verb{urlraw}
+      \verb https://github.com/mrdoob/three.js/issues/1960
+      \endverb
+      \verb{url}
+      \verb https://github.com/mrdoob/three.js/issues/1960
+      \endverb
+    \endentry
+    \entry{nanome}{online}{}
+      \field{sortinit}{N}
+      \field{sortinithash}{22369a73d5f88983a108b63f07f37084}
+      \field{labeltitlesource}{title}
+      \field{month}{10}
+      \field{note}{[Online; accessed 30. Oct. 2022]}
+      \field{title}{{Nanome: Virtual Reality for Drug Design and Molecular Visualization}}
+      \field{year}{2022}
+      \verb{urlraw}
+      \verb https://nanome.ai
+      \endverb
+      \verb{url}
+      \verb https://nanome.ai
+      \endverb
+    \endentry
+    \entry{10.1038/nmeth.1427}{article}{}
+      \name{author}{11}{}{%
+        {{hash=0aa4abe7b406328fa6060ed0c720d3d7}{%
+           family={O'Donoghue},
+           familyi={O\bibinitperiod},
+           given={Seán\bibnamedelima I.},
+           giveni={S\bibinitperiod\bibinitdelim I\bibinitperiod}}}%
+        {{hash=59a6a1245ee1edfd5ef4e4eb40ca306c}{%
+           family={Goodsell},
+           familyi={G\bibinitperiod},
+           given={David\bibnamedelima S.},
+           giveni={D\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
+        {{hash=01303a4ffd06fb9575f59dc0d7489f62}{%
+           family={Frangakis},
+           familyi={F\bibinitperiod},
+           given={Achilleas\bibnamedelima S.},
+           giveni={A\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
+        {{hash=b9be7430571208dadd7ed1237a71266a}{%
+           family={Jossinet},
+           familyi={J\bibinitperiod},
+           given={Fabrice},
+           giveni={F\bibinitperiod}}}%
+        {{hash=95146375803d5775f9a3bd5a6d51f098}{%
+           family={Laskowski},
+           familyi={L\bibinitperiod},
+           given={Roman\bibnamedelima A.},
+           giveni={R\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+        {{hash=f6e0f609210ac8d798602f446c19ab22}{%
+           family={Nilges},
+           familyi={N\bibinitperiod},
+           given={Michael},
+           giveni={M\bibinitperiod}}}%
+        {{hash=7aef90a2c7cff24dc3b5b4f23198b476}{%
+           family={Saibil},
+           familyi={S\bibinitperiod},
+           given={Helen\bibnamedelima R.},
+           giveni={H\bibinitperiod\bibinitdelim R\bibinitperiod}}}%
+        {{hash=2937ffbed7ed4ebb298c3d9c7397a4a3}{%
+           family={Schafferhans},
+           familyi={S\bibinitperiod},
+           given={Andrea},
+           giveni={A\bibinitperiod}}}%
+        {{hash=ebea48d0f9a428b2a612e00059f5ccf4}{%
+           family={Wade},
+           familyi={W\bibinitperiod},
+           given={Rebecca\bibnamedelima C.},
+           giveni={R\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
+        {{hash=c37a56f8c00b45bf050fdc5d6f59491e}{%
+           family={Westhof},
+           familyi={W\bibinitperiod},
+           given={Eric},
+           giveni={E\bibinitperiod}}}%
+        {{hash=9dbfbd7d8c9609b4c77dec5b8e7c2c3e}{%
+           family={Olson},
+           familyi={O\bibinitperiod},
+           given={Arthur\bibnamedelima J.},
+           giveni={A\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+      }
+      \strng{namehash}{c4603c496aadc734f8d8d300110e70d5}
+      \strng{fullhash}{9ac8609b0893818c760d9dc39fdf659f}
+      \strng{bibnamehash}{8195761e4fd50830ffca0abb33194d29}
+      \strng{authorbibnamehash}{8195761e4fd50830ffca0abb33194d29}
+      \strng{authornamehash}{c4603c496aadc734f8d8d300110e70d5}
+      \strng{authorfullhash}{9ac8609b0893818c760d9dc39fdf659f}
+      \field{sortinit}{O}
+      \field{sortinithash}{2cd7140a07aea5341f9e2771efe90aae}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{{Structural biology is rapidly accumulating a wealth of detailed information about protein function, binding sites, RNA, large assemblies and molecular motions. These data are increasingly of interest to a broader community of life scientists, not just structural experts. Visualization is a primary means for accessing and using these data, yet visualization is also a stumbling block that prevents many life scientists from benefiting from three-dimensional structural data. In this review, we focus on key biological questions where visualizing three-dimensional structures can provide insight and describe available methods and tools.}}
+      \field{issn}{1548-7105}
+      \field{journaltitle}{Nature methods}
+      \field{number}{3}
+      \field{title}{Visualization of macromolecular structures}
+      \field{volume}{7}
+      \field{year}{2010}
+      \field{pages}{42\bibrangedash 55}
+      \range{pages}{14}
+      \verb{doi}
+      \verb 10.1038/nmeth.1427
+      \endverb
+      \verb{eprint}
+      \verb https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7097155/#CR1
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1038/nmeth.1427
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1038/nmeth.1427
+      \endverb
+    \endentry
+    \entry{OLSON20183997}{article}{}
+      \name{author}{1}{}{%
+        {{hash=9dbfbd7d8c9609b4c77dec5b8e7c2c3e}{%
+           family={Olson},
+           familyi={O\bibinitperiod},
+           given={Arthur\bibnamedelima J.},
+           giveni={A\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+      }
+      \strng{namehash}{9dbfbd7d8c9609b4c77dec5b8e7c2c3e}
+      \strng{fullhash}{9dbfbd7d8c9609b4c77dec5b8e7c2c3e}
+      \strng{bibnamehash}{9dbfbd7d8c9609b4c77dec5b8e7c2c3e}
+      \strng{authorbibnamehash}{9dbfbd7d8c9609b4c77dec5b8e7c2c3e}
+      \strng{authornamehash}{9dbfbd7d8c9609b4c77dec5b8e7c2c3e}
+      \strng{authorfullhash}{9dbfbd7d8c9609b4c77dec5b8e7c2c3e}
+      \field{sortinit}{O}
+      \field{sortinithash}{2cd7140a07aea5341f9e2771efe90aae}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{{Visualization has been a key technology in the progress of structural molecular biology for as long as the field has existed. This perspective describes the nature of the visualization process in structural studies, how it has evolved over the years, and its relationship to the changes in technology that have supported and driven it. It focuses on how technical advances have changed the way we look at and interact with molecular structure, and how structural biology has fostered and challenged that technology.}}
+      \field{issn}{0022-2836}
+      \field{journaltitle}{Journal of Molecular Biology}
+      \field{number}{21}
+      \field{title}{Perspectives on Structural Molecular Biology Visualization: From Past to Present}
+      \field{volume}{430}
+      \field{year}{2018}
+      \field{pages}{3997\bibrangedash 4012}
+      \range{pages}{16}
+      \verb{doi}
+      \verb https://doi.org/10.1016/j.jmb.2018.07.009
+      \endverb
+      \verb{urlraw}
+      \verb https://www.sciencedirect.com/science/article/pii/S0022283618307599
+      \endverb
+      \verb{url}
+      \verb https://www.sciencedirect.com/science/article/pii/S0022283618307599
+      \endverb
+      \keyw{visualization,molecular graphics,structural molecular biology,molecular modeling}
+    \endentry
+    \entry{10.1093/bioinformatics/btu829}{article}{}
+      \name{author}{2}{}{%
+        {{hash=bc4309991c41cbe538c852e90dd919d8}{%
+           family={Rego},
+           familyi={R\bibinitperiod},
+           given={Nicholas},
+           giveni={N\bibinitperiod}}}%
+        {{hash=d955fa628d794e5ea31051ac241b78c6}{%
+           family={Koes},
+           familyi={K\bibinitperiod},
+           given={David},
+           giveni={D\bibinitperiod}}}%
+      }
+      \strng{namehash}{d43c12af99df79121d0372cb07cc39dd}
+      \strng{fullhash}{d43c12af99df79121d0372cb07cc39dd}
+      \strng{bibnamehash}{d43c12af99df79121d0372cb07cc39dd}
+      \strng{authorbibnamehash}{d43c12af99df79121d0372cb07cc39dd}
+      \strng{authornamehash}{d43c12af99df79121d0372cb07cc39dd}
+      \strng{authorfullhash}{d43c12af99df79121d0372cb07cc39dd}
+      \field{sortinit}{R}
+      \field{sortinithash}{5e1c39a9d46ffb6bebd8f801023a9486}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{{Summary: 3Dmol.js is a modern, object-oriented JavaScript library that uses the latest web technologies to provide interactive, hardware-accelerated three-dimensional representations of molecular data without the need to install browser plugins or Java. 3Dmol.js provides a full featured API for developers as well as a straightforward declarative interface that lets users easily share and embed molecular data in websites.Availability and implementation: 3Dmol.js is distributed under the permissive BSD open source license. Source code and documentation can be found at http://3Dmol.csb.pitt.eduContact:dkoes@pitt.edu}}
+      \field{issn}{1367-4803}
+      \field{journaltitle}{Bioinformatics}
+      \field{month}{12}
+      \field{number}{8}
+      \field{title}{{3Dmol.js: molecular visualization with WebGL}}
+      \field{volume}{31}
+      \field{year}{2014}
+      \field{pages}{1322\bibrangedash 1324}
+      \range{pages}{3}
+      \verb{doi}
+      \verb 10.1093/bioinformatics/btu829
+      \endverb
+      \verb{eprint}
+      \verb https://academic.oup.com/bioinformatics/article-pdf/31/8/1322/564183/btu829.pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1093/bioinformatics/btu829
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1093/bioinformatics/btu829
+      \endverb
+    \endentry
+    \entry{10.1093/bioinformatics/bty419}{article}{}
+      \name{author}{6}{}{%
+        {{hash=233ce1831ffab84db164b809eeda6a44}{%
+           family={Rose},
+           familyi={R\bibinitperiod},
+           given={Alexander\bibnamedelima S},
+           giveni={A\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
+        {{hash=55f0af5a438ebb96d5c2abfaf08d35b8}{%
+           family={Bradley},
+           familyi={B\bibinitperiod},
+           given={Anthony\bibnamedelima R},
+           giveni={A\bibinitperiod\bibinitdelim R\bibinitperiod}}}%
+        {{hash=963ba6105e3dca2033334a5a95923db0}{%
+           family={Valasatava},
+           familyi={V\bibinitperiod},
+           given={Yana},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=a7399b08a4351d7152e68b8fce9782f9}{%
+           family={Duarte},
+           familyi={D\bibinitperiod},
+           given={Jose\bibnamedelima M},
+           giveni={J\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+        {{hash=199c7411a1dba8e40bad90e48f824280}{%
+           family={Prlić},
+           familyi={P\bibinitperiod},
+           given={Andreas},
+           giveni={A\bibinitperiod}}}%
+        {{hash=a54e54b2ea36d6960c68511f9cd04c72}{%
+           family={Rose},
+           familyi={R\bibinitperiod},
+           given={Peter\bibnamedelima W},
+           giveni={P\bibinitperiod\bibinitdelim W\bibinitperiod}}}%
+      }
+      \strng{namehash}{dfe011206b25c77c32ed935c43c59441}
+      \strng{fullhash}{7fc56a2701b49885590665707be28a46}
+      \strng{bibnamehash}{08cb44fb88dd0177be248b078fbbf6b3}
+      \strng{authorbibnamehash}{08cb44fb88dd0177be248b078fbbf6b3}
+      \strng{authornamehash}{dfe011206b25c77c32ed935c43c59441}
+      \strng{authorfullhash}{7fc56a2701b49885590665707be28a46}
+      \field{sortinit}{R}
+      \field{sortinithash}{5e1c39a9d46ffb6bebd8f801023a9486}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{{The interactive visualization of very large macromolecular complexes on the web is becoming a challenging problem as experimental techniques advance at an unprecedented rate and deliver structures of increasing size.We have tackled this problem by developing highly memory-efficient and scalable extensions for the NGL WebGL-based molecular viewer and by using Macromolecular Transmission Format (MMTF), a binary and compressed MMTF. These enable NGL to download and render molecular complexes with millions of atoms interactively on desktop computers and smartphones alike, making it a tool of choice for web-based molecular visualization in research and education.The source code is freely available under the MIT license at github.com/arose/ngl and distributed on NPM (npmjs.com/package/ngl). MMTF-JavaScript encoders and decoders are available at github.com/rcsb/mmtf-javascript.}}
+      \field{issn}{1367-4803}
+      \field{journaltitle}{Bioinformatics}
+      \field{month}{05}
+      \field{number}{21}
+      \field{title}{{NGL viewer: web-based molecular graphics for large complexes}}
+      \field{volume}{34}
+      \field{year}{2018}
+      \field{pages}{3755\bibrangedash 3758}
+      \range{pages}{4}
+      \verb{doi}
+      \verb 10.1093/bioinformatics/bty419
+      \endverb
+      \verb{eprint}
+      \verb https://academic.oup.com/bioinformatics/article-pdf/34/21/3755/26147052/bty419.pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1093/bioinformatics/bty419
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1093/bioinformatics/bty419
+      \endverb
+    \endentry
+    \entry{10.1093/nar/gkv402}{article}{}
+      \name{author}{2}{}{%
+        {{hash=233ce1831ffab84db164b809eeda6a44}{%
+           family={Rose},
+           familyi={R\bibinitperiod},
+           given={Alexander\bibnamedelima S.},
+           giveni={A\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
+        {{hash=f247699085f9339228aca4aaa0ea5ab8}{%
+           family={Hildebrand},
+           familyi={H\bibinitperiod},
+           given={Peter\bibnamedelima W.},
+           giveni={P\bibinitperiod\bibinitdelim W\bibinitperiod}}}%
+      }
+      \strng{namehash}{86268ac6c9afadff913ac7c2b0aeb156}
+      \strng{fullhash}{86268ac6c9afadff913ac7c2b0aeb156}
+      \strng{bibnamehash}{86268ac6c9afadff913ac7c2b0aeb156}
+      \strng{authorbibnamehash}{86268ac6c9afadff913ac7c2b0aeb156}
+      \strng{authornamehash}{86268ac6c9afadff913ac7c2b0aeb156}
+      \strng{authorfullhash}{86268ac6c9afadff913ac7c2b0aeb156}
+      \field{sortinit}{R}
+      \field{sortinithash}{5e1c39a9d46ffb6bebd8f801023a9486}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{{The NGL Viewer (http://proteinformatics.charite.de/ngl) is a web application for the visualization of macromolecular structures. By fully adopting capabilities of modern web browsers, such as WebGL, for molecular graphics, the viewer can interactively display large molecular complexes and is also unaffected by the retirement of third-party plug-ins like Flash and Java Applets. Generally, the web application offers comprehensive molecular visualization through a graphical user interface so that life scientists can easily access and profit from available structural data. It supports common structural file-formats (e.g. PDB, mmCIF) and a variety of molecular representations (e.g. ‘cartoon, spacefill, licorice’). Moreover, the viewer can be embedded in other web sites to provide specialized visualizations of entries in structural databases or results of structure-related calculations.}}
+      \field{issn}{0305-1048}
+      \field{journaltitle}{Nucleic Acids Research}
+      \field{month}{04}
+      \field{number}{W1}
+      \field{title}{{NGL Viewer: a web application for molecular visualization}}
+      \field{volume}{43}
+      \field{year}{2015}
+      \field{pages}{W576\bibrangedash W579}
+      \range{pages}{-1}
+      \verb{doi}
+      \verb 10.1093/nar/gkv402
+      \endverb
+      \verb{eprint}
+      \verb https://academic.oup.com/nar/article-pdf/43/W1/W576/7476193/gkv402.pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1093/nar/gkv402
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1093/nar/gkv402
+      \endverb
+    \endentry
+    \entry{BibEntry2019Sep}{online}{}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{labeltitlesource}{title}
+      \field{month}{9}
+      \field{note}{[Online; accessed 30. Oct. 2022]}
+      \field{title}{{STL (STereoLithography) File Format Family}}
+      \field{year}{2019}
+      \verb{urlraw}
+      \verb https://www.loc.gov/preservation/digital/formats/fdd/fdd000504.shtml
+      \endverb
+      \verb{url}
+      \verb https://www.loc.gov/preservation/digital/formats/fdd/fdd000504.shtml
+      \endverb
+    \endentry
+    \entry{SZILVSINAGY2003945}{article}{}
+      \name{author}{2}{}{%
+        {{hash=322b61944519070e0806d52179b72518}{%
+           family={Szilvśi-Nagy},
+           familyi={S\bibinithyphendelim N\bibinitperiod},
+           given={M.},
+           giveni={M\bibinitperiod}}}%
+        {{hash=ab1427f7714f38485ac62f0b4a94f9f2}{%
+           family={Mátyási},
+           familyi={M\bibinitperiod},
+           given={Gy.},
+           giveni={G\bibinitperiod}}}%
+      }
+      \strng{namehash}{2526e5fe923c0bf19a7fafd5b7aac6dc}
+      \strng{fullhash}{2526e5fe923c0bf19a7fafd5b7aac6dc}
+      \strng{bibnamehash}{2526e5fe923c0bf19a7fafd5b7aac6dc}
+      \strng{authorbibnamehash}{2526e5fe923c0bf19a7fafd5b7aac6dc}
+      \strng{authornamehash}{2526e5fe923c0bf19a7fafd5b7aac6dc}
+      \strng{authorfullhash}{2526e5fe923c0bf19a7fafd5b7aac6dc}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{STL files produced by 3D modelling systems contain triangular facet representation of surfaces and have become standard data inputs of rapid prototyping and manufacturing systems. In rapid prototyping technology, physical objects are produced layer by layer, each layer a 2D cross-section of the 3D mesh in STL format. In current CAD systems, the surface tessellation frequently ends with errors in the data structure as gaps and holes leading to open loops in the cross-sections that cannot be manufactured as layers. In this paper, we present a method to detect defects in the surface representation and to analyse the shape of the approximated surface by constructing a polyhedral data structure from the STL file.}
+      \field{issn}{0895-7177}
+      \field{journaltitle}{Mathematical and Computer Modelling}
+      \field{note}{Hungarian Applied Mathematics}
+      \field{number}{7}
+      \field{title}{Analysis of STL files}
+      \field{volume}{38}
+      \field{year}{2003}
+      \field{pages}{945\bibrangedash 960}
+      \range{pages}{16}
+      \verb{doi}
+      \verb https://doi.org/10.1016/S0895-7177(03)90079-3
+      \endverb
+      \verb{urlraw}
+      \verb https://www.sciencedirect.com/science/article/pii/S0895717703900793
+      \endverb
+      \verb{url}
+      \verb https://www.sciencedirect.com/science/article/pii/S0895717703900793
+      \endverb
+      \keyw{Rapid prototyping,STL file,Polyhedral data structure}
+    \endentry
+    \entry{PyMOL}{online}{}
+      \field{sortinit}{T}
+      \field{sortinithash}{9af77f0292593c26bde9a56e688eaee9}
+      \field{labeltitlesource}{title}
+      \field{month}{5}
+      \field{note}{[Online; accessed 29, Oct. 2022]}
+      \field{title}{The {PyMOL} Molecular Graphics System, Version~2.5}
+      \field{year}{2021}
+      \verb{urlraw}
+      \verb https://pymol.org/
+      \endverb
+      \verb{url}
+      \verb https://pymol.org/
+      \endverb
+    \endentry
+    \entry{BibEntry2022Oct}{online}{}
+      \field{sortinit}{T}
+      \field{sortinithash}{9af77f0292593c26bde9a56e688eaee9}
+      \field{labeltitlesource}{title}
+      \field{month}{10}
+      \field{note}{[Online; accessed 29. Oct. 2022]}
+      \field{title}{{Three.js {–} JavaScript 3D Library}}
+      \field{year}{2022}
+      \verb{urlraw}
+      \verb https://threejs.org
+      \endverb
+      \verb{url}
+      \verb https://threejs.org
+      \endverb
+    \endentry
+    \entry{BibEntry2011Jul}{online}{}
+      \field{sortinit}{W}
+      \field{sortinithash}{4315d78024d0cea9b57a0c6f0e35ed0d}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Khronos Group}
+      \field{month}{7}
+      \field{note}{[Online; accessed 29. Oct. 2022]}
+      \field{title}{{WebGL}}
+      \field{year}{2011}
+      \verb{urlraw}
+      \verb https://www.khronos.org/webgl
+      \endverb
+      \verb{url}
+      \verb https://www.khronos.org/webgl
+      \endverb
+    \endentry
+    \entry{BibEntry2018Sep}{online}{}
+      \field{sortinit}{W}
+      \field{sortinithash}{4315d78024d0cea9b57a0c6f0e35ed0d}
+      \field{labeltitlesource}{title}
+      \field{month}{9}
+      \field{note}{[Online; accessed 29. Oct. 2022]}
+      \field{title}{{WebVR}}
+      \field{year}{2018}
+      \verb{urlraw}
+      \verb https://mozvr.github.io/webvr-spec
+      \endverb
+      \verb{url}
+      \verb https://mozvr.github.io/webvr-spec
+      \endverb
+    \endentry
+    \entry{BibEntry2022Aug}{online}{}
+      \field{sortinit}{W}
+      \field{sortinithash}{4315d78024d0cea9b57a0c6f0e35ed0d}
+      \field{labeltitlesource}{title}
+      \field{month}{8}
+      \field{note}{[Online; accessed 29. Oct. 2022]}
+      \field{title}{{WebXR Device API}}
+      \field{year}{2022}
+      \verb{urlraw}
+      \verb https://www.w3.org/TR/webxr
+      \endverb
+      \verb{url}
+      \verb https://www.w3.org/TR/webxr
+      \endverb
+    \endentry
+    \entry{BibEntry2022Jan}{online}{}
+      \field{sortinit}{w}
+      \field{sortinithash}{4315d78024d0cea9b57a0c6f0e35ed0d}
+      \field{labeltitlesource}{title}
+      \field{month}{1}
+      \field{note}{[Online; accessed 30. Oct. 2022]}
+      \field{title}{{wwPDB Format version 3.3: Introduction}}
+      \field{year}{2022}
+      \verb{urlraw}
+      \verb http://www.wwpdb.org/documentation/file-format-content/format33/sect1.html
+      \endverb
+      \verb{url}
+      \verb http://www.wwpdb.org/documentation/file-format-content/format33/sect1.html
+      \endverb
+    \endentry
+  \enddatalist
+  \datalist[entry]{nty/global/518ED29525738CEBDAC49C49E60EA9D3/global/global}
+    \entry{aframe}{online}{}
+      \field{sortinit}{A}
+      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \field{labelprefix}{@}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{A-Frame}
+      \field{month}{8}
+      \field{note}{[Online; accessed 30. Oct. 2022]}
+      \field{title}{{A-Frame {–} Make WebVR}}
+      \field{year}{2022}
+      \verb{urlraw}
+      \verb https://aframe.io
+      \endverb
+      \verb{url}
+      \verb https://aframe.io
+      \endverb
+    \endentry
+    \entry{Bergwerf2022Oct}{online}{}
+      \name{author}{1}{}{%
+        {{hash=91c10be8430e1de3090bcbe3af7872e3}{%
+           family={Bergwerf},
+           familyi={B\bibinitperiod},
+           given={Herman},
+           giveni={H\bibinitperiod}}}%
+      }
+      \strng{namehash}{91c10be8430e1de3090bcbe3af7872e3}
+      \strng{fullhash}{91c10be8430e1de3090bcbe3af7872e3}
+      \strng{bibnamehash}{91c10be8430e1de3090bcbe3af7872e3}
+      \strng{authorbibnamehash}{91c10be8430e1de3090bcbe3af7872e3}
+      \strng{authornamehash}{91c10be8430e1de3090bcbe3af7872e3}
+      \strng{authorfullhash}{91c10be8430e1de3090bcbe3af7872e3}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{labelprefix}{@}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{10}
+      \field{note}{[Online; accessed 29. Oct. 2022]}
+      \field{title}{MolView}
+      \field{year}{2022}
+      \verb{urlraw}
+      \verb https://molview.org/?cid=10635
+      \endverb
+      \verb{url}
+      \verb https://molview.org/?cid=10635
+      \endverb
+    \endentry
+    \entry{biochem-fan2022Oct}{online}{}
+      \name{author}{1}{}{%
+        {{hash=84d4dcdbc4626e1d67bce687a24928d2}{%
+           family={biochem-fan},
+           familyi={b\bibinithyphendelim f\bibinitperiod}}}%
+      }
+      \strng{namehash}{84d4dcdbc4626e1d67bce687a24928d2}
+      \strng{fullhash}{84d4dcdbc4626e1d67bce687a24928d2}
+      \strng{bibnamehash}{84d4dcdbc4626e1d67bce687a24928d2}
+      \strng{authorbibnamehash}{84d4dcdbc4626e1d67bce687a24928d2}
+      \strng{authornamehash}{84d4dcdbc4626e1d67bce687a24928d2}
+      \strng{authorfullhash}{84d4dcdbc4626e1d67bce687a24928d2}
+      \field{sortinit}{b}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{labelprefix}{@}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{GitHub}
+      \field{month}{10}
+      \field{note}{[Online; accessed 30. Oct. 2022]}
+      \field{title}{{GLmol}}
+      \field{year}{2022}
+      \verb{urlraw}
+      \verb https://github.com/biochem-fan/GLmol
+      \endverb
+      \verb{url}
+      \verb https://github.com/biochem-fan/GLmol
+      \endverb
+    \endentry
+    \entry{10.1371/journal.pcbi.1007747}{article}{}
+      \name{author}{5}{}{%
+        {{hash=fc2feb86e2c48dbf167eac2888f0f752}{%
+           family={Cassidy},
+           familyi={C\bibinitperiod},
+           given={Kevin\bibnamedelima C.},
+           giveni={K\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
+        {{hash=90a3a445ff0033131e31d3153c138ddb}{%
+           family={Šefčík},
+           familyi={Š\bibinitperiod},
+           given={Jan},
+           giveni={J\bibinitperiod}}}%
+        {{hash=2254b2411a992c0dccb68bb98778fab8}{%
+           family={Raghav},
+           familyi={R\bibinitperiod},
+           given={Yogindra},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=1bcfd96267038e9393050491837a266f}{%
+           family={Chang},
+           familyi={C\bibinitperiod},
+           given={Alexander},
+           giveni={A\bibinitperiod}}}%
+        {{hash=2fa382bef9da57d1e5424cd2277049d1}{%
+           family={Durrant},
+           familyi={D\bibinitperiod},
+           given={Jacob\bibnamedelima D.},
+           giveni={J\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Public Library of Science}%
+      }
+      \strng{namehash}{e3db655a85f24ef1c0b23ca878bad43c}
+      \strng{fullhash}{333b9522ee1aa7150847ff6ba5f6e664}
+      \strng{bibnamehash}{333b9522ee1aa7150847ff6ba5f6e664}
+      \strng{authorbibnamehash}{333b9522ee1aa7150847ff6ba5f6e664}
+      \strng{authornamehash}{e3db655a85f24ef1c0b23ca878bad43c}
+      \strng{authorfullhash}{333b9522ee1aa7150847ff6ba5f6e664}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{labelprefix}{@}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Protein structure determines biological function. Accurately conceptualizing 3D protein/ligand structures is thus vital to scientific research and education. Virtual reality (VR) enables protein visualization in stereoscopic 3D, but many VR molecular-visualization programs are expensive and challenging to use; work only on specific VR headsets; rely on complicated model-preparation software; and/or require the user to install separate programs or plugins. Here we introduce ProteinVR, a web-based application that works on various VR setups and operating systems. ProteinVR displays molecular structures within 3D environments that give useful biological context and allow users to situate themselves in 3D space. Our web-based implementation is ideal for hypothesis generation and education in research and large-classroom settings. We release ProteinVR under the open-source BSD-3-Clause license. A copy of the program is available free of charge from http://durrantlab.com/protein-vr/, and a working version can be accessed at http://durrantlab.com/pvr/.}
+      \field{journaltitle}{PLOS Computational Biology}
+      \field{month}{03}
+      \field{number}{3}
+      \field{title}{ProteinVR: Web-based molecular visualization in virtual reality}
+      \field{volume}{16}
+      \field{year}{2020}
+      \field{pages}{1\bibrangedash 17}
+      \range{pages}{17}
+      \verb{doi}
+      \verb 10.1371/journal.pcbi.1007747
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1371/journal.pcbi.1007747
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1371/journal.pcbi.1007747
+      \endverb
+    \endentry
+    \entry{10.3389/fpsyg.2018.02086}{article}{}
+      \name{author}{4}{}{%
+        {{hash=1bc6246c8e34b01d98ba049716491b9d}{%
+           family={Cipresso},
+           familyi={C\bibinitperiod},
+           given={Pietro},
+           giveni={P\bibinitperiod}}}%
+        {{hash=4e44835d352f6040c216ce1a6b12da93}{%
+           family={Giglioli},
+           familyi={G\bibinitperiod},
+           given={Irene\bibnamedelimb Alice\bibnamedelima Chicchi},
+           giveni={I\bibinitperiod\bibinitdelim A\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
+        {{hash=ae1168f5f332b6d073777456d3a13ace}{%
+           family={Raya},
+           familyi={R\bibinitperiod},
+           given={Mariano\bibnamedelima Alcañiz},
+           giveni={M\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+        {{hash=2730bcc70dd8b3f17abe4d333add003f}{%
+           family={Riva},
+           familyi={R\bibinitperiod},
+           given={Giuseppe},
+           giveni={G\bibinitperiod}}}%
+      }
+      \strng{namehash}{1fd53620bce337b8c7fc4579f8922dbc}
+      \strng{fullhash}{f8f4a75c46355141a3fbde06ee07185d}
+      \strng{bibnamehash}{f8f4a75c46355141a3fbde06ee07185d}
+      \strng{authorbibnamehash}{f8f4a75c46355141a3fbde06ee07185d}
+      \strng{authornamehash}{1fd53620bce337b8c7fc4579f8922dbc}
+      \strng{authorfullhash}{f8f4a75c46355141a3fbde06ee07185d}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{labelprefix}{@}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{The recent appearance of low cost virtual reality (VR) technologies – like the Oculus Rift, the HTC Vive and the Sony PlayStation VR – and Mixed Reality Interfaces (MRITF) – like the Hololens – is attracting the attention of users and researchers suggesting it may be the next largest stepping stone in technological innovation. However, the history of VR technology is longer than it may seem: the concept of VR was formulated in the 1960s and the first commercial VR tools appeared in the late 1980s. For this reason, during the last 20 years, 100s of researchers explored the processes, effects, and applications of this technology producing 1000s of scientific papers. What is the outcome of this significant research work? This paper wants to provide an answer to this question by exploring, using advanced scientometric techniques, the existing research corpus in the field. We collected all the existent articles about VR in the Web of Science Core Collection scientific database, and the resultant dataset contained 21,667 records for VR and 9,944 for augmented reality (AR). The bibliographic record contained various fields, such as author, title, abstract, country, and all the references (needed for the citation analysis). The network and cluster analysis of the literature showed a composite panorama characterized by changes and evolutions over the time. Indeed, whether until 5 years ago, the main publication media on VR concerned both conference proceeding and journals, more recently journals constitute the main medium of communication. Similarly, if at first computer science was the leading research field, nowadays clinical areas have increased, as well as the number of countries involved in VR research. The present work discusses the evolution and changes over the time of the use of VR in the main areas of application with an emphasis on the future expected VR’s capacities, increases and challenges. We conclude considering the disruptive contribution that VR/AR/MRITF will be able to get in scientific fields, as well in human communication and interaction, as already happened with the advent of mobile phones by increasing the use and the development of scientific applications (e.g., in clinical areas) and by modifying the social communication and interaction among people.}
+      \field{issn}{1664-1078}
+      \field{journaltitle}{Frontiers in Psychology}
+      \field{title}{The Past, Present, and Future of Virtual and Augmented Reality Research: A Network and Cluster Analysis of the Literature}
+      \field{volume}{9}
+      \field{year}{2018}
+      \verb{doi}
+      \verb 10.3389/fpsyg.2018.02086
+      \endverb
+      \verb{urlraw}
+      \verb https://www.frontiersin.org/articles/10.3389/fpsyg.2018.02086
+      \endverb
+      \verb{url}
+      \verb https://www.frontiersin.org/articles/10.3389/fpsyg.2018.02086
+      \endverb
+    \endentry
+    \entry{DEGREVE2014384}{article}{}
+      \name{author}{3}{}{%
+        {{hash=9db53eac84411e7b06c268c6fd1531d6}{%
+           family={Degrève},
+           familyi={D\bibinitperiod},
+           given={Léo},
+           giveni={L\bibinitperiod}}}%
+        {{hash=e83810c5fd6e6919f54e6fe39bec0035}{%
+           family={Fuzo},
+           familyi={F\bibinitperiod},
+           given={Carlos\bibnamedelima A.},
+           giveni={C\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+        {{hash=369b571fa3d0ba1a719ab67028de37ab}{%
+           family={Caliri},
+           familyi={C\bibinitperiod},
+           given={Antonio},
+           giveni={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{5bc0d2b6c8830904c408a15bb3b40672}
+      \strng{fullhash}{d6b4962f856e1580a8c233a80d75d519}
+      \strng{bibnamehash}{d6b4962f856e1580a8c233a80d75d519}
+      \strng{authorbibnamehash}{d6b4962f856e1580a8c233a80d75d519}
+      \strng{authornamehash}{5bc0d2b6c8830904c408a15bb3b40672}
+      \strng{authorfullhash}{d6b4962f856e1580a8c233a80d75d519}
+      \field{sortinit}{D}
+      \field{sortinithash}{6f385f66841fb5e82009dc833c761848}
+      \field{labelprefix}{@}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{1570-9639}
+      \field{journaltitle}{Biochimica et Biophysica Acta (BBA) - Proteins and Proteomics}
+      \field{number}{2}
+      \field{title}{Extended secondary structures in proteins}
+      \field{volume}{1844}
+      \field{year}{2014}
+      \field{pages}{384\bibrangedash 388}
+      \range{pages}{5}
+      \verb{doi}
+      \verb https://doi.org/10.1016/j.bbapap.2013.10.005
+      \endverb
+      \verb{urlraw}
+      \verb https://www.sciencedirect.com/science/article/pii/S1570963913003634
+      \endverb
+      \verb{url}
+      \verb https://www.sciencedirect.com/science/article/pii/S1570963913003634
+      \endverb
+      \keyw{Protein's structure,Secondary structure,Extended secondary structure}
+    \endentry
+    \entry{facebookarchive2022Oct}{online}{}
+      \name{author}{1}{}{%
+        {{hash=4f700cf27fae7184cfd695ca9d3348ee}{%
+           family={facebookarchive},
+           familyi={f\bibinitperiod}}}%
+      }
+      \strng{namehash}{4f700cf27fae7184cfd695ca9d3348ee}
+      \strng{fullhash}{4f700cf27fae7184cfd695ca9d3348ee}
+      \strng{bibnamehash}{4f700cf27fae7184cfd695ca9d3348ee}
+      \strng{authorbibnamehash}{4f700cf27fae7184cfd695ca9d3348ee}
+      \strng{authornamehash}{4f700cf27fae7184cfd695ca9d3348ee}
+      \strng{authorfullhash}{4f700cf27fae7184cfd695ca9d3348ee}
+      \field{sortinit}{f}
+      \field{sortinithash}{2638baaa20439f1b5a8f80c6c08a13b4}
+      \field{labelprefix}{@}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{GitHub}
+      \field{month}{10}
+      \field{note}{[Online; accessed 30. Oct. 2022]}
+      \field{title}{{react-360}}
+      \field{year}{2022}
+      \verb{urlraw}
+      \verb https://github.com/facebookarchive/react-360
+      \endverb
+      \verb{url}
+      \verb https://github.com/facebookarchive/react-360
+      \endverb
+    \endentry
+    \entry{felixmariotto2022Oct}{online}{}
+      \name{author}{1}{}{%
+        {{hash=21d41be822d038352aa1f4940a74d9b3}{%
+           family={felixmariotto},
+           familyi={f\bibinitperiod}}}%
+      }
+      \strng{namehash}{21d41be822d038352aa1f4940a74d9b3}
+      \strng{fullhash}{21d41be822d038352aa1f4940a74d9b3}
+      \strng{bibnamehash}{21d41be822d038352aa1f4940a74d9b3}
+      \strng{authorbibnamehash}{21d41be822d038352aa1f4940a74d9b3}
+      \strng{authornamehash}{21d41be822d038352aa1f4940a74d9b3}
+      \strng{authorfullhash}{21d41be822d038352aa1f4940a74d9b3}
+      \field{sortinit}{f}
+      \field{sortinithash}{2638baaa20439f1b5a8f80c6c08a13b4}
+      \field{labelprefix}{@}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{GitHub}
+      \field{month}{10}
+      \field{note}{[Online; accessed 30. Oct. 2022]}
+      \field{title}{{three-mesh-ui}}
+      \field{year}{2022}
+      \verb{urlraw}
+      \verb https://github.com/felixmariotto/three-mesh-ui
+      \endverb
+      \verb{url}
+      \verb https://github.com/felixmariotto/three-mesh-ui
+      \endverb
+    \endentry
+    \entry{HAMANN1994197}{article}{}
+      \name{author}{1}{}{%
+        {{hash=cf9456543034e2f1ea8e7e13b291d974}{%
+           family={Hamann},
+           familyi={H\bibinitperiod},
+           given={Bernd},
+           giveni={B\bibinitperiod}}}%
+      }
+      \strng{namehash}{cf9456543034e2f1ea8e7e13b291d974}
+      \strng{fullhash}{cf9456543034e2f1ea8e7e13b291d974}
+      \strng{bibnamehash}{cf9456543034e2f1ea8e7e13b291d974}
+      \strng{authorbibnamehash}{cf9456543034e2f1ea8e7e13b291d974}
+      \strng{authornamehash}{cf9456543034e2f1ea8e7e13b291d974}
+      \strng{authorfullhash}{cf9456543034e2f1ea8e7e13b291d974}
+      \field{sortinit}{H}
+      \field{sortinithash}{23a3aa7c24e56cfa16945d55545109b5}
+      \field{labelprefix}{@}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Given a surface triangulation in three-dimensional space, an algorithm is developed to iteratively remove triangles from the triangulation. An underlying parametric or implicit surface representation is not required. An order is introduced on the set of triangles by considering curvature at their vertices. Triangles in nearly planar surface regions are prime candidates for removal. The degree of reduction can be specified by a percentage or, in the case of bivariate functions, by an error tolerance.}
+      \field{issn}{0167-8396}
+      \field{journaltitle}{Computer Aided Geometric Design}
+      \field{number}{2}
+      \field{title}{A data reduction scheme for triangulated surfaces}
+      \field{volume}{11}
+      \field{year}{1994}
+      \field{pages}{197\bibrangedash 214}
+      \range{pages}{18}
+      \verb{doi}
+      \verb https://doi.org/10.1016/0167-8396(94)90032-9
+      \endverb
+      \verb{urlraw}
+      \verb https://www.sciencedirect.com/science/article/pii/0167839694900329
+      \endverb
+      \verb{url}
+      \verb https://www.sciencedirect.com/science/article/pii/0167839694900329
+      \endverb
+      \keyw{Approximation,Curvature,Data reduction,Surface triangulation}
+    \endentry
+    \entry{Hamzah2022Jul}{article}{}
+      \name{author}{1}{}{%
+        {{hash=47d1588ff9f44abd94388c10ae88aa36}{%
+           family={Hamzah},
+           familyi={H\bibinitperiod},
+           given={K.},
+           giveni={K\bibinitperiod}}}%
+      }
+      \strng{namehash}{47d1588ff9f44abd94388c10ae88aa36}
+      \strng{fullhash}{47d1588ff9f44abd94388c10ae88aa36}
+      \strng{bibnamehash}{47d1588ff9f44abd94388c10ae88aa36}
+      \strng{authorbibnamehash}{47d1588ff9f44abd94388c10ae88aa36}
+      \strng{authornamehash}{47d1588ff9f44abd94388c10ae88aa36}
+      \strng{authorfullhash}{47d1588ff9f44abd94388c10ae88aa36}
+      \field{sortinit}{H}
+      \field{sortinithash}{23a3aa7c24e56cfa16945d55545109b5}
+      \field{labelprefix}{@}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{PSIBERG}
+      \field{month}{7}
+      \field{title}{{Ball and Stick Model - A Convention - PSIBERG}}
+      \field{year}{2022}
+      \verb{urlraw}
+      \verb https://psiberg.com/ball-and-stick-model
+      \endverb
+      \verb{url}
+      \verb https://psiberg.com/ball-and-stick-model
+      \endverb
+    \endentry
+    \entry{BibEntry2022Jul}{online}{}
+      \field{sortinit}{I}
+      \field{sortinithash}{8d291c51ee89b6cd86bf5379f0b151d8}
+      \field{labelprefix}{@}
+      \field{labeltitlesource}{title}
+      \field{month}{7}
+      \field{note}{[Online; accessed 29. Oct. 2022]}
+      \field{title}{{Immersive Web Working Group Charter}}
+      \field{year}{2022}
+      \verb{urlraw}
+      \verb https://www.w3.org/2018/09/immersive-web-wg-charter.html
+      \endverb
+      \verb{url}
+      \verb https://www.w3.org/2018/09/immersive-web-wg-charter.html
+      \endverb
+    \endentry
+    \entry{immersive-web2022Oct}{online}{}
+      \name{author}{1}{}{%
+        {{hash=7b33a8de145820f5959652c6a0619723}{%
+           family={immersive-web},
+           familyi={i\bibinithyphendelim w\bibinitperiod}}}%
+      }
+      \strng{namehash}{7b33a8de145820f5959652c6a0619723}
+      \strng{fullhash}{7b33a8de145820f5959652c6a0619723}
+      \strng{bibnamehash}{7b33a8de145820f5959652c6a0619723}
+      \strng{authorbibnamehash}{7b33a8de145820f5959652c6a0619723}
+      \strng{authornamehash}{7b33a8de145820f5959652c6a0619723}
+      \strng{authorfullhash}{7b33a8de145820f5959652c6a0619723}
+      \field{sortinit}{i}
+      \field{sortinithash}{8d291c51ee89b6cd86bf5379f0b151d8}
+      \field{labelprefix}{@}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{GitHub}
+      \field{month}{10}
+      \field{note}{[Online; accessed 30. Oct. 2022]}
+      \field{title}{{layers}}
+      \field{year}{2022}
+      \verb{urlraw}
+      \verb https://github.com/immersive-web/layers/pull/293
+      \endverb
+      \verb{url}
+      \verb https://github.com/immersive-web/layers/pull/293
+      \endverb
+    \endentry
+    \entry{WebVRIntro}{online}{}
+      \field{sortinit}{I}
+      \field{sortinithash}{8d291c51ee89b6cd86bf5379f0b151d8}
+      \field{labelprefix}{@}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Mozilla Hacks {–} the Web developer blog}
+      \field{month}{10}
+      \field{note}{[Online; accessed 29. Oct. 2022]}
+      \field{title}{{Introducing the WebVR 1.0 API Proposal {–} Mozilla Hacks - the Web developer blog}}
+      \field{year}{2022}
+      \verb{urlraw}
+      \verb https://hacks.mozilla.org/2016/03/introducing-the-webvr-1-0-api-proposal
+      \endverb
+      \verb{url}
+      \verb https://hacks.mozilla.org/2016/03/introducing-the-webvr-1-0-api-proposal
+      \endverb
+    \endentry
+    \entry{Iqbal2019Sep}{online}{}
+      \name{author}{1}{}{%
+        {{hash=4d587bd0612c994973710c30432f75b6}{%
+           family={Iqbal},
+           familyi={I\bibinitperiod},
+           given={Kashif},
+           giveni={K\bibinitperiod}}}%
+      }
+      \strng{namehash}{4d587bd0612c994973710c30432f75b6}
+      \strng{fullhash}{4d587bd0612c994973710c30432f75b6}
+      \strng{bibnamehash}{4d587bd0612c994973710c30432f75b6}
+      \strng{authorbibnamehash}{4d587bd0612c994973710c30432f75b6}
+      \strng{authornamehash}{4d587bd0612c994973710c30432f75b6}
+      \strng{authorfullhash}{4d587bd0612c994973710c30432f75b6}
+      \field{sortinit}{I}
+      \field{sortinithash}{8d291c51ee89b6cd86bf5379f0b151d8}
+      \field{labelprefix}{@}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{9}
+      \field{note}{[Online; accessed 30. Oct. 2022]}
+      \field{title}{{OBJ File Format}}
+      \field{year}{2019}
+      \verb{urlraw}
+      \verb https://docs.fileformat.com/3d/obj
+      \endverb
+      \verb{url}
+      \verb https://docs.fileformat.com/3d/obj
+      \endverb
+    \endentry
+    \entry{BibEntry2022Mar}{online}{}
+      \field{sortinit}{J}
+      \field{sortinithash}{b2f54a9081ace9966a7cb9413811edb4}
+      \field{labelprefix}{@}
+      \field{labeltitlesource}{title}
+      \field{month}{3}
+      \field{note}{[Online; accessed 29. Oct. 2022]}
+      \field{title}{{Jmol: an open-source Java viewer for chemical structures in 3D}}
+      \field{year}{2022}
+      \verb{urlraw}
+      \verb https://jmol.org/
+      \endverb
+      \verb{url}
+      \verb https://jmol.org/
+      \endverb
+    \endentry
+    \entry{10.3389/fbioe.2021.687426}{article}{}
+      \name{author}{5}{}{%
+        {{hash=4e599507ba0b6d89eb0f2fe9086e1f52}{%
+           family={Lyu},
+           familyi={L\bibinitperiod},
+           given={Zhiliang},
+           giveni={Z\bibinitperiod}}}%
+        {{hash=ea47d6317cb898619463f331c4d5eb1c}{%
+           family={Wang},
+           familyi={W\bibinitperiod},
+           given={Zhijin},
+           giveni={Z\bibinitperiod}}}%
+        {{hash=5ac78981aab2caa6a80cd29470c7cccf}{%
+           family={Luo},
+           familyi={L\bibinitperiod},
+           given={Fangfang},
+           giveni={F\bibinitperiod}}}%
+        {{hash=8d0ddb971ba447136b4c71b3321e9e2e}{%
+           family={Shuai},
+           familyi={S\bibinitperiod},
+           given={Jianwei},
+           giveni={J\bibinitperiod}}}%
+        {{hash=1644220f4f67f4b07bd4123ae69a18e6}{%
+           family={Huang},
+           familyi={H\bibinitperiod},
+           given={Yandong},
+           giveni={Y\bibinitperiod}}}%
+      }
+      \strng{namehash}{7b672e420c080486fa132bd80968ca00}
+      \strng{fullhash}{f259517faa3872506948e5503de7655d}
+      \strng{bibnamehash}{f259517faa3872506948e5503de7655d}
+      \strng{authorbibnamehash}{f259517faa3872506948e5503de7655d}
+      \strng{authornamehash}{7b672e420c080486fa132bd80968ca00}
+      \strng{authorfullhash}{f259517faa3872506948e5503de7655d}
+      \field{sortinit}{L}
+      \field{sortinithash}{7c47d417cecb1f4bd38d1825c427a61a}
+      \field{labelprefix}{@}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Protein secondary structures have been identified as the links in the physical processes of primary sequences, typically random coils, folding into functional tertiary structures that enable proteins to involve a variety of biological events in life science. Therefore, an efficient protein secondary structure predictor is of importance especially when the structure of an amino acid sequence fragment is not solved by high-resolution experiments, such as X-ray crystallography, cryo-electron microscopy, and nuclear magnetic resonance spectroscopy, which are usually time consuming and expensive. In this paper, a reductive deep learning model MLPRNN has been proposed to predict either 3-state or 8-state protein secondary structures. The prediction accuracy by the MLPRNN on the publicly available benchmark CB513 data set is comparable with those by other state-of-the-art models. More importantly, taking into account the reductive architecture, MLPRNN could be a baseline for future developments.}
+      \field{issn}{2296-4185}
+      \field{journaltitle}{Frontiers in Bioengineering and Biotechnology}
+      \field{title}{Protein Secondary Structure Prediction With a Reductive Deep Learning Method}
+      \field{volume}{9}
+      \field{year}{2021}
+      \verb{doi}
+      \verb 10.3389/fbioe.2021.687426
+      \endverb
+      \verb{urlraw}
+      \verb https://www.frontiersin.org/articles/10.3389/fbioe.2021.687426
+      \endverb
+      \verb{url}
+      \verb https://www.frontiersin.org/articles/10.3389/fbioe.2021.687426
+      \endverb
+    \endentry
+    \entry{Maxfield2011Oct}{article}{}
+      \name{author}{1}{}{%
+        {{hash=9a20ee54f08b63389aa95c68f46d68d1}{%
+           family={Maxfield},
+           familyi={M\bibinitperiod},
+           given={Clive},
+           giveni={C\bibinitperiod}}}%
+      }
+      \strng{namehash}{9a20ee54f08b63389aa95c68f46d68d1}
+      \strng{fullhash}{9a20ee54f08b63389aa95c68f46d68d1}
+      \strng{bibnamehash}{9a20ee54f08b63389aa95c68f46d68d1}
+      \strng{authorbibnamehash}{9a20ee54f08b63389aa95c68f46d68d1}
+      \strng{authornamehash}{9a20ee54f08b63389aa95c68f46d68d1}
+      \strng{authorfullhash}{9a20ee54f08b63389aa95c68f46d68d1}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{labelprefix}{@}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{EE Times}
+      \field{month}{10}
+      \field{title}{{How it was: Paper tapes and punched cards - EE Times}}
+      \field{year}{2011}
+      \verb{urlraw}
+      \verb https://www.eetimes.com/how-it-was-paper-tapes-and-punched-cards
+      \endverb
+      \verb{url}
+      \verb https://www.eetimes.com/how-it-was-paper-tapes-and-punched-cards
+      \endverb
+    \endentry
+    \entry{article}{article}{}
+      \name{author}{2}{}{%
+        {{hash=6c4c48b2088b1a719da235f08e690bae}{%
+           family={Mchenry},
+           familyi={M\bibinitperiod},
+           given={Kenton},
+           giveni={K\bibinitperiod}}}%
+        {{hash=13c55b873931b03fa6bbe66693e346b6}{%
+           family={Bajcsy},
+           familyi={B\bibinitperiod},
+           given={Peter},
+           giveni={P\bibinitperiod}}}%
+      }
+      \strng{namehash}{c5cd810635ce52615d62e30a05826c61}
+      \strng{fullhash}{c5cd810635ce52615d62e30a05826c61}
+      \strng{bibnamehash}{c5cd810635ce52615d62e30a05826c61}
+      \strng{authorbibnamehash}{c5cd810635ce52615d62e30a05826c61}
+      \strng{authornamehash}{c5cd810635ce52615d62e30a05826c61}
+      \strng{authorfullhash}{c5cd810635ce52615d62e30a05826c61}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{labelprefix}{@}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{12}
+      \field{title}{An overview of 3D data content, file formats and viewers}
+      \field{year}{2008}
+      \verb{urlraw}
+      \verb https://www.researchgate.net/publication/228976876_An_overview_of_3D_data_content_file_formats_and_viewers
+      \endverb
+      \verb{url}
+      \verb https://www.researchgate.net/publication/228976876_An_overview_of_3D_data_content_file_formats_and_viewers
+      \endverb
+    \endentry
+    \entry{10.1093/bioinformatics/bti818}{article}{}
+      \name{author}{4}{}{%
+        {{hash=e3999f964e1c6c495f240700845f9eb1}{%
+           family={Moll},
+           familyi={M\bibinitperiod},
+           given={Andreas},
+           giveni={A\bibinitperiod}}}%
+        {{hash=710f3f7a35d791a7de7473b3203e3edb}{%
+           family={Hildebrandt},
+           familyi={H\bibinitperiod},
+           given={Andreas},
+           giveni={A\bibinitperiod}}}%
+        {{hash=6b657b86855afcb6dd24d3b3bbfe63d9}{%
+           family={Lenhof},
+           familyi={L\bibinitperiod},
+           given={Hans-Peter},
+           giveni={H\bibinithyphendelim P\bibinitperiod}}}%
+        {{hash=569089e0d5a019d6333ea5f294769662}{%
+           family={Kohlbacher},
+           familyi={K\bibinitperiod},
+           given={Oliver},
+           giveni={O\bibinitperiod}}}%
+      }
+      \strng{namehash}{49efae8347691db6c5dc2f823fa21ac0}
+      \strng{fullhash}{7703523a17fa3007f26f24b56f8e1461}
+      \strng{bibnamehash}{7703523a17fa3007f26f24b56f8e1461}
+      \strng{authorbibnamehash}{7703523a17fa3007f26f24b56f8e1461}
+      \strng{authornamehash}{49efae8347691db6c5dc2f823fa21ac0}
+      \strng{authorfullhash}{7703523a17fa3007f26f24b56f8e1461}
+      \field{extraname}{1}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{labelprefix}{@}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{{Summary: We present BALLView, a molecular viewer and modeling tool. It combines state-of-the-art visualization capabilities with powerful modeling functionality including implementations of force field methods and continuum electrostatics models. BALLView is a versatile and extensible tool for research in structural bioinformatics and molecular modeling. Furthermore, the convenient and intuitive graphical user interface offers novice users direct access to the full functionality, rendering it ideal for teaching. Through an interface to the object-oriented scripting language Python it is easily extensible.Availability: BALLView is an open source software and runs on all major platforms (Windows, MacOS X, Linux and most Unix flavors). It is available free of charge under the GNU Public License at Contact:amoll@bioinf.uni-saarland.de}}
+      \field{issn}{1367-4803}
+      \field{journaltitle}{Bioinformatics}
+      \field{month}{12}
+      \field{number}{3}
+      \field{title}{{BALLView: a tool for research and education in molecular modeling}}
+      \field{volume}{22}
+      \field{year}{2005}
+      \field{pages}{365\bibrangedash 366}
+      \range{pages}{2}
+      \verb{doi}
+      \verb 10.1093/bioinformatics/bti818
+      \endverb
+      \verb{eprint}
+      \verb https://academic.oup.com/bioinformatics/article-pdf/22/3/365/589349/bti818.pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1093/bioinformatics/bti818
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1093/bioinformatics/bti818
+      \endverb
+    \endentry
+    \entry{10.1007/s10822-005-9027-x}{article}{}
+      \name{author}{4}{}{%
+        {{hash=e3999f964e1c6c495f240700845f9eb1}{%
+           family={Moll},
+           familyi={M\bibinitperiod},
+           given={Andreas},
+           giveni={A\bibinitperiod}}}%
+        {{hash=710f3f7a35d791a7de7473b3203e3edb}{%
+           family={Hildebrandt},
+           familyi={H\bibinitperiod},
+           given={Andreas},
+           giveni={A\bibinitperiod}}}%
+        {{hash=6b657b86855afcb6dd24d3b3bbfe63d9}{%
+           family={Lenhof},
+           familyi={L\bibinitperiod},
+           given={Hans-Peter},
+           giveni={H\bibinithyphendelim P\bibinitperiod}}}%
+        {{hash=569089e0d5a019d6333ea5f294769662}{%
+           family={Kohlbacher},
+           familyi={K\bibinitperiod},
+           given={Oliver},
+           giveni={O\bibinitperiod}}}%
+      }
+      \strng{namehash}{49efae8347691db6c5dc2f823fa21ac0}
+      \strng{fullhash}{7703523a17fa3007f26f24b56f8e1461}
+      \strng{bibnamehash}{7703523a17fa3007f26f24b56f8e1461}
+      \strng{authorbibnamehash}{7703523a17fa3007f26f24b56f8e1461}
+      \strng{authornamehash}{49efae8347691db6c5dc2f823fa21ac0}
+      \strng{authorfullhash}{7703523a17fa3007f26f24b56f8e1461}
+      \field{extraname}{2}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{labelprefix}{@}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{{Summary: We present BALLView, an extensible tool for visualizing and modeling bio-molecular structures. It provides a variety of different models for bio-molecular visualization, e.g. ball-and-stick models, molecular surfaces, or ribbon models. In contrast to most existing visualization tools, BALLView also offers rich functionality for molecular modeling and simulation, including molecular mechanics methods (AMBER and CHARMM force fields), continuum electrostatics methods employing a Finite-Difference Poisson Boltzmann solver, and secondary structure calculation. Results of these computations can be exported as publication quality images or as movies. Even unexperienced users have direct access to this functionality through an intuitive graphical user interface, which makes BALLView particularly useful for teaching. For more advanced users, BALLView is extensible in different ways. Owing to its framework design, extension on the level of C‰+‰‰+ code is very convenient. In addition, an interface to the scripting language Python allows the interactive rapid prototyping of new methods. BALLView is portable and runs on all major platforms (Windows, MacOS X, Linux, most Unix flavors). It is available free of charge under the GNU Public License (GPL) from our website http://www.ballview.org.}}
+      \field{issn}{1573-4951}
+      \field{journaltitle}{Computer-Aided Molecular Design}
+      \field{month}{11}
+      \field{number}{11}
+      \field{title}{BALLView: An object-oriented molecular visualization and modeling framework}
+      \field{volume}{19}
+      \field{year}{2005}
+      \field{pages}{791\bibrangedash 800}
+      \range{pages}{10}
+      \verb{doi}
+      \verb 10.1007/s10822-005-9027-x
+      \endverb
+      \verb{eprint}
+      \verb https://link.springer.com/article/10.1007/s10822-005-9027-x
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1007/s10822-005-9027-x
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1007/s10822-005-9027-x
+      \endverb
+    \endentry
+    \entry{mrdoob2022Oct}{online}{}
+      \name{author}{1}{}{%
+        {{hash=c7d06b0a852bcd88b5d4efb963eb45ce}{%
+           family={mrdoob},
+           familyi={m\bibinitperiod}}}%
+      }
+      \strng{namehash}{c7d06b0a852bcd88b5d4efb963eb45ce}
+      \strng{fullhash}{c7d06b0a852bcd88b5d4efb963eb45ce}
+      \strng{bibnamehash}{c7d06b0a852bcd88b5d4efb963eb45ce}
+      \strng{authorbibnamehash}{c7d06b0a852bcd88b5d4efb963eb45ce}
+      \strng{authornamehash}{c7d06b0a852bcd88b5d4efb963eb45ce}
+      \strng{authorfullhash}{c7d06b0a852bcd88b5d4efb963eb45ce}
+      \field{sortinit}{m}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{labelprefix}{@}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{GitHub}
+      \field{month}{10}
+      \field{note}{[Online; accessed 29. Oct. 2022]}
+      \field{title}{{three.js}}
+      \field{year}{2022}
+      \verb{urlraw}
+      \verb https://github.com/mrdoob/three.js/issues/1960
+      \endverb
+      \verb{url}
+      \verb https://github.com/mrdoob/three.js/issues/1960
+      \endverb
+    \endentry
+    \entry{nanome}{online}{}
+      \field{sortinit}{N}
+      \field{sortinithash}{22369a73d5f88983a108b63f07f37084}
+      \field{labelprefix}{@}
+      \field{labeltitlesource}{title}
+      \field{month}{10}
+      \field{note}{[Online; accessed 30. Oct. 2022]}
+      \field{title}{{Nanome: Virtual Reality for Drug Design and Molecular Visualization}}
+      \field{year}{2022}
+      \verb{urlraw}
+      \verb https://nanome.ai
+      \endverb
+      \verb{url}
+      \verb https://nanome.ai
+      \endverb
+    \endentry
+    \entry{10.1038/nmeth.1427}{article}{}
+      \name{author}{11}{}{%
+        {{hash=0aa4abe7b406328fa6060ed0c720d3d7}{%
+           family={O'Donoghue},
+           familyi={O\bibinitperiod},
+           given={Seán\bibnamedelima I.},
+           giveni={S\bibinitperiod\bibinitdelim I\bibinitperiod}}}%
+        {{hash=59a6a1245ee1edfd5ef4e4eb40ca306c}{%
+           family={Goodsell},
+           familyi={G\bibinitperiod},
+           given={David\bibnamedelima S.},
+           giveni={D\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
+        {{hash=01303a4ffd06fb9575f59dc0d7489f62}{%
+           family={Frangakis},
+           familyi={F\bibinitperiod},
+           given={Achilleas\bibnamedelima S.},
+           giveni={A\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
+        {{hash=b9be7430571208dadd7ed1237a71266a}{%
+           family={Jossinet},
+           familyi={J\bibinitperiod},
+           given={Fabrice},
+           giveni={F\bibinitperiod}}}%
+        {{hash=95146375803d5775f9a3bd5a6d51f098}{%
+           family={Laskowski},
+           familyi={L\bibinitperiod},
+           given={Roman\bibnamedelima A.},
+           giveni={R\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+        {{hash=f6e0f609210ac8d798602f446c19ab22}{%
+           family={Nilges},
+           familyi={N\bibinitperiod},
+           given={Michael},
+           giveni={M\bibinitperiod}}}%
+        {{hash=7aef90a2c7cff24dc3b5b4f23198b476}{%
+           family={Saibil},
+           familyi={S\bibinitperiod},
+           given={Helen\bibnamedelima R.},
+           giveni={H\bibinitperiod\bibinitdelim R\bibinitperiod}}}%
+        {{hash=2937ffbed7ed4ebb298c3d9c7397a4a3}{%
+           family={Schafferhans},
+           familyi={S\bibinitperiod},
+           given={Andrea},
+           giveni={A\bibinitperiod}}}%
+        {{hash=ebea48d0f9a428b2a612e00059f5ccf4}{%
+           family={Wade},
+           familyi={W\bibinitperiod},
+           given={Rebecca\bibnamedelima C.},
+           giveni={R\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
+        {{hash=c37a56f8c00b45bf050fdc5d6f59491e}{%
+           family={Westhof},
+           familyi={W\bibinitperiod},
+           given={Eric},
+           giveni={E\bibinitperiod}}}%
+        {{hash=9dbfbd7d8c9609b4c77dec5b8e7c2c3e}{%
+           family={Olson},
+           familyi={O\bibinitperiod},
+           given={Arthur\bibnamedelima J.},
+           giveni={A\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+      }
+      \strng{namehash}{c4603c496aadc734f8d8d300110e70d5}
+      \strng{fullhash}{9ac8609b0893818c760d9dc39fdf659f}
+      \strng{bibnamehash}{8195761e4fd50830ffca0abb33194d29}
+      \strng{authorbibnamehash}{8195761e4fd50830ffca0abb33194d29}
+      \strng{authornamehash}{c4603c496aadc734f8d8d300110e70d5}
+      \strng{authorfullhash}{9ac8609b0893818c760d9dc39fdf659f}
+      \field{sortinit}{O}
+      \field{sortinithash}{2cd7140a07aea5341f9e2771efe90aae}
+      \field{labelprefix}{@}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{{Structural biology is rapidly accumulating a wealth of detailed information about protein function, binding sites, RNA, large assemblies and molecular motions. These data are increasingly of interest to a broader community of life scientists, not just structural experts. Visualization is a primary means for accessing and using these data, yet visualization is also a stumbling block that prevents many life scientists from benefiting from three-dimensional structural data. In this review, we focus on key biological questions where visualizing three-dimensional structures can provide insight and describe available methods and tools.}}
+      \field{issn}{1548-7105}
+      \field{journaltitle}{Nature methods}
+      \field{number}{3}
+      \field{title}{Visualization of macromolecular structures}
+      \field{volume}{7}
+      \field{year}{2010}
+      \field{pages}{42\bibrangedash 55}
+      \range{pages}{14}
+      \verb{doi}
+      \verb 10.1038/nmeth.1427
+      \endverb
+      \verb{eprint}
+      \verb https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7097155/#CR1
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1038/nmeth.1427
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1038/nmeth.1427
+      \endverb
+    \endentry
+    \entry{OLSON20183997}{article}{}
+      \name{author}{1}{}{%
+        {{hash=9dbfbd7d8c9609b4c77dec5b8e7c2c3e}{%
+           family={Olson},
+           familyi={O\bibinitperiod},
+           given={Arthur\bibnamedelima J.},
+           giveni={A\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+      }
+      \strng{namehash}{9dbfbd7d8c9609b4c77dec5b8e7c2c3e}
+      \strng{fullhash}{9dbfbd7d8c9609b4c77dec5b8e7c2c3e}
+      \strng{bibnamehash}{9dbfbd7d8c9609b4c77dec5b8e7c2c3e}
+      \strng{authorbibnamehash}{9dbfbd7d8c9609b4c77dec5b8e7c2c3e}
+      \strng{authornamehash}{9dbfbd7d8c9609b4c77dec5b8e7c2c3e}
+      \strng{authorfullhash}{9dbfbd7d8c9609b4c77dec5b8e7c2c3e}
+      \field{sortinit}{O}
+      \field{sortinithash}{2cd7140a07aea5341f9e2771efe90aae}
+      \field{labelprefix}{@}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{{Visualization has been a key technology in the progress of structural molecular biology for as long as the field has existed. This perspective describes the nature of the visualization process in structural studies, how it has evolved over the years, and its relationship to the changes in technology that have supported and driven it. It focuses on how technical advances have changed the way we look at and interact with molecular structure, and how structural biology has fostered and challenged that technology.}}
+      \field{issn}{0022-2836}
+      \field{journaltitle}{Journal of Molecular Biology}
+      \field{number}{21}
+      \field{title}{Perspectives on Structural Molecular Biology Visualization: From Past to Present}
+      \field{volume}{430}
+      \field{year}{2018}
+      \field{pages}{3997\bibrangedash 4012}
+      \range{pages}{16}
+      \verb{doi}
+      \verb https://doi.org/10.1016/j.jmb.2018.07.009
+      \endverb
+      \verb{urlraw}
+      \verb https://www.sciencedirect.com/science/article/pii/S0022283618307599
+      \endverb
+      \verb{url}
+      \verb https://www.sciencedirect.com/science/article/pii/S0022283618307599
+      \endverb
+      \keyw{visualization,molecular graphics,structural molecular biology,molecular modeling}
+    \endentry
+    \entry{10.1093/bioinformatics/btu829}{article}{}
+      \name{author}{2}{}{%
+        {{hash=bc4309991c41cbe538c852e90dd919d8}{%
+           family={Rego},
+           familyi={R\bibinitperiod},
+           given={Nicholas},
+           giveni={N\bibinitperiod}}}%
+        {{hash=d955fa628d794e5ea31051ac241b78c6}{%
+           family={Koes},
+           familyi={K\bibinitperiod},
+           given={David},
+           giveni={D\bibinitperiod}}}%
+      }
+      \strng{namehash}{d43c12af99df79121d0372cb07cc39dd}
+      \strng{fullhash}{d43c12af99df79121d0372cb07cc39dd}
+      \strng{bibnamehash}{d43c12af99df79121d0372cb07cc39dd}
+      \strng{authorbibnamehash}{d43c12af99df79121d0372cb07cc39dd}
+      \strng{authornamehash}{d43c12af99df79121d0372cb07cc39dd}
+      \strng{authorfullhash}{d43c12af99df79121d0372cb07cc39dd}
+      \field{sortinit}{R}
+      \field{sortinithash}{5e1c39a9d46ffb6bebd8f801023a9486}
+      \field{labelprefix}{@}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{{Summary: 3Dmol.js is a modern, object-oriented JavaScript library that uses the latest web technologies to provide interactive, hardware-accelerated three-dimensional representations of molecular data without the need to install browser plugins or Java. 3Dmol.js provides a full featured API for developers as well as a straightforward declarative interface that lets users easily share and embed molecular data in websites.Availability and implementation: 3Dmol.js is distributed under the permissive BSD open source license. Source code and documentation can be found at http://3Dmol.csb.pitt.eduContact:dkoes@pitt.edu}}
+      \field{issn}{1367-4803}
+      \field{journaltitle}{Bioinformatics}
+      \field{month}{12}
+      \field{number}{8}
+      \field{title}{{3Dmol.js: molecular visualization with WebGL}}
+      \field{volume}{31}
+      \field{year}{2014}
+      \field{pages}{1322\bibrangedash 1324}
+      \range{pages}{3}
+      \verb{doi}
+      \verb 10.1093/bioinformatics/btu829
+      \endverb
+      \verb{eprint}
+      \verb https://academic.oup.com/bioinformatics/article-pdf/31/8/1322/564183/btu829.pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1093/bioinformatics/btu829
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1093/bioinformatics/btu829
+      \endverb
+    \endentry
+    \entry{10.1093/bioinformatics/bty419}{article}{}
+      \name{author}{6}{}{%
+        {{hash=233ce1831ffab84db164b809eeda6a44}{%
+           family={Rose},
+           familyi={R\bibinitperiod},
+           given={Alexander\bibnamedelima S},
+           giveni={A\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
+        {{hash=55f0af5a438ebb96d5c2abfaf08d35b8}{%
+           family={Bradley},
+           familyi={B\bibinitperiod},
+           given={Anthony\bibnamedelima R},
+           giveni={A\bibinitperiod\bibinitdelim R\bibinitperiod}}}%
+        {{hash=963ba6105e3dca2033334a5a95923db0}{%
+           family={Valasatava},
+           familyi={V\bibinitperiod},
+           given={Yana},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=a7399b08a4351d7152e68b8fce9782f9}{%
+           family={Duarte},
+           familyi={D\bibinitperiod},
+           given={Jose\bibnamedelima M},
+           giveni={J\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+        {{hash=199c7411a1dba8e40bad90e48f824280}{%
+           family={Prlić},
+           familyi={P\bibinitperiod},
+           given={Andreas},
+           giveni={A\bibinitperiod}}}%
+        {{hash=a54e54b2ea36d6960c68511f9cd04c72}{%
+           family={Rose},
+           familyi={R\bibinitperiod},
+           given={Peter\bibnamedelima W},
+           giveni={P\bibinitperiod\bibinitdelim W\bibinitperiod}}}%
+      }
+      \strng{namehash}{dfe011206b25c77c32ed935c43c59441}
+      \strng{fullhash}{7fc56a2701b49885590665707be28a46}
+      \strng{bibnamehash}{08cb44fb88dd0177be248b078fbbf6b3}
+      \strng{authorbibnamehash}{08cb44fb88dd0177be248b078fbbf6b3}
+      \strng{authornamehash}{dfe011206b25c77c32ed935c43c59441}
+      \strng{authorfullhash}{7fc56a2701b49885590665707be28a46}
+      \field{sortinit}{R}
+      \field{sortinithash}{5e1c39a9d46ffb6bebd8f801023a9486}
+      \field{labelprefix}{@}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{{The interactive visualization of very large macromolecular complexes on the web is becoming a challenging problem as experimental techniques advance at an unprecedented rate and deliver structures of increasing size.We have tackled this problem by developing highly memory-efficient and scalable extensions for the NGL WebGL-based molecular viewer and by using Macromolecular Transmission Format (MMTF), a binary and compressed MMTF. These enable NGL to download and render molecular complexes with millions of atoms interactively on desktop computers and smartphones alike, making it a tool of choice for web-based molecular visualization in research and education.The source code is freely available under the MIT license at github.com/arose/ngl and distributed on NPM (npmjs.com/package/ngl). MMTF-JavaScript encoders and decoders are available at github.com/rcsb/mmtf-javascript.}}
+      \field{issn}{1367-4803}
+      \field{journaltitle}{Bioinformatics}
+      \field{month}{05}
+      \field{number}{21}
+      \field{title}{{NGL viewer: web-based molecular graphics for large complexes}}
+      \field{volume}{34}
+      \field{year}{2018}
+      \field{pages}{3755\bibrangedash 3758}
+      \range{pages}{4}
+      \verb{doi}
+      \verb 10.1093/bioinformatics/bty419
+      \endverb
+      \verb{eprint}
+      \verb https://academic.oup.com/bioinformatics/article-pdf/34/21/3755/26147052/bty419.pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1093/bioinformatics/bty419
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1093/bioinformatics/bty419
+      \endverb
+    \endentry
+    \entry{10.1093/nar/gkv402}{article}{}
+      \name{author}{2}{}{%
+        {{hash=233ce1831ffab84db164b809eeda6a44}{%
+           family={Rose},
+           familyi={R\bibinitperiod},
+           given={Alexander\bibnamedelima S.},
+           giveni={A\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
+        {{hash=f247699085f9339228aca4aaa0ea5ab8}{%
+           family={Hildebrand},
+           familyi={H\bibinitperiod},
+           given={Peter\bibnamedelima W.},
+           giveni={P\bibinitperiod\bibinitdelim W\bibinitperiod}}}%
+      }
+      \strng{namehash}{86268ac6c9afadff913ac7c2b0aeb156}
+      \strng{fullhash}{86268ac6c9afadff913ac7c2b0aeb156}
+      \strng{bibnamehash}{86268ac6c9afadff913ac7c2b0aeb156}
+      \strng{authorbibnamehash}{86268ac6c9afadff913ac7c2b0aeb156}
+      \strng{authornamehash}{86268ac6c9afadff913ac7c2b0aeb156}
+      \strng{authorfullhash}{86268ac6c9afadff913ac7c2b0aeb156}
+      \field{sortinit}{R}
+      \field{sortinithash}{5e1c39a9d46ffb6bebd8f801023a9486}
+      \field{labelprefix}{@}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{{The NGL Viewer (http://proteinformatics.charite.de/ngl) is a web application for the visualization of macromolecular structures. By fully adopting capabilities of modern web browsers, such as WebGL, for molecular graphics, the viewer can interactively display large molecular complexes and is also unaffected by the retirement of third-party plug-ins like Flash and Java Applets. Generally, the web application offers comprehensive molecular visualization through a graphical user interface so that life scientists can easily access and profit from available structural data. It supports common structural file-formats (e.g. PDB, mmCIF) and a variety of molecular representations (e.g. ‘cartoon, spacefill, licorice’). Moreover, the viewer can be embedded in other web sites to provide specialized visualizations of entries in structural databases or results of structure-related calculations.}}
+      \field{issn}{0305-1048}
+      \field{journaltitle}{Nucleic Acids Research}
+      \field{month}{04}
+      \field{number}{W1}
+      \field{title}{{NGL Viewer: a web application for molecular visualization}}
+      \field{volume}{43}
+      \field{year}{2015}
+      \field{pages}{W576\bibrangedash W579}
+      \range{pages}{-1}
+      \verb{doi}
+      \verb 10.1093/nar/gkv402
+      \endverb
+      \verb{eprint}
+      \verb https://academic.oup.com/nar/article-pdf/43/W1/W576/7476193/gkv402.pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1093/nar/gkv402
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1093/nar/gkv402
+      \endverb
+    \endentry
+    \entry{BibEntry2019Sep}{online}{}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{labelprefix}{@}
+      \field{labeltitlesource}{title}
+      \field{month}{9}
+      \field{note}{[Online; accessed 30. Oct. 2022]}
+      \field{title}{{STL (STereoLithography) File Format Family}}
+      \field{year}{2019}
+      \verb{urlraw}
+      \verb https://www.loc.gov/preservation/digital/formats/fdd/fdd000504.shtml
+      \endverb
+      \verb{url}
+      \verb https://www.loc.gov/preservation/digital/formats/fdd/fdd000504.shtml
+      \endverb
+    \endentry
+    \entry{SZILVSINAGY2003945}{article}{}
+      \name{author}{2}{}{%
+        {{hash=322b61944519070e0806d52179b72518}{%
+           family={Szilvśi-Nagy},
+           familyi={S\bibinithyphendelim N\bibinitperiod},
+           given={M.},
+           giveni={M\bibinitperiod}}}%
+        {{hash=ab1427f7714f38485ac62f0b4a94f9f2}{%
+           family={Mátyási},
+           familyi={M\bibinitperiod},
+           given={Gy.},
+           giveni={G\bibinitperiod}}}%
+      }
+      \strng{namehash}{2526e5fe923c0bf19a7fafd5b7aac6dc}
+      \strng{fullhash}{2526e5fe923c0bf19a7fafd5b7aac6dc}
+      \strng{bibnamehash}{2526e5fe923c0bf19a7fafd5b7aac6dc}
+      \strng{authorbibnamehash}{2526e5fe923c0bf19a7fafd5b7aac6dc}
+      \strng{authornamehash}{2526e5fe923c0bf19a7fafd5b7aac6dc}
+      \strng{authorfullhash}{2526e5fe923c0bf19a7fafd5b7aac6dc}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{labelprefix}{@}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{STL files produced by 3D modelling systems contain triangular facet representation of surfaces and have become standard data inputs of rapid prototyping and manufacturing systems. In rapid prototyping technology, physical objects are produced layer by layer, each layer a 2D cross-section of the 3D mesh in STL format. In current CAD systems, the surface tessellation frequently ends with errors in the data structure as gaps and holes leading to open loops in the cross-sections that cannot be manufactured as layers. In this paper, we present a method to detect defects in the surface representation and to analyse the shape of the approximated surface by constructing a polyhedral data structure from the STL file.}
+      \field{issn}{0895-7177}
+      \field{journaltitle}{Mathematical and Computer Modelling}
+      \field{note}{Hungarian Applied Mathematics}
+      \field{number}{7}
+      \field{title}{Analysis of STL files}
+      \field{volume}{38}
+      \field{year}{2003}
+      \field{pages}{945\bibrangedash 960}
+      \range{pages}{16}
+      \verb{doi}
+      \verb https://doi.org/10.1016/S0895-7177(03)90079-3
+      \endverb
+      \verb{urlraw}
+      \verb https://www.sciencedirect.com/science/article/pii/S0895717703900793
+      \endverb
+      \verb{url}
+      \verb https://www.sciencedirect.com/science/article/pii/S0895717703900793
+      \endverb
+      \keyw{Rapid prototyping,STL file,Polyhedral data structure}
+    \endentry
+    \entry{PyMOL}{online}{}
+      \field{sortinit}{T}
+      \field{sortinithash}{9af77f0292593c26bde9a56e688eaee9}
+      \field{labelprefix}{@}
+      \field{labeltitlesource}{title}
+      \field{month}{5}
+      \field{note}{[Online; accessed 29, Oct. 2022]}
+      \field{title}{The {PyMOL} Molecular Graphics System, Version~2.5}
+      \field{year}{2021}
+      \verb{urlraw}
+      \verb https://pymol.org/
+      \endverb
+      \verb{url}
+      \verb https://pymol.org/
+      \endverb
+    \endentry
+    \entry{BibEntry2022Oct}{online}{}
+      \field{sortinit}{T}
+      \field{sortinithash}{9af77f0292593c26bde9a56e688eaee9}
+      \field{labelprefix}{@}
+      \field{labeltitlesource}{title}
+      \field{month}{10}
+      \field{note}{[Online; accessed 29. Oct. 2022]}
+      \field{title}{{Three.js {–} JavaScript 3D Library}}
+      \field{year}{2022}
+      \verb{urlraw}
+      \verb https://threejs.org
+      \endverb
+      \verb{url}
+      \verb https://threejs.org
+      \endverb
+    \endentry
+    \entry{BibEntry2011Jul}{online}{}
+      \field{sortinit}{W}
+      \field{sortinithash}{4315d78024d0cea9b57a0c6f0e35ed0d}
+      \field{labelprefix}{@}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Khronos Group}
+      \field{month}{7}
+      \field{note}{[Online; accessed 29. Oct. 2022]}
+      \field{title}{{WebGL}}
+      \field{year}{2011}
+      \verb{urlraw}
+      \verb https://www.khronos.org/webgl
+      \endverb
+      \verb{url}
+      \verb https://www.khronos.org/webgl
+      \endverb
+    \endentry
+    \entry{BibEntry2018Sep}{online}{}
+      \field{sortinit}{W}
+      \field{sortinithash}{4315d78024d0cea9b57a0c6f0e35ed0d}
+      \field{labelprefix}{@}
+      \field{labeltitlesource}{title}
+      \field{month}{9}
+      \field{note}{[Online; accessed 29. Oct. 2022]}
+      \field{title}{{WebVR}}
+      \field{year}{2018}
+      \verb{urlraw}
+      \verb https://mozvr.github.io/webvr-spec
+      \endverb
+      \verb{url}
+      \verb https://mozvr.github.io/webvr-spec
+      \endverb
+    \endentry
+    \entry{BibEntry2022Aug}{online}{}
+      \field{sortinit}{W}
+      \field{sortinithash}{4315d78024d0cea9b57a0c6f0e35ed0d}
+      \field{labelprefix}{@}
+      \field{labeltitlesource}{title}
+      \field{month}{8}
+      \field{note}{[Online; accessed 29. Oct. 2022]}
+      \field{title}{{WebXR Device API}}
+      \field{year}{2022}
+      \verb{urlraw}
+      \verb https://www.w3.org/TR/webxr
+      \endverb
+      \verb{url}
+      \verb https://www.w3.org/TR/webxr
+      \endverb
+    \endentry
+    \entry{BibEntry2022Jan}{online}{}
+      \field{sortinit}{w}
+      \field{sortinithash}{4315d78024d0cea9b57a0c6f0e35ed0d}
+      \field{labelprefix}{@}
+      \field{labeltitlesource}{title}
+      \field{month}{1}
+      \field{note}{[Online; accessed 30. Oct. 2022]}
+      \field{title}{{wwPDB Format version 3.3: Introduction}}
+      \field{year}{2022}
+      \verb{urlraw}
+      \verb http://www.wwpdb.org/documentation/file-format-content/format33/sect1.html
+      \endverb
+      \verb{url}
+      \verb http://www.wwpdb.org/documentation/file-format-content/format33/sect1.html
+      \endverb
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+

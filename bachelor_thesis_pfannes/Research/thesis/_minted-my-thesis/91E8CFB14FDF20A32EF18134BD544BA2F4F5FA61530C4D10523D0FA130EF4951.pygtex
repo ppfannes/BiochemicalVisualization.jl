@@ -1,0 +1,6 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{c+c1}{// three.js mesh creation.		}
+\PYG{k+kd}{const}\PYG{+w}{ }\PYG{n+nx}{boxGeometry}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{o+ow}{new}\PYG{+w}{ }\PYG{n+nx}{THREE}\PYG{p}{.}\PYG{n+nx}{BoxGeometry}\PYG{p}{(}\PYG{n+nx}{boxWidth}\PYG{p}{,}\PYG{+w}{ }\PYG{n+nx}{boxHeight}\PYG{p}{,}\PYG{+w}{ }\PYG{n+nx}{boxDepth}\PYG{p}{);}
+\PYG{k+kd}{const}\PYG{+w}{ }\PYG{n+nx}{boxMaterials}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{p}{[...];}\PYG{+w}{   }\PYG{c+c1}{// Array of MeshBasicMaterial instances.}
+\PYG{k+kd}{const}\PYG{+w}{ }\PYG{n+nx}{box}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{o+ow}{new}\PYG{+w}{ }\PYG{n+nx}{THREE}\PYG{p}{.}\PYG{n+nx}{Mesh}\PYG{p}{(}\PYG{n+nx}{boxGeometry}\PYG{p}{,}\PYG{+w}{ }\PYG{n+nx}{boxMaterials}\PYG{p}{);}
+\end{Verbatim}

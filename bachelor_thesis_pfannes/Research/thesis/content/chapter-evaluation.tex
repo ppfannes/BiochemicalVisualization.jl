@@ -1,0 +1,84 @@
+% !TEX root = ../my-thesis.tex
+%
+
+\chapter{Evaluation}
+\label{sec:evaluation}
+
+
+\section{Setup}
+\label{sec:evaluation:setup}
+
+\begin{table}[h]
+\begin{tabularx}{\textwidth}{ | c | X | }
+\hline
+Acer Nitro N50-600 & Windows 10 Home, Intel(R) Core(TM) i5-9400 CPU @2.90 GHz, 16GB RAM, NVIDIA GeForce GTX 1060 6GB \\ \hline
+Oculus Rift & Inter-Pupillary Distance (IPD): 58-72 mm, Resolution: 1080x1200 per eye, Refresh Rate: 90Hz, Tracking: 6 Degrees of Freedom (6DoF) outside-in (base stations required), Controllers: partial finger tracking via capacitive sensors \\ \hline
+\end{tabularx}
+\caption{Table containing the specifications of the PC and VR device used during the evaluation.}
+\label{sec:evaluation:setup:specstable}
+\end{table}
+
+The Molecule Visualizer provides basic functionality for inspecting molecules such as loading different representations, selecting and colouring atom groups as well as changing models during visualization. In this evaluation we want to compare the Molecule Visualizer with other visualization tools and gain insights on how our application can be ranked among them. We decided to choose tools from the following four categories to properly categorize the Molecule Visualizer: web-based + no VR (3Dmol.js, MolView), web-based + VR support (Nanome \cite{nanome}, ProteinVR \cite{10.1371/journal.pcbi.1007747}), web-based on three.js (GLmol \cite{biochem-fan2022Oct}, NGL \cite{10.1093/bioinformatics/bty419, 10.1093/nar/gkv402}) and desktop applications (PyMOL, Jmol). Table \ref{sec:evaluation:setup:specstable} contains the specifications of the PC and the VR device we used for testing. To assess the performance of the different tools and formulate a proper classification we specified two important aspects according to which we will evaluate during our experiment: user-friendliness and functionalities of the application. As we intend our application to be used by other scientists we want to deploy a tool that is easy to use and features the most important aspects necessary for molecular research. The following paragraphs provides a list of functionalities that we expect the applications to have and which qualities make up a user-friendly software.
+
+An application is user-friendly if it meets the following criteria: 
+\begin{itemize}
+	\item \textbf{Easy-to-grasp GUI}: The interface should be easily understandable by the user. Its structure should help with grasping how the application works, i.e. it should not cause the user to be more confused. For more complex GUIs, a guide should be provided to explain the most essential settings.
+	\item \textbf{Documentation}: The developers should provide some sort of documentation for their software, be it within the project repository or as an extra website to explain their application in more detail. The documentation should also be well-maintained an be up-to-date with the most recent version of the software.
+	\item \textbf{Setup}: The Setup of the application should be designed so that users without experience in Computer Science are able to install the software on their machine, i.e. it should be accessible to everyone. If necessary, a guide should be provided, either through an installer, on the download page or an entry in the documentation, that explains the necessary steps for the installation.
+	\item \textbf{Support}: For further questions or problems Support should be provided in the form of a discussion forum or a contact address that people could send their problems to. 
+\end{itemize}
+
+Following functionalities should be part of the examined tools:
+\begin{itemize}
+	\item \textbf{Molecule Models}: The applications should feature several molecule models especially basic representations like Ball and Stick, Space-Filling and Wireframe in order for researchers to properly investigate the structure of molecules. The more models are supported the better.
+	\item \textbf{Loading of various molecule file types}: Molecules should be able to be loaded from a file either locally or from a remote server. If the application is able to calculate molecular surfaces itself then the support for surface files is not needed. 
+	\item \textbf{Interactions with molecule}: It should be possible to interact with the visualised molecules. Means of interaction can be versatile such as simple camera movement, selection, editing of the molecule, labelling etc. The more functionalities for interaction are supported the better.
+	\item \textbf{Colouring}: Choosing different color schemes for molecules or individual colouring of atoms should be supported as a means to highlight specific regions of interest within a molecule.
+\end{itemize}
+
+To determine the existence of the documentation we look for links on the download page of the application or for further links within the tool. As for the web-based software we check the repository of the project for links as well or a README file that documents usage of the application. Its quality will be judged based on several factors: Does it contain a tutorial on basic functionalities and the set-up? Does it document the tools' features? Is it structured properly? Is there a section regarding additional support? 
+
+Tutorials can help to understand the core functionalities of an application quicker and speed up the process of "getting used to the tool". Once the software is big enough and supports enough features users will quickly get overwhelmed with the application's set-up or how to use it properly. That is why the existence of tutorials in a documentation is essential to prevent the user from being confused and frustrated while using the software. The same goes for the set-up process. As for the next two points, the documentation should not only mention the capabilities of the application, but also explain how they work and are used. There should be different sections for each feature and, if necessary, groupings of functionalities that perform similar tasks. Lastly, there has to be a section containing further links to community forums, other help platforms or a developer contact if users need help on problems that are cannot be solved with the help of the documentation. Checking activity of users as well as the developers on these platforms is also a sign of a well-maintained software and indicates if the tool is still in use.
+
+\begin{table}[t!]
+\begin{tabularx}{\textwidth}{| X | X | X | X | X |}
+\hline
+& Easy GUI & Documentation & Support & Set-up \\ \hline
+GLmol & + & - & $\sim$ & + \\ \hline
+NGL & + & ++ & + & + \\ \hline
+3Dmol & + & ++ & + & + \\ \hline
+ProteinVR & $\sim$ & ++ & + & + \\ \hline
+PyMOL (free) & $\sim$ & $\sim$ & - & - \\ \hline
+Jmol & ++ & ++ & ++ & + \\ \hline
+Nanome & $\sim$ & ++ & + & + \\ \hline
+MolView & ++ & $\sim$ & + & + \\ \hline
+Molecule Visualizer & + & $\sim$ & + & + \\ \hline
+\end{tabularx}
+\caption{Results of User-friendliness evaluation.}
+\label{sec:evaluation:benchmark:userfriendeval}
+\end{table}
+
+\section{Benchmark}
+\label{sec:evaluation:benchmark}
+
+\begin{table}[t!]
+\begin{tabularx}{\textwidth}{| X | X | X | X | X | X |}
+\hline
+& Basic molecule models & Local or remote molecule loading & Various file types supported & Interactions with molecule & Colouring \\ \hline
+GLmol & + & ++ & $\sim$ & + & + \\ \hline
+NGL & ++ & ++ & ++ & ++ & + \\ \hline
+3Dmol & ++ & + & $\varnothing$ & ++ & + \\ \hline
+ProteinVR & ++ & ++ & + & ++ & + \\ \hline
+PyMOL & ++ & ++ & ++ & ++ & + \\ \hline
+Jmol & ++ & ++ & + & ++ & + \\ \hline
+Nanome & ++ & ++ & ++ & ++ & + \\ \hline
+MolView & ++ & $\sim$ & $\varnothing$ & ++ & + \\ \hline
+Molecule Visualizer & + & + & + & + & + \\ \hline
+\end{tabularx}
+\caption{Results of functionality evaluation.}
+\label{sec.evaluation:benchmark:funceval}
+\end{table}
+
+Tables \ref{sec:evaluation:benchmark:userfriendeval} and \ref{sec.evaluation:benchmark:funceval} contain the results of our evaluations. As one can see in regards to user-friendliness the results vary drastically between the various applications. For example Jmol's interface is really intuitive for users as the buttons show pop-ups that explain what the button is used for. It has a very detailed documentation page that also contains tutorials on the usage of Jmol. Regarding support there are various forums in which users can post questions and receive help from other Jmol users. Set-up is uncomplicated as well as it only involves downloading the application and following the instructions of the installer. On the other hand, PyMOL has not only an open-source version, but also a licensed version of the tool. We used the open-source version of PyMOL for our evaluation. The set-up of the open-source version is relatively complicated as the instructions on the page that the open-source project refers to are not clear enough to successfully install it. Support is locked behind buying a license for PyMOL, the same goes for the documentation. There are a few tutorials accessible for free, but they refer to older versions of PyMOL. When using PyMOL for the first time the interface is quite overwhelming as it features two separate windows, one visualisation window and a command-line interface. Without a proper tutorial visualising a molecule and performing tasks like changing the color of atoms, changing the representation or even just interacting with the molecule can be quite difficult. Both VR applications, Nanome and ProteinVR, suffer from an initially complicated user interface. This stems from the various functionalities both of them support. Otherwise their documentations are well-structured and feature videos for further explanations. Compared to their rich VR environment the VR scene in our tool is still rather empty and only permits limited interactions with molecules. This is due to the restrictions we faced when trying to set up a GUI in VR. Functionality-wise our application is rather limited. Every one of the tested tools offers functionalities beyond standard representations or basic interactions. ProteinVR and Nanome offer a fully functional VR scene including GUI and advanced controls. MolView, NGL and Jmol offer the ability to edit molecules. Calculating molecular surfaces and additional representations for molecules can be found in all tools.
+
+Compared to the aforementioned tools our Molecule Visualizer can be categorised as a solid alternative. It might not have the support for the amount of features from other applications, but we designed our project with extensibility in mind which was present in almost none of the tested tools. Only PyMOL showed signs of extensibility via Python scripts. Our project also supports the most basic features for molecular research and leaves a lot of room for improvement in the future with additional representations for example. Regarding user-friendliness, our user interface is pretty small due to the limited functionalities, but still clearly structured which becomes harder the more features you support. Our documentations is currently not up-to-date with the current state of our project which will be solved in the near future. Other than that it can be compared to some of the better structured documentations like the one for Jmol or Nanome.

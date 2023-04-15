@@ -1,0 +1,33 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{c+c1}{// WebGL VR scene.}
+\PYG{p}{...}
+\PYG{k+kd}{function}\PYG{+w}{ }\PYG{n+nx}{enterVR}\PYG{p}{()}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{	}\PYG{n+nx}{navigator}\PYG{p}{.}\PYG{n+nx}{xr}\PYG{p}{.}\PYG{n+nx}{requestSession}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}immersive\PYGZhy{}vr\PYGZsq{}}\PYG{p}{).}\PYG{n+nx}{then}\PYG{p}{((}\PYG{n+nx}{session}\PYG{p}{)}\PYG{+w}{ }\PYG{p}{=\PYGZgt{}}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{	}\PYG{c+c1}{// Set up xrReferenceSpace.}
+\PYG{+w}{	}\PYG{n+nx}{inVR}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{k+kc}{true}\PYG{p}{;}
+
+\PYG{+w}{	}\PYG{n+nx}{gl}\PYG{p}{.}\PYG{n+nx}{makeXRCompatible}\PYG{p}{().}\PYG{n+nx}{then}\PYG{p}{((}\PYG{n+nx}{xrContext}\PYG{p}{)}\PYG{+w}{ }\PYG{p}{=\PYGZgt{}}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{		}\PYG{c+c1}{// Set up render state and frame buffer.}
+\PYG{+w}{	}\PYG{p}{\PYGZcb{});}
+
+\PYG{+w}{	}\PYG{k+kd}{const}\PYG{+w}{ }\PYG{n+nx}{renderVR}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{p}{(}\PYG{n+nx}{now}\PYG{p}{,}\PYG{+w}{ }\PYG{n+nx}{frame}\PYG{p}{)}\PYG{+w}{ }\PYG{p}{=\PYGZgt{}}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{		}\PYG{c+c1}{// Similar to render with the exception of setting up xrFrame; call to sceneDrawVR with same parameters as in non\PYGZhy{}VR.}
+\PYG{+w}{	}\PYG{p}{\PYGZcb{};}
+
+\PYG{+w}{	}\PYG{n+nx}{xrSession}\PYG{p}{.}\PYG{n+nx}{requestAnimationFrame}\PYG{p}{(}\PYG{n+nx}{renderVR}\PYG{p}{);}
+\PYG{+w}{	}\PYG{p}{\PYGZcb{});}
+\PYG{p}{\PYGZcb{}}
+\PYG{p}{...}
+\PYG{k+kd}{function}\PYG{+w}{ }\PYG{n+nx}{sceneDrawVR}\PYG{p}{(}\PYG{n+nx}{gl}\PYG{p}{,}\PYG{+w}{ }\PYG{n+nx}{progInfo}\PYG{p}{,}\PYG{+w}{ }\PYG{n+nx}{buffer}\PYG{p}{,}\PYG{+w}{ }\PYG{n+nx}{deltaTime}\PYG{p}{)}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{	}\PYG{c+c1}{// Same setup as in sceneDraw; retrieve pose of xrFrame so you can render the scene for each eye of the VR headset.}
+\PYG{+w}{	}\PYG{n+nx}{gl}\PYG{p}{.}\PYG{n+nx}{finish}\PYG{p}{();}
+\PYG{p}{\PYGZcb{}}
+\PYG{p}{...}
+\PYG{k+kd}{function}\PYG{+w}{ }\PYG{n+nx}{renderEye}\PYG{p}{(}\PYG{n+nx}{gl}\PYG{p}{,}\PYG{+w}{ }\PYG{n+nx}{progInfo}\PYG{p}{,}\PYG{+w}{ }\PYG{n+nx}{buffers}\PYG{p}{,}\PYG{+w}{ }\PYG{n+nx}{eye}\PYG{p}{)}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{	}\PYG{c+c1}{// Set up Projection and View Matrix with respect to the eye that is currently rendered; rest of function like sceneDraw.}
+\PYG{+w}{	}\PYG{n+nx}{projection}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n+nx}{eye}\PYG{p}{.}\PYG{n+nx}{projectionMatrix}\PYG{p}{;}
+\PYG{+w}{	}\PYG{n+nx}{view}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n+nx}{eye}\PYG{p}{.}\PYG{n+nx}{transform}\PYG{p}{.}\PYG{n+nx}{inverse}\PYG{p}{.}\PYG{n+nx}{matrix}\PYG{p}{;}
+\PYG{+w}{	}\PYG{p}{...}
+\PYG{p}{\PYGZcb{}}
+\PYG{p}{...}
+\end{Verbatim}

@@ -1,0 +1,14 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{c+c1}{// three.js camera.		}
+\PYG{k+kd}{const}\PYG{+w}{ }\PYG{n+nx}{camera}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{o+ow}{new}\PYG{+w}{ }\PYG{n+nx}{THREE}\PYG{p}{.}\PYG{n+nx}{PerspectiveCamera}\PYG{p}{(}\PYG{l+m+mf}{50}\PYG{p}{,}\PYG{+w}{ }\PYG{n+nx}{canvas}\PYG{p}{.}\PYG{n+nx}{clientWidth}\PYG{+w}{ }\PYG{o}{/}\PYG{+w}{ }\PYG{n+nx}{canvas}\PYG{p}{.}\PYG{n+nx}{clientHeight}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mf}{0.1}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mf}{100}\PYG{p}{);}
+\PYG{n+nx}{camera}\PYG{p}{.}\PYG{n+nx}{position}\PYG{p}{.}\PYG{n+nx}{z}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m+mf}{3.5}\PYG{p}{;}
+\PYG{p}{...}
+\PYG{n+nx}{time}\PYG{+w}{ }\PYG{o}{*=}\PYG{+w}{ }\PYG{l+m+mf}{0.001}\PYG{p}{;}
+
+\PYG{n+nx}{box}\PYG{p}{.}\PYG{n+nx}{rotation}\PYG{p}{.}\PYG{n+nx}{z}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n+nx}{time}\PYG{p}{;}
+\PYG{n+nx}{box}\PYG{p}{.}\PYG{n+nx}{rotation}\PYG{p}{.}\PYG{n+nx}{y}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n+nx}{time}\PYG{+w}{ }\PYG{o}{*}\PYG{+w}{ }\PYG{l+m+mf}{0.7}\PYG{p}{;}
+\PYG{n+nx}{box}\PYG{p}{.}\PYG{n+nx}{rotation}\PYG{p}{.}\PYG{n+nx}{x}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n+nx}{time}\PYG{+w}{ }\PYG{o}{*}\PYG{+w}{ }\PYG{l+m+mf}{0.3}\PYG{p}{;}
+
+\PYG{n+nx}{renderer}\PYG{p}{.}\PYG{n+nx}{render}\PYG{p}{(}\PYG{n+nx}{scene}\PYG{p}{,}\PYG{+w}{ }\PYG{n+nx}{camera}\PYG{p}{);}
+\PYG{p}{...}
+\end{Verbatim}

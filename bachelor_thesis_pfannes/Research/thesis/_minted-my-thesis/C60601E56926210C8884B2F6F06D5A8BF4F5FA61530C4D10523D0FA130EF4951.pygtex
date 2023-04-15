@@ -1,0 +1,9 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{c+c1}{// three.js VR scene.}
+\PYG{c+c1}{// import VRButton.js for setting up xrSession.}
+\PYG{p}{...}
+\PYG{n+nx}{renderer}\PYG{p}{.}\PYG{n+nx}{xr}\PYG{p}{.}\PYG{n+nx}{enabled}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{k+kc}{true}\PYG{p}{;}
+\PYG{n+nb}{document}\PYG{p}{.}\PYG{n+nx}{body}\PYG{p}{.}\PYG{n+nx}{appendChild}\PYG{p}{(}\PYG{n+nx}{VRButton}\PYG{p}{.}\PYG{n+nx}{createButton}\PYG{p}{(}\PYG{n+nx}{renderer}\PYG{p}{));}
+\PYG{p}{...}
+\PYG{n+nx}{renderer}\PYG{p}{.}\PYG{n+nx}{setAnimationLoop}\PYG{p}{(}\PYG{n+nx}{render}\PYG{p}{);}
+\end{Verbatim}

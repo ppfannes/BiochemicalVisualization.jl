@@ -1,0 +1,14 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{c+cm}{\PYGZlt{}!\PYGZhy{}\PYGZhy{} Method 1: Embed source code directly into the HTML page. \PYGZhy{}\PYGZhy{}\PYGZgt{}}
+...
+\PYG{p}{\PYGZlt{}}\PYG{n+nt}{script} \PYG{n+na}{src}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}path/to/three.js\PYGZdq{}}\PYG{p}{\PYGZgt{}\PYGZlt{}/}\PYG{n+nt}{script}\PYG{p}{\PYGZgt{}}
+\PYG{p}{\PYGZlt{}}\PYG{n+nt}{script}\PYG{p}{\PYGZgt{}}
+\PYG{+w}{	}\PYG{c}{\PYGZlt{}!\PYGZhy{}\PYGZhy{}}\PYG{+w}{ }\PYG{n+nx}{visualisation}\PYG{+w}{ }\PYG{n+nx}{code}\PYG{+w}{ }\PYG{n+nx}{here}\PYG{p}{...}\PYG{+w}{ }\PYG{o}{\PYGZhy{}\PYGZhy{}\PYGZgt{}}
+\PYG{p}{\PYGZlt{}/}\PYG{n+nt}{script}\PYG{p}{\PYGZgt{}}
+...
+
+\PYG{c+cm}{\PYGZlt{}!\PYGZhy{}\PYGZhy{} Method 2: Specify path to the source code file. \PYGZhy{}\PYGZhy{}\PYGZgt{}}
+...
+\PYG{p}{\PYGZlt{}}\PYG{n+nt}{script} \PYG{n+na}{src}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}path/to/visualisation/source/file\PYGZdq{}}\PYG{p}{\PYGZgt{}\PYGZlt{}/}\PYG{n+nt}{script}\PYG{p}{\PYGZgt{}}
+...
+\end{Verbatim}

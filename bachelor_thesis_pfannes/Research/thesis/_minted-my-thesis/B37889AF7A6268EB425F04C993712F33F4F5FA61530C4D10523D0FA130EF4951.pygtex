@@ -1,0 +1,29 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{c+c1}{// Constant section.}
+\PYG{k+kd}{const}\PYG{+w}{ }\PYG{n+nx}{NEAR}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m+mf}{1e\PYGZhy{}6}\PYG{p}{;}
+\PYG{k+kd}{const}\PYG{+w}{ }\PYG{n+nx}{FAR}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m+mf}{2000}\PYG{p}{;}
+\PYG{k+kd}{const}\PYG{+w}{ }\PYG{n+nx}{scene}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{o+ow}{new}\PYG{+w}{ }\PYG{n+nx}{THREE}\PYG{p}{.}\PYG{n+nx}{Scene}\PYG{p}{();}
+\PYG{k+kd}{const}\PYG{+w}{ }\PYG{n+nx}{camera}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{o+ow}{new}\PYG{+w}{ }\PYG{n+nx}{THREE}\PYG{p}{.}\PYG{n+nx}{PerspectiveCamera}\PYG{p}{(}\PYG{l+m+mf}{50}\PYG{p}{,}\PYG{+w}{ }\PYG{n+nx}{innerWidth}\PYG{+w}{ }\PYG{o}{/}\PYG{+w}{ }\PYG{n+nx}{innerHeight}\PYG{p}{,}\PYG{+w}{ }\PYG{n+nx}{NEAR}\PYG{p}{,}\PYG{+w}{ }\PYG{n+nx}{FAR}\PYG{p}{);}
+\PYG{k+kd}{const}\PYG{+w}{ }\PYG{n+nx}{container}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n+nb}{document}\PYG{p}{.}\PYG{n+nx}{getElementById}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}container\PYGZsq{}}\PYG{p}{);}
+\PYG{k+kd}{const}\PYG{+w}{ }\PYG{n+nx}{renderer}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{o+ow}{new}\PYG{+w}{ }\PYG{n+nx}{THREE}\PYG{p}{.}\PYG{n+nx}{WebGLRenderer}\PYG{p}{(\PYGZob{}}\PYG{n+nx}{canvas}\PYG{o}{:}\PYG{+w}{ }\PYG{n+nx}{container}\PYG{p}{,}\PYG{+w}{ }\PYG{n+nx}{antialias}\PYG{o}{:}\PYG{+w}{ }\PYG{k+kc}{true}\PYG{p}{,}\PYG{+w}{ }\PYG{n+nx}{logarithmicDepthBuffer}\PYG{o}{:}\PYG{+w}{ }\PYG{k+kc}{true}\PYG{p}{\PYGZcb{});}
+\PYG{k+kd}{const}\PYG{+w}{ }\PYG{n+nx}{stats}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{o+ow}{new}\PYG{+w}{ }\PYG{n+nx}{Stats}\PYG{p}{();}
+\PYG{k+kd}{const}\PYG{+w}{ }\PYG{n+nx}{cameraGroup}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{o+ow}{new}\PYG{+w}{ }\PYG{n+nx}{THREE}\PYG{p}{.}\PYG{n+nx}{Group}\PYG{p}{();}
+\PYG{k+kd}{const}\PYG{+w}{ }\PYG{n+nx}{prevGamePads}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{o+ow}{new}\PYG{+w}{ }\PYG{n+nb}{Map}\PYG{p}{();}
+\PYG{k+kd}{let}\PYG{+w}{ }\PYG{n+nx}{cameraVector}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{o+ow}{new}\PYG{+w}{ }\PYG{n+nx}{THREE}\PYG{p}{.}\PYG{n+nx}{Vector3}\PYG{p}{();}
+\PYG{k+kd}{let}\PYG{+w}{ }\PYG{n+nx}{speedFactor}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{p}{[}\PYG{l+m+mf}{0.1}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mf}{0.1}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mf}{0.1}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mf}{0.1}\PYG{p}{];}
+\PYG{k+kd}{let}\PYG{+w}{ }\PYG{n+nx}{frontLight1}\PYG{p}{,}\PYG{+w}{ }\PYG{n+nx}{frontLight2}\PYG{p}{,}\PYG{+w}{ }\PYG{n+nx}{backLight1}\PYG{p}{,}\PYG{+w}{ }\PYG{n+nx}{backLight2}\PYG{p}{;}
+\PYG{c+c1}{// Properties section.}
+\PYG{k+kd}{class}\PYG{+w}{ }\PYG{n+nx}{Visualizer}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{	}\PYG{k+kr}{constructor}\PYG{p}{()}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{		}\PYG{k}{this}\PYG{p}{.}\PYG{n+nx}{root}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{o+ow}{new}\PYG{+w}{ }\PYG{n+nx}{THREE}\PYG{p}{.}\PYG{n+nx}{Group}\PYG{p}{();}
+\PYG{+w}{		}\PYG{k}{this}\PYG{p}{.}\PYG{n+nx}{controls}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{o+ow}{new}\PYG{+w}{ }\PYG{n+nx}{TrackballControls}\PYG{p}{(}\PYG{n+nx}{camera}\PYG{p}{,}\PYG{+w}{ }\PYG{n+nx}{renderer}\PYG{p}{.}\PYG{n+nx}{domElement}\PYG{p}{);}
+\PYG{+w}{		}\PYG{k}{this}\PYG{p}{.}\PYG{n+nx}{objectPicker}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{o+ow}{new}\PYG{+w}{ }\PYG{n+nx}{ObjectPicker}\PYG{p}{(}\PYG{k}{this}\PYG{p}{.}\PYG{n+nx}{root}\PYG{p}{,}\PYG{+w}{ }\PYG{n+nx}{camera}\PYG{p}{);}
+\PYG{+w}{		}\PYG{k}{this}\PYG{p}{.}\PYG{n+nx}{moleculeModel}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{o+ow}{new}\PYG{+w}{ }\PYG{n+nx}{Model}\PYG{p}{();}
+\PYG{+w}{		}\PYG{k}{this}\PYG{p}{.}\PYG{n+nx}{renderRequested}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{k+kc}{false}\PYG{p}{;}
+\PYG{+w}{		}\PYG{k}{this}\PYG{p}{.}\PYG{n+nx}{debugGUI}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{o+ow}{new}\PYG{+w}{ }\PYG{n+nx}{VisualizerGUI}\PYG{p}{();}
+\PYG{+w}{		}\PYG{k}{this}\PYG{p}{.}\PYG{n+nx}{moleculestruct}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{p}{\PYGZob{}\PYGZcb{};}
+\PYG{+w}{		}\PYG{k}{this}\PYG{p}{.}\PYG{n+nx}{modal}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{o+ow}{new}\PYG{+w}{ }\PYG{n+nx}{Modal}\PYG{p}{(}\PYG{n+nb}{document}\PYG{p}{.}\PYG{n+nx}{querySelector}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}\PYGZsh{}modal\PYGZsq{}}\PYG{p}{));}
+\PYG{+w}{		}\PYG{k}{this}\PYG{p}{.}\PYG{n+nx}{changedAtomColor}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{o+ow}{new}\PYG{+w}{ }\PYG{n+nb}{Map}\PYG{p}{();}
+\PYG{+w}{	}\PYG{p}{\PYGZcb{}}
+\PYG{p}{\PYGZcb{}}\PYG{+w}{	}
+\end{Verbatim}
