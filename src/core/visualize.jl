@@ -1,4 +1,4 @@
-export element_color, ball_and_stick, van_der_waals
+export element_color, ball_and_stick, stick, van_der_waals
 
 const VISUALIZE = ES6Module(asset_path("visualize_structure.js"))::Asset
 
@@ -132,19 +132,16 @@ hex_colors = [hex(RGB((e ./ 255)...)) for e in ELEMENT_COLORS]
 
 element_color(e) = "0x"*lowercase(hex_colors[Int(e)])
 
-function prepare_model(ac::AbstractAtomContainer)
-	raw_atoms = atoms_df(ac).idx
-	spheres = atoms_df(ac).r;
-	colors = [element_color(e) for e in atoms_df(ac).element];
-	sticks = [(findfirst(==(b.a1), raw_atoms), findfirst(==(b.a2), raw_atoms)) for b in bonds(ac)];
-	midpoints = map(b -> (
-		a1=spheres[b[1]];
-		a2=spheres[b[2]];
-		a1 + 0.5*(a2 - a1)),
-		sticks
-	);
+function prepare_model(ac::AbstractAtomContainer; type="BALL_AND_STICK")
+	if type == "BALL_AND_STICK"
+		return prepare_ball_and_stick_model(ac)
+	elseif type == "STICK"
+		return prepare_stick_model(ac)
+	elseif type == "VAN_DER_WAALS"
+		return prepare_van_der_waals_model(ac)
+	end
 
-	spheres, colors, sticks, midpoints
+	return nothing
 end
 
 function display_model(ac::AbstractAtomContainer; type="BALL_AND_STICK")
@@ -152,25 +149,24 @@ function display_model(ac::AbstractAtomContainer; type="BALL_AND_STICK")
 		width = 500; height = 500
 		dom = DOM.div(width = width, height = height)
 
-		spheres, colors, sticks, midpoints = prepare_model(ac)
+		r = prepare_model(ac; type=type)
+
+		if isnothing(r)
+			return dom
+		end
 
 		# compute the center of mass of the geometry
-		focus_point = mean(spheres)
+		focus_point = mean(center.(r.primitives))
 
 		JSServe.onload(session, dom, js"""
 			function (container){
 				$(VISUALIZE).then(VISUALIZE => {
-					console.log("test")
 					let { 
 						renderer,
 						scene, 
 						camera } = VISUALIZE.setup(container, $width, $height);
 
-					if ($type == "BALL_AND_STICK") {
-						VISUALIZE.ballAndStickModel(scene, $spheres, $sticks, $midpoints, $colors);
-					} else {
-						VISUALIZE.VanDerWaals(scene, $spheres, $colors);
-					}
+					VISUALIZE.render(scene, $r)
 
 					let controls = VISUALIZE.setupControls(renderer, scene, camera, $focus_point);
 
@@ -195,4 +191,5 @@ function display_model(ac::AbstractAtomContainer; type="BALL_AND_STICK")
 end
 
 ball_and_stick(ac) = display_model(ac; type="BALL_AND_STICK")
+stick(ac)          = display_model(ac; type="STICK")
 van_der_waals(ac)  = display_model(ac; type="VAN_DER_WAALS")
