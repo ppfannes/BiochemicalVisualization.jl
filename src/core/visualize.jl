@@ -144,50 +144,53 @@ function prepare_model(ac::AbstractAtomContainer; type="BALL_AND_STICK")
 	return nothing
 end
 
-function display_model(ac::AbstractAtomContainer; type="BALL_AND_STICK")
+function display_model(ac::Union{AbstractAtomContainer, Observable{<:AbstractAtomContainer}}; type="BALL_AND_STICK")
+	width = 500; height = 500
+	dom = DOM.div(width = width, height = height)
+
+	or, r = if ac isa Observable
+		or = map(a -> prepare_model(a; type=type), ac)
+		or, or.val
+	else
+		nothing, prepare_model(ac; type=type)
+	end
+	
+	if isnothing(r)
+		return
+	end
+
+	# compute the center of mass of the geometry
+	focus_point = mean(center.(r.primitives))
+
 	app = App() do session, request
-		width = 500; height = 500
-		dom = DOM.div(width = width, height = height)
-
-		r = prepare_model(ac; type=type)
-
-		if isnothing(r)
-			return dom
-		end
-
-		# compute the center of mass of the geometry
-		focus_point = mean(center.(r.primitives))
-
 		JSServe.onload(session, dom, js"""
 			function (container){
 				$(VISUALIZE).then(VISUALIZE => {
-					let { 
-						renderer,
-						scene, 
-						camera } = VISUALIZE.setup(container, $width, $height);
+					VISUALIZE.setup(container, $width, $height);
 
-					VISUALIZE.render(scene, $r)
+					VISUALIZE.addRepresentation($r)
 
-					let controls = VISUALIZE.setupControls(renderer, scene, camera, $focus_point);
+					let controls = VISUALIZE.setupControls($focus_point);
 
-					controls.addEventListener( 'change', render ); // call this only in static scenes (i.e., if there is no animation loop)
-
-					render();
-						
-					function animate() {         
-						requestAnimationFrame( animate );                  
-						controls.update(); // only required if controls.enableDamping = true, or if controls.autoRotate = true              
-						render();
-					}
-
-					function render() {
-						renderer.render( scene, camera );
-					}
+					VISUALIZE.render();
+					
 				})
 			}
 		""")
+
+		if ac isa Observable
+			on(r -> JSServe.evaljs(session, js"""
+				$(VISUALIZE).then(
+					VISUALIZE => {
+						VISUALIZE.updateRepresentation(0, $r)
+						VISUALIZE.render()
+					}
+				)"""), session, or)
+		end
+
 		return dom
 	end
+
 end
 
 ball_and_stick(ac) = display_model(ac; type="BALL_AND_STICK")

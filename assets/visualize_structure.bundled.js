@@ -22558,81 +22558,80 @@ class OrbitControls extends EventDispatcher {
         this.update();
     }
 }
+let geometries = [];
+let scene = null;
+let renderer = null;
+let camera = null;
+let controls = null;
 function setup(container, width, height) {
-    let renderer = new WebGLRenderer({
+    renderer = new WebGLRenderer({
         antialias: true
     });
     renderer.setSize(width, height);
     renderer.setClearColor("#000000");
     container.appendChild(renderer.domElement);
-    let scene = new Scene();
-    let camera = new PerspectiveCamera(75, width / height, 0.1, 1000);
+    camera = new PerspectiveCamera(75, width / height, 0.1, 1000);
     camera.position.z = 4;
     var ambientLight = new AmbientLight(0xcccccc, 0.4);
-    scene.add(ambientLight);
     var pointLight = new PointLight(0xffffff, 0.8);
     camera.add(pointLight);
+    scene = new Scene();
+    scene.add(ambientLight);
     scene.add(camera);
-    return {
-        renderer,
-        scene,
-        camera
+}
+function addRepresentation(r) {
+    let geo = renderRepresentation(r);
+    geo.children.forEach((c)=>scene.add(c));
+    geometries.push(geo);
+}
+function updateRepresentation(i, r) {
+    let old_geo = geometries[i];
+    let new_geo = renderRepresentation(r);
+    old_geo.children.forEach((c)=>{
+        scene.remove(c);
+        c.geometry.dispose();
+        c.material.dispose();
+    });
+    new_geo.children.forEach((c)=>scene.add(c));
+    geometries[i] = new_geo;
+}
+function renderRepresentation(representation) {
+    let geometry = {
+        children: []
     };
-}
-function VanDerWaalsModel(scene, spheres, colors) {
-    let geometry = new SphereGeometry(1.0, 32, 32);
-    for(let i = 0; i < spheres.length; ++i){
-        let s = spheres[i];
+    for(let i = 0; i < representation.primitives.length; ++i){
         let material = new MeshPhongMaterial({
-            color: parseInt(colors[i])
+            color: parseInt(representation.colors[i])
         });
-        let sphere = new Mesh(geometry, material);
-        sphere.position.set(s[0], s[1], s[2]);
-        scene.add(sphere);
-    }
-}
-function ballAndStickModel(scene, spheres, bonds, midpoints, colors) {
-    let ball_geometry = new SphereGeometry(0.4, 32, 32);
-    for(let i = 0; i < spheres.length; ++i){
-        let s = spheres[i];
-        let material = new MeshPhongMaterial({
-            color: parseInt(colors[i])
-        });
-        let sphere = new Mesh(ball_geometry, material);
-        sphere.position.set(s[0], s[1], s[2]);
-        scene.add(sphere);
-    }
-    for(let i1 = 0; i1 < bonds.length; ++i1){
-        let i11 = bonds[i1][0] - 1;
-        let i2 = bonds[i1][1] - 1;
-        let e1 = spheres[i11];
-        let e2 = spheres[i2];
-        let s1 = new Vector3(e1[0], e1[1], e1[2]);
-        let s2 = new Vector3(e2[0], e2[1], e2[2]);
-        let c1 = parseInt(colors[i11]);
-        let c2 = parseInt(colors[i2]);
-        let mi = midpoints[i1];
-        let m = new Vector3(mi[0], mi[1], mi[2]);
-        function addCylinder(s, m, color) {
-            const cylinder = new CylinderGeometry(0.2, 0.2, s.distanceTo(m), 32, 2);
-            const { x: ax , y: ay , z: az  } = s;
-            const { x: bx , y: by , z: bz  } = m;
-            const stickAxis = new Vector3(bx - ax, by - ay, bz - az).normalize();
-            const quaternion = new Quaternion();
-            const cylinderUpAxis = new Vector3(0, 1, 0);
-            quaternion.setFromUnitVectors(cylinderUpAxis, stickAxis);
-            cylinder.applyQuaternion(quaternion);
-            cylinder.translate((bx + ax) / 2, (by + ay) / 2, (bz + az) / 2);
-            scene.add(new Mesh(cylinder, new MeshPhongMaterial({
-                color: color
-            })));
+        let p = representation.primitives[i];
+        if ('center' in p && 'r' in p) {
+            let sphere_geometry = new SphereGeometry(p.r, 32, 32);
+            let sphere = new Mesh(sphere_geometry, material);
+            sphere.position.set(p.center[0], p.center[1], p.center[2]);
+            geometry.children.push(sphere);
+        } else if ('origin' in p && 'extremity' in p && 'r' in p) {
+            let cylinder = createCylinder(p.origin, p.extremity, p.r);
+            geometry.children.push(new Mesh(cylinder, material));
         }
-        addCylinder(s1, m, c1);
-        addCylinder(m, s2, c2);
     }
+    return geometry;
 }
-function setupControls(renderer, scene, camera, focus_point) {
-    let controls = new OrbitControls(camera, renderer.domElement);
+function createCylinder(s_i, m_i, r) {
+    let s = new Vector3(s_i[0], s_i[1], s_i[2]);
+    let m = new Vector3(m_i[0], m_i[1], m_i[2]);
+    const cylinder = new CylinderGeometry(r, r, s.distanceTo(m), 32, 2);
+    const { x: ax , y: ay , z: az  } = s;
+    const { x: bx , y: by , z: bz  } = m;
+    const stickAxis = new Vector3(bx - ax, by - ay, bz - az).normalize();
+    const quaternion = new Quaternion();
+    const cylinderUpAxis = new Vector3(0, 1, 0);
+    quaternion.setFromUnitVectors(cylinderUpAxis, stickAxis);
+    cylinder.applyQuaternion(quaternion);
+    cylinder.translate((bx + ax) / 2, (by + ay) / 2, (bz + az) / 2);
+    return cylinder;
+}
+function setupControls(focus_point) {
+    controls = new OrbitControls(camera, renderer.domElement);
     controls.enableDamping = true;
     controls.dampingFactor = 0.05;
     controls.screenSpacePanning = true;
@@ -22640,7 +22639,15 @@ function setupControls(renderer, scene, camera, focus_point) {
     controls.maxDistance = 500;
     controls.maxPolarAngle = Math.PI / 2;
     controls.target = new Vector3(focus_point[0], focus_point[1], focus_point[2]);
-    return controls;
+    controls.addEventListener('change', render);
 }
-export { setup as setup, setupControls as setupControls, VanDerWaalsModel as VanDerWaalsModel, ballAndStickModel as ballAndStickModel };
+function render() {
+    renderer.render(scene, camera);
+}
+function animate() {
+    requestAnimationFrame(animate);
+    controls.update();
+    render();
+}
+export { setup as setup, setupControls as setupControls, animate as animate, render as render, addRepresentation as addRepresentation, updateRepresentation as updateRepresentation, renderer as renderer, camera as camera, scene as scene, geometries as geometries, controls as controls };
 

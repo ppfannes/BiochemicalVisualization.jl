@@ -6,26 +6,52 @@ import {
 
 import { OrbitControls } from "./OrbitControls.js"
 
+let geometries = []
+let scene = null
+let renderer = null
+let camera = null
+let controls = null
+
 function setup(container, width, height) {
-    let renderer = new WebGLRenderer({antialias: true});
+    renderer = new WebGLRenderer({antialias: true});
     renderer.setSize(width, height);
     renderer.setClearColor("#000000");
     container.appendChild(renderer.domElement);
 
-    let scene = new Scene();
-    let camera = new PerspectiveCamera(75, width / height, 0.1, 1000);
+    camera = new PerspectiveCamera(75, width / height, 0.1, 1000);
     camera.position.z = 4;
 
     var ambientLight = new AmbientLight(0xcccccc, 0.4);
-    scene.add(ambientLight);
     var pointLight = new PointLight(0xffffff, 0.8);
     camera.add(pointLight);
-    scene.add(camera);
 
-    return { renderer, scene, camera };
+    scene = new Scene();
+    scene.add(ambientLight);
+    scene.add(camera);
 }
 
-function render(scene, representation) {
+function addRepresentation(r) {
+    let geo = renderRepresentation(r)
+    geo.children.forEach(c => scene.add(c))
+    geometries.push(geo)
+}
+
+function updateRepresentation(i, r) {
+    let old_geo = geometries[i]
+    let new_geo = renderRepresentation(r)
+
+    old_geo.children.forEach(c => {
+        scene.remove(c)
+        c.geometry.dispose()
+        c.material.dispose()
+    })
+
+    new_geo.children.forEach(c => scene.add(c))
+    geometries[i] = new_geo
+}
+
+function renderRepresentation(representation) {
+    let geometry = { children: [] }
     for (let i=0; i<representation.primitives.length; ++i) {
         let material = new MeshPhongMaterial(
             {
@@ -38,23 +64,25 @@ function render(scene, representation) {
         // check the type of representation
         if ('center' in p && 'r' in p) {
             // a sphere
-            let geometry = new SphereGeometry(p.r, 32, 32);
+            let sphere_geometry = new SphereGeometry(p.r, 32, 32);
 
-            let sphere = new Mesh(geometry, material);
+            let sphere = new Mesh(sphere_geometry, material);
 
             sphere.position.set(p.center[0], p.center[1], p.center[2]);
-            scene.add(sphere);
+            geometry.children.push(sphere);
         } else if ('origin' in p && 'extremity' in p && 'r' in p) {
             // a cylinder
             let cylinder = createCylinder(p.origin, p.extremity, p.r)
 
             // add to geometry list
-            scene.add(new Mesh(
+            geometry.children.push(new Mesh(
                 cylinder,
                 material
             ))
         }
     }
+
+    return geometry
 }
 
 function createCylinder(s_i, m_i, r) {
@@ -81,8 +109,8 @@ function createCylinder(s_i, m_i, r) {
     return cylinder;
 }
 
-function setupControls(renderer, scene, camera, focus_point) {
-    let controls = new OrbitControls( camera, renderer.domElement );
+function setupControls(focus_point) {
+    controls = new OrbitControls( camera, renderer.domElement );
     //controls.listenToKeyEvents( window ); // optional
         
     controls.enableDamping = true; // an animation loop is required when either damping or auto-rotation are enabled
@@ -97,7 +125,20 @@ function setupControls(renderer, scene, camera, focus_point) {
 
     controls.target = new Vector3(focus_point[0], focus_point[1], focus_point[2]);
     
-    return controls;
+    controls.addEventListener( 'change', render ); // call this only in static scenes (i.e., if there is no animation loop)
 }
 
-export { setup, setupControls, render };
+function render() {
+    renderer.render(scene, camera)
+}
+	
+function animate() {         
+    requestAnimationFrame( animate );                  
+    controls.update(); // only required if controls.enableDamping = true, or if controls.autoRotate = true              
+    render();
+}
+
+export { 
+    setup, setupControls, animate, render, addRepresentation, updateRepresentation,
+    renderer, camera, scene, geometries, controls
+};
