@@ -124,13 +124,14 @@ const ELEMENT_COLORS = [
 	(255, 255, 255),   # BOHRIUM 107
 	(255, 255, 255),   # HASSIUM 108
 	(255, 255, 255),   # MEITNERIUM 109
-	(255, 255, 255)    # DUBNIUM 105
+	(255, 255, 255),   # DUBNIUM 105
 	#110
+	(255, 255, 255)    # UNKNOWN
 ]
 
 hex_colors = [hex(RGB((e ./ 255)...)) for e in ELEMENT_COLORS]
 
-element_color(e) = "0x"*lowercase(hex_colors[Int(e)])
+element_color(e) = "0x"*lowercase(get(hex_colors, Int(e), hex_colors[end]))
 
 function prepare_model(ac::AbstractAtomContainer; type="BALL_AND_STICK")
 	if type == "BALL_AND_STICK"
