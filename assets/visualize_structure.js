@@ -150,13 +150,6 @@ function render() {
 function animate() {}
 
 export {
-  setup,
-  render,
-  addRepresentation,
-  updateRepresentation,
-  engine,
-  camera,
-  scene,
-  meshes,
-  animate,
+  addRepresentation, animate, camera, engine, meshes, render, scene, setup, updateRepresentation
 };
+
