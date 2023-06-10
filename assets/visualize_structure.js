@@ -5,6 +5,15 @@ let scene = null;
 let engine = null;
 let camera = null;
 
+function* zip(arrays) {
+  let iterators = arrays.map((a) => a[Symbol.iterator]());
+  while (true) {
+    let results = iterators.map((it) => it.next());
+    if (results.some((r) => r.done)) return;
+    yield results.map((r) => r.value);
+  }
+}
+
 function setup(container, width, height) {
   engine = new BABYLON.Engine(container);
   scene = new BABYLON.Scene(engine);
@@ -36,9 +45,11 @@ function setup(container, width, height) {
 
 function addRepresentation(r) {
   let mesh = renderRepresentation(r);
+  console.log(mesh);
   mesh.children.forEach((child) => {
     scene.addMesh(child);
   });
+  console.log(scene);
   meshes.push(mesh);
 }
 
@@ -56,68 +67,84 @@ function updateRepresentation(i, r) {
 
 function renderRepresentation(representation) {
   let mesh = { children: [] };
-  for (let i = 0; i < representation.primitives.length; i++) {
-    let primitive = representation.primitives[i];
+  const material = new BABYLON.StandardMaterial("material");
+  for (let key in representation.primitives) {
+    console.log(key);
+    switch (key) {
+      case "spheres":
+        console.log("Creating sphere...");
+        const sphere_colors = representation.colors["sphere_colors"];
+        const spheres = representation.primitives[key];
+        var root_sphere = BABYLON.MeshBuilder.CreateSphere(
+          "rootSphere",
+          { diameter: 1.0 },
+          scene
+        );
+        root_sphere.material = material;
+        root_sphere.registerInstancedBuffer("color", 4);
+        root_sphere.isVisible = false;
 
-    // check the type of representation
-    if ("center" in primitive && "r" in primitive) {
-      // a sphere
-      let sphere = BABYLON.MeshBuilder.CreateSphere(
-        "sphere" + i,
-        { diameter: primitive.r * 2.0 },
-        scene
-      );
-      let material = new BABYLON.StandardMaterial("material" + i);
-      material.diffuseColor = BABYLON.Color3.FromHexString(
-        representation.colors[i]
-      );
-      sphere.material = material;
+        for (let [sphere, sphere_color] of zip([spheres, sphere_colors])) {
+          let instance = root_sphere.createInstance("childSphere");
+          instance.isVisible = true;
+          instance.instancedBuffers.color = new BABYLON.Color4.FromHexString(
+            sphere_color
+          );
+          instance.position.set(
+            sphere.center[0],
+            sphere.center[1],
+            sphere.center[2]
+          );
+          instance.scaling = instance.scaling.scale(sphere.r * 2.0);
+          mesh.children.push(instance);
+        }
+        break;
 
-      sphere.position.set(
-        primitive.center[0],
-        primitive.center[1],
-        primitive.center[2]
-      );
-      mesh.children.push(sphere);
-    } else if (
-      "origin" in primitive &&
-      "extremity" in primitive &&
-      "r" in primitive
-    ) {
-      // a cylinder
-      let cylinder = createCylinder(
-        primitive.origin,
-        primitive.extremity,
-        primitive.r,
-        i,
-        representation.colors[i]
-      );
+      case "cylinders":
+        const cylinder_colors = representation.colors["cylinder_colors"];
+        const cylinders = representation.primitives[key];
+        var root_cylinder = BABYLON.MeshBuilder.CreateCylinder(
+          "rootCylinder",
+          { diameter: 1.0, tessellation: 32, height: 1.0 },
+          scene
+        );
+        root_cylinder.material = material;
+        root_cylinder.registerInstancedBuffer("color", 4);
+        root_cylinder.isVisible = false;
 
-      // add to geometry list
-      mesh.children.push(cylinder);
+        for (let [cylinder, cylinder_color] of zip([
+          cylinders,
+          cylinder_colors,
+        ])) {
+          let instance = createCylinderInstance(
+            cylinder_color,
+            cylinder,
+            root_cylinder
+          );
+          mesh.children.push(instance);
+        }
+        break;
     }
   }
-
   return mesh;
 }
 
-function createCylinder(s_i, m_i, r, i, color) {
-  let s = new BABYLON.Vector3(s_i[0], s_i[1], s_i[2]);
-  let m = new BABYLON.Vector3(m_i[0], m_i[1], m_i[2]);
-
-  let cylinder = BABYLON.MeshBuilder.CreateCylinder(
-    "cylinder" + i,
-    {
-      diameter: r * 2.0,
-      tessellation: 32,
-      height: BABYLON.Vector3.Distance(s, m),
-    },
-    scene
+function createCylinderInstance(color, cylinder_data, root_instance) {
+  let s = new BABYLON.Vector3(
+    cylinder_data.origin[0],
+    cylinder_data.origin[1],
+    cylinder_data.origin[2]
   );
-  console.log(cylinder);
-  let material = new BABYLON.StandardMaterial("material" + i);
-  material.diffuseColor = BABYLON.Color3.FromHexString(color);
-  cylinder.material = material;
+  let m = new BABYLON.Vector3(
+    cylinder_data.extremity[0],
+    cylinder_data.extremity[1],
+    cylinder_data.extremity[2]
+  );
+
+  let instance = root_instance.createInstance("childCylinder");
+  instance.instancedBuffers.color = new BABYLON.Color4.FromHexString(color);
+  instance.scaling = instance.scaling.scale(cylinder_data.r * 2.0);
+  instance.scaling.y = BABYLON.Vector3.Distance(s, m);
 
   const { x: ax, y: ay, z: az } = s;
   const { x: bx, y: by, z: bz } = m;
@@ -130,15 +157,16 @@ function createCylinder(s_i, m_i, r, i, color) {
     stickAxis,
     quaternion
   );
-  cylinder.rotationQuaternion = quaternion;
+  instance.rotationQuaternion = quaternion;
 
-  cylinder.translate(
+  instance.translate(
     new BABYLON.Vector3((bx + ax) / 2, (by + ay) / 2, (bz + az) / 2),
     1,
     BABYLON.Space.WORLD
   );
+  console.log(instance);
 
-  return cylinder;
+  return instance;
 }
 
 function render() {
@@ -150,6 +178,13 @@ function render() {
 function animate() {}
 
 export {
-  addRepresentation, animate, camera, engine, meshes, render, scene, setup, updateRepresentation
+  addRepresentation,
+  animate,
+  camera,
+  engine,
+  meshes,
+  render,
+  scene,
+  setup,
+  updateRepresentation,
 };
-

@@ -163,7 +163,7 @@ function display_model(ac::Union{AbstractAtomContainer, Observable{<:AbstractAto
 	println(r)
 
 	# compute the center of mass of the geometry
-	focus_point = mean(center.(r.primitives))
+	# focus_point = mean(center.(r.primitives))
 
 	app = App() do session, request
 		JSServe.onload(session, dom, js"""
@@ -172,8 +172,6 @@ function display_model(ac::Union{AbstractAtomContainer, Observable{<:AbstractAto
 					VISUALIZE.setup(container, $width, $height);
 
 					VISUALIZE.addRepresentation($r)
-
-					//let controls = VISUALIZE.setupControls($focus_point);
 
 					VISUALIZE.render();
 					

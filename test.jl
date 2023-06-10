@@ -19,4 +19,4 @@
  Bond(h2o, o1.idx, h2.idx, BondOrder.Single)
  
  # visualize the system
- van_der_waals(h2o)
+ ball_and_stick(h2o)

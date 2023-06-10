@@ -1,12 +1,12 @@
 export Representation
 
 struct Representation{T <: Real}
-    primitives::AbstractVector{GeometryPrimitive{3, T}}
-    colors::AbstractVector{String}
+    primitives::Dict{String, AbstractVector{GeometryPrimitive{3, T}}}
+    colors::Dict{String, AbstractVector{String}}
 
     function Representation{T}(
-            primitives=Vector{GeometryPrimitive{3, T}}(), 
-            colors=Vector{String}()) where {T}
+            primitives=Dict{String, Vector{GeometryPrimitive{3, T}}}(), 
+            colors=Dict{String, Vector{String}}()) where {T}
         new(primitives, colors)
     end
 end

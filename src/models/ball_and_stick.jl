@@ -17,5 +17,5 @@ function prepare_ball_and_stick_model(
     cylinder_colors = collect(Iterators.flatten(
         map(s -> (element_color(s[1].element), element_color(s[2].element)), sticks)))
 
-    Representation{T}(vcat(spheres, cylinders), vcat(sphere_colors, cylinder_colors))
+    Representation{T}(Dict("spheres" => spheres, "cylinders" => cylinders), Dict("sphere_colors" => sphere_colors, "cylinder_colors" => cylinder_colors))
 end
