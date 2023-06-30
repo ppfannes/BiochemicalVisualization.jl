@@ -21,7 +21,7 @@ function setup(container, width, height) {
     "camera",
     -2 * Math.PI,
     2 * Math.PI,
-    12,
+    12000,
     BABYLON.Vector3.Zero(),
     scene
   );
@@ -45,12 +45,40 @@ function setup(container, width, height) {
 
 function addRepresentation(r) {
   let mesh = renderRepresentation(r);
-  console.log(mesh);
   mesh.children.forEach((child) => {
     scene.addMesh(child);
   });
-  console.log(scene);
   meshes.push(mesh);
+}
+
+function addMesh(vertices, indices) {
+  const material = new BABYLON.StandardMaterial("material", scene);
+  material.backFaceCulling = false;
+  var mesh = new BABYLON.Mesh("mesh", scene);
+  mesh.material = material;
+  var vertexData = new BABYLON.VertexData();
+  var normals = [];
+  BABYLON.VertexData.ComputeNormals(vertices, indices, normals);
+  vertexData.positions = vertices;
+  vertexData.indices = indices;
+  vertexData.normals = normals;
+  vertexData.applyToMesh(mesh);
+  meshes.push(mesh);
+}
+
+function addTube(splinePoints) {
+  const material = new BABYLON.StandardMaterial("material", scene);
+  material.backFaceCulling = false;
+  var path = splinePoints.map(
+    (point) => new BABYLON.Vector3(point[0], point[1], point[2])
+  );
+  var tubeMesh = new BABYLON.MeshBuilder.CreateTube(
+    "tube",
+    { path: path, updatable: true, radius: 0.5 },
+    scene
+  );
+  tubeMesh.material = material;
+  meshes.push(tubeMesh);
 }
 
 function updateRepresentation(i, r) {
@@ -69,10 +97,8 @@ function renderRepresentation(representation) {
   let mesh = { children: [] };
   const material = new BABYLON.StandardMaterial("material");
   for (let key in representation.primitives) {
-    console.log(key);
     switch (key) {
       case "spheres":
-        console.log("Creating sphere...");
         const sphere_colors = representation.colors["sphere_colors"];
         const spheres = representation.primitives[key];
         var root_sphere = BABYLON.MeshBuilder.CreateSphere(
@@ -164,7 +190,6 @@ function createCylinderInstance(color, cylinder_data, root_instance) {
     1,
     BABYLON.Space.WORLD
   );
-  console.log(instance);
 
   return instance;
 }
@@ -178,7 +203,9 @@ function render() {
 function animate() {}
 
 export {
+  addMesh,
   addRepresentation,
+  addTube,
   animate,
   camera,
   engine,

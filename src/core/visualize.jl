@@ -1,4 +1,4 @@
-export element_color, ball_and_stick, stick, van_der_waals
+export element_color, ball_and_stick, stick, van_der_waals, backbone_mesh, backbone_mesh_tube
 
 const VISUALIZE = ES6Module(asset_path("visualize_structure.js"))::Asset
 
@@ -146,9 +146,6 @@ function prepare_model(ac::AbstractAtomContainer; type="BALL_AND_STICK")
 end
 
 function display_model(ac::Union{AbstractAtomContainer, Observable{<:AbstractAtomContainer}}; type="BALL_AND_STICK")
-	width = 500; height = 500
-	dom = DOM.canvas(width = width, height = height)
-
 	or, r = if ac isa Observable
 		or = map(a -> prepare_model(a; type=type), ac)
 		or, or.val
@@ -160,18 +157,22 @@ function display_model(ac::Union{AbstractAtomContainer, Observable{<:AbstractAto
 		return
 	end
 
-	println(r)
-
 	# compute the center of mass of the geometry
-	# focus_point = mean(center.(r.primitives))
+	focus_point = mean(center.(reduce(vcat, values(r.primitives))))
 
 	app = App() do session, request
+		width = 500; height = 500
+		dom = DOM.canvas(width=width, height=height; style="height: 100%; width: 100%; display: block; overflow: hidden; top: 0; bottom: 0; left: 0; right: 0;")
 		JSServe.onload(session, dom, js"""
 			function (container){
 				$(VISUALIZE).then(VISUALIZE => {
+					container.width = window.innerWidth;
+					container.height = window.innerHeight;
 					VISUALIZE.setup(container, $width, $height);
 
-					VISUALIZE.addRepresentation($r)
+					VISUALIZE.camera.setTarget(new BABYLON.Vector3($focus_point[0], $focus_point[1], $focus_point[2]));
+
+					VISUALIZE.addRepresentation($r);
 
 					VISUALIZE.render();
 					
@@ -183,8 +184,8 @@ function display_model(ac::Union{AbstractAtomContainer, Observable{<:AbstractAto
 			on(r -> JSServe.evaljs(session, js"""
 				$(VISUALIZE).then(
 					VISUALIZE => {
-						VISUALIZE.updateRepresentation(0, $r)
-						VISUALIZE.render()
+						VISUALIZE.updateRepresentation(0, $r);
+						VISUALIZE.render();
 					}
 				)"""), session, or)
 		end
@@ -194,6 +195,55 @@ function display_model(ac::Union{AbstractAtomContainer, Observable{<:AbstractAto
 
 end
 
+function display_mesh(vertices::AbstractVector{T}, indices::AbstractVector{U}) where {T, U <: Real}
+	app = App() do session, request
+		width = 500; height = 500
+		dom = DOM.canvas(width=width, height=height; style="height: 100%; width: 100%; display: block; overflow: hidden; top: 0; bottom: 0; left: 0; right: 0;")
+		JSServe.onload(session, dom, js"""
+			function (container) {
+				$(VISUALIZE).then(VISUALIZE => {
+					container.width = window.innerWidth;
+					container.height = window.innerHeight;
+
+					VISUALIZE.setup(container, $width, $height);
+
+					console.log($vertices, $indices);
+					VISUALIZE.addMesh($vertices, $indices);
+
+					VISUALIZE.render();
+				})
+			}
+		""")
+
+		return dom
+	end
+end
+
+function display_tube(spline_points)
+	app = App() do session, request
+		width = 500; height = 500
+		dom = DOM.canvas(width=width, height=height; style="height: 100%; width: 100%; display: block; overflow: hidden; top: 0; bottom: 0; left: 0; right: 0;")
+		JSServe.onload(session, dom, js"""
+			function (container) {
+				$(VISUALIZE).then(VISUALIZE => {
+					container.width = window.innerWidth;
+					container.height = window.innerHeight;
+
+					VISUALIZE.setup(container, $width, $height);
+
+					VISUALIZE.addTube($spline_points);
+
+					VISUALIZE.render();
+				})
+			}
+		""")
+
+		return dom
+	end
+end
+
 ball_and_stick(ac) = display_model(ac; type="BALL_AND_STICK")
 stick(ac)          = display_model(ac; type="STICK")
 van_der_waals(ac)  = display_model(ac; type="VAN_DER_WAALS")
+backbone_mesh(vertices, indices) = display_mesh(vertices, indices)
+backbone_mesh_tube(spline_points) = display_tube(spline_points)
