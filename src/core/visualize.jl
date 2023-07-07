@@ -207,7 +207,6 @@ function display_mesh(vertices::AbstractVector{T}, indices::AbstractVector{U}) w
 
 					VISUALIZE.setup(container, $width, $height);
 
-					console.log($vertices, $indices);
 					VISUALIZE.addMesh($vertices, $indices);
 
 					VISUALIZE.render();

@@ -21,7 +21,7 @@ function setup(container, width, height) {
     "camera",
     -2 * Math.PI,
     2 * Math.PI,
-    12000,
+    12,
     BABYLON.Vector3.Zero(),
     scene
   );
@@ -59,7 +59,7 @@ function addMesh(vertices, indices) {
   var vertexData = new BABYLON.VertexData();
   var normals = [];
   BABYLON.VertexData.ComputeNormals(vertices, indices, normals);
-  vertexData.positions = vertices;
+  vertexData.positions = Array.from(vertices);
   vertexData.indices = indices;
   vertexData.normals = normals;
   vertexData.applyToMesh(mesh);
@@ -213,5 +213,6 @@ export {
   render,
   scene,
   setup,
-  updateRepresentation,
+  updateRepresentation
 };
+
