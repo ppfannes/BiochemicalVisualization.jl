@@ -14,9 +14,52 @@ function* zip(arrays) {
   }
 }
 
+function create_SSAO() {
+  const ssaoRatio = {
+    ssaoRatio: 0.5,
+    combineRatio: 1.0,
+  };
+  var ssao = new BABYLON.SSAORenderingPipeline(
+    "ssao",
+    scene,
+    ssaoRatio,
+    null,
+    false
+  );
+  ssao.maxZ = 500;
+  ssao.totalStrength = 1.3;
+  ssao.radius = 6e-4;
+  ssao.area = 1.0;
+  ssao.fallOff = 1e-6;
+  ssao.base = 0.5;
+  return ssao;
+}
+
+function create_SSAO2() {
+  const ssaoRatio = {
+    ssaoRatio: 0.5,
+    blurRatio: 0.5,
+  };
+  var ssao = new BABYLON.SSAO2RenderingPipeline(
+    "ssao",
+    scene,
+    ssaoRatio,
+    null,
+    false
+  );
+  ssao.maxZ = 500;
+  ssao.radius = 12.0;
+  ssao.totalStrength = 1.3;
+  ssao.expensiveBlur = false;
+  ssao.samples = 16;
+  scene.prePassRenderer.samples = 16;
+  return ssao;
+}
+
 function setup(container, width, height) {
   engine = new BABYLON.Engine(container);
   scene = new BABYLON.Scene(engine);
+  scene.clearColor = BABYLON.Color3.White();
   camera = new BABYLON.ArcRotateCamera(
     "camera",
     -2 * Math.PI,
@@ -40,6 +83,118 @@ function setup(container, width, height) {
   light2.intensity = 0.8;
   window.addEventListener("resize", function () {
     engine.resize();
+  });
+
+  // const ssaoRatio = {
+  //   ssaoRatio: 0.5,
+  //   // combineRatio: 1.0,
+  //   blurRatio: 0.5,
+  // };
+  // // var ssao = new BABYLON.SSAORenderingPipeline(
+  // //   "ssao",
+  // //   scene,
+  // //   ssaoRatio,
+  // //   null,
+  // //   false
+  // // );
+  // var ssao = new BABYLON.SSAO2RenderingPipeline(
+  //   "ssao",
+  //   scene,
+  //   ssaoRatio,
+  //   null,
+  //   false
+  // );
+  // // ssao.maxZ = 500;
+  // // ssao.totalStrength = 1.3;
+  // // ssao.radius = 6e-4;
+  // // ssao.area = 1.0;
+  // // ssao.fallOff = 1e-6;
+  // // ssao.base = 0.5;
+  // ssao.maxZ = 500;
+  // ssao.radius = 12.0;
+  // ssao.totalStrength = 1.3;
+  // ssao.expensiveBlur = false;
+  // ssao.samples = 16;
+  // scene.prePassRenderer.samples = 16;
+
+  var ssao = create_SSAO();
+
+  scene.postProcessRenderPipelineManager.attachCamerasToRenderPipeline(
+    "ssao",
+    camera
+  );
+
+  var isAttached = true;
+  window.addEventListener("keydown", function (event) {
+    console.log(event.key);
+    if (event.key === "1") {
+      if (!isAttached) {
+        console.log("Attaching SSAO....");
+        isAttached = true;
+        scene.postProcessRenderPipelineManager.attachCamerasToRenderPipeline(
+          "ssao",
+          camera
+        );
+      }
+      scene.postProcessRenderPipelineManager.enableEffectInPipeline(
+        "ssao",
+        ssao.SSAOCombineRenderEffect,
+        camera
+      );
+    } else if (event.key === "2") {
+      console.log("Detaching SSAO....");
+      isAttached = false;
+      scene.postProcessRenderPipelineManager.detachCamerasFromRenderPipeline(
+        "ssao",
+        camera
+      );
+    } else if (event.key === "3") {
+      console.log("Draw SSAO effect...");
+      if (!isAttached) {
+        isAttached = true;
+        scene.postProcessRenderPipelineManager.attachCamerasToRenderPipeline(
+          "ssao",
+          camera
+        );
+      }
+      scene.postProcessRenderPipelineManager.disableEffectInPipeline(
+        "ssao",
+        ssao.SSAOCombineRenderEffect,
+        camera
+      );
+    } else if (event.key === "9") {
+      console.log("Creating + attaching SSAO...");
+      scene.postProcessRenderPipelineManager.detachCamerasFromRenderPipeline(
+        "ssao",
+        camera
+      );
+      ssao = create_SSAO();
+      scene.postProcessRenderPipelineManager.attachCamerasToRenderPipeline(
+        "ssao",
+        camera
+      );
+      scene.postProcessRenderPipelineManager.enableEffectInPipeline(
+        "ssao",
+        ssao.SSAOCombineRenderEffect,
+        camera
+      );
+    } else if (event.key === "0") {
+      console.log("Creating + attaching SAO2...");
+      scene.postProcessRenderPipelineManager.detachCamerasFromRenderPipeline(
+        "ssao",
+        camera
+      );
+      ssao = create_SSAO2();
+      scene.postProcessRenderPipelineManager.attachCamerasToRenderPipeline(
+        "ssao",
+        camera
+      );
+      scene.postProcessRenderPipelineManager.enableEffectInPipeline(
+        "ssao",
+        ssao.SSAOCombineRenderEffect,
+        camera
+      );
+    }
   });
 }
 
@@ -94,11 +249,13 @@ function updateRepresentation(i, r) {
 }
 
 function renderRepresentation(representation) {
+  console.log("Start rendering....");
   let mesh = { children: [] };
   const material = new BABYLON.StandardMaterial("material");
   for (let key in representation.primitives) {
     switch (key) {
       case "spheres":
+        console.log("Building Atoms....");
         const sphere_colors = representation.colors["sphere_colors"];
         const spheres = representation.primitives[key];
         var root_sphere = BABYLON.MeshBuilder.CreateSphere(
@@ -213,6 +370,5 @@ export {
   render,
   scene,
   setup,
-  updateRepresentation
+  updateRepresentation,
 };
-
