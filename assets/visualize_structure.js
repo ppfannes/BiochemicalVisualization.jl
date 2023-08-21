@@ -85,38 +85,6 @@ function setup(container, width, height) {
     engine.resize();
   });
 
-  // const ssaoRatio = {
-  //   ssaoRatio: 0.5,
-  //   // combineRatio: 1.0,
-  //   blurRatio: 0.5,
-  // };
-  // // var ssao = new BABYLON.SSAORenderingPipeline(
-  // //   "ssao",
-  // //   scene,
-  // //   ssaoRatio,
-  // //   null,
-  // //   false
-  // // );
-  // var ssao = new BABYLON.SSAO2RenderingPipeline(
-  //   "ssao",
-  //   scene,
-  //   ssaoRatio,
-  //   null,
-  //   false
-  // );
-  // // ssao.maxZ = 500;
-  // // ssao.totalStrength = 1.3;
-  // // ssao.radius = 6e-4;
-  // // ssao.area = 1.0;
-  // // ssao.fallOff = 1e-6;
-  // // ssao.base = 0.5;
-  // ssao.maxZ = 500;
-  // ssao.radius = 12.0;
-  // ssao.totalStrength = 1.3;
-  // ssao.expensiveBlur = false;
-  // ssao.samples = 16;
-  // scene.prePassRenderer.samples = 16;
-
   var ssao = create_SSAO();
 
   scene.postProcessRenderPipelineManager.attachCamerasToRenderPipeline(
