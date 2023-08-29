@@ -5,6 +5,9 @@ let scene = null;
 let engine = null;
 let camera = null;
 
+// TODO: Create API funtions for frontent (experimental GUI for testing).
+// TODO: Create base functionality for animations.
+
 function* zip(arrays) {
   let iterators = arrays.map((a) => a[Symbol.iterator]());
   while (true) {
