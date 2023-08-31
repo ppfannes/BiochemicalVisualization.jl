@@ -60,6 +60,22 @@ function create_SSAO2() {
 }
 
 function setup(container, width, height) {
+  var modal = document.querySelector(".modal");
+  var closeButton = document.querySelector(".close-button");
+
+  function toggleModal() {
+    modal.classList.toggle("show-modal");
+  }
+
+  function windowOnClick(event) {
+    if (event.target === modal) {
+      toggleModal();
+    }
+  }
+
+  closeButton.addEventListener("click", toggleModal);
+  window.addEventListener("click", windowOnClick);
+
   engine = new BABYLON.Engine(container);
   scene = new BABYLON.Scene(engine);
   scene.clearColor = BABYLON.Color3.White();
@@ -94,6 +110,18 @@ function setup(container, width, height) {
     "ssao",
     camera
   );
+
+  scene.onPointerObservable.add((pointerInfo) => {
+    switch (pointerInfo.type) {
+      case BABYLON.PointerEventTypes.POINTERUP:
+        console.log(pointerInfo._pickInfo);
+        if (pointerInfo._pickInfo.hit) {
+          toggleModal();
+          document.getElementById("modal-iframe").innerHTML =
+            "Modal is working correctly...";
+        }
+    }
+  });
 
   var isAttached = true;
   window.addEventListener("keydown", function (event) {
