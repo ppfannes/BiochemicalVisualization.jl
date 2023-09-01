@@ -4,6 +4,7 @@ let meshes = [];
 let scene = null;
 let engine = null;
 let camera = null;
+let hlMesh = null;
 
 // TODO: Create API funtions for frontent (experimental GUI for testing).
 // TODO: Create base functionality for animations.
@@ -111,6 +112,8 @@ function setup(container, width, height) {
     camera
   );
 
+  let pickedMesh = null;
+
   scene.onPointerObservable.add((pointerInfo) => {
     switch (pointerInfo.type) {
       case BABYLON.PointerEventTypes.POINTERUP:
@@ -119,6 +122,28 @@ function setup(container, width, height) {
           toggleModal();
           document.getElementById("modal-iframe").innerHTML =
             "Modal is working correctly...";
+        }
+        case BABYLON.PointerEventTypes.POINTERMOVE:
+          var result = scene.pick(scene.pointerX, scene.pointerY);
+        if (result.hit) {
+            if (pickedMesh) {
+                pickedMesh.setEnabled(true);
+                pickedMesh.position.copyFrom(hlMesh.position);
+                pickedMesh.scaling.copyFrom(hlMesh.scaling);
+                pickedMesh.rotation.copyFrom(hlMesh.rotation);
+            }
+
+            pickedMesh = result.pickedMesh;
+            pickedMesh.setEnabled(false);
+            console.log(pickedMesh);
+            
+            hlMesh.setEnabled(true);
+            hlMesh.position.copyFrom(pickedMesh.position);
+            hlMesh.scaling.copyFrom(pickedMesh.scaling);
+            hlMesh.rotation.copyFrom(pickedMesh.rotation);
+        } else {
+            pickedMesh.setEnabled(true);
+            hlMesh.setEnabled(false);
         }
     }
   });
@@ -262,6 +287,12 @@ function renderRepresentation(representation) {
           { diameter: 1.0 },
           scene
         );
+
+        const hl = new BABYLON.HighlightLayer("h1", scene);
+        hlMesh = root_sphere.clone("hlMesh");
+        hl.addMesh(hlMesh, BABYLON.Color3.Blue());
+        hlMesh.setEnabled(false);
+
         root_sphere.material = material;
         root_sphere.registerInstancedBuffer("color", 4);
         root_sphere.isVisible = false;
