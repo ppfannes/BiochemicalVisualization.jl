@@ -1,3 +1,4 @@
+import { TextBlock } from "./babylon.gui.js";
 import { BABYLON } from "./babylon.js";
 
 let meshes = [];
@@ -5,6 +6,18 @@ let scene = null;
 let engine = null;
 let camera = null;
 let hlMesh = null;
+
+// Create GUI + modal box and style it.
+// console.log(AdvancedDynamicTexture);
+// let GUITexture = GUI.AdvancedDynamicTexture.CreateFullscreenUI("UI");
+let modalBox = new TextBlock();
+// modalBox.text = "This is a modal...";
+// modalBox.color = "white";
+// modalBox.fontSize = 24;
+// modalBox.height = "40px";
+// modalBox.verticalAlignment = 0;
+// modalBox.isVisible = false;
+// GUITexture.addControl(modalBox);
 
 // TODO: Create API funtions for frontent (experimental GUI for testing).
 // TODO: Create base functionality for animations.
@@ -61,22 +74,6 @@ function create_SSAO2() {
 }
 
 function setup(container, width, height) {
-  var modal = document.querySelector(".modal");
-  var closeButton = document.querySelector(".close-button");
-
-  function toggleModal() {
-    modal.classList.toggle("show-modal");
-  }
-
-  function windowOnClick(event) {
-    if (event.target === modal) {
-      toggleModal();
-    }
-  }
-
-  closeButton.addEventListener("click", toggleModal);
-  window.addEventListener("click", windowOnClick);
-
   engine = new BABYLON.Engine(container);
   scene = new BABYLON.Scene(engine);
   scene.clearColor = BABYLON.Color3.White();
@@ -117,33 +114,35 @@ function setup(container, width, height) {
   scene.onPointerObservable.add((pointerInfo) => {
     switch (pointerInfo.type) {
       case BABYLON.PointerEventTypes.POINTERUP:
-        console.log(pointerInfo._pickInfo);
-        if (pointerInfo._pickInfo.hit) {
-          toggleModal();
-          document.getElementById("modal-iframe").innerHTML =
-            "Modal is working correctly...";
-        }
-        case BABYLON.PointerEventTypes.POINTERMOVE:
-          var result = scene.pick(scene.pointerX, scene.pointerY);
+        var result = scene.pick(scene.pointerX, scene.pointerY);
         if (result.hit) {
-            if (pickedMesh) {
-                pickedMesh.setEnabled(true);
-                pickedMesh.position.copyFrom(hlMesh.position);
-                pickedMesh.scaling.copyFrom(hlMesh.scaling);
-                pickedMesh.rotation.copyFrom(hlMesh.rotation);
-            }
-
-            pickedMesh = result.pickedMesh;
-            pickedMesh.setEnabled(false);
-            console.log(pickedMesh);
-            
-            hlMesh.setEnabled(true);
-            hlMesh.position.copyFrom(pickedMesh.position);
-            hlMesh.scaling.copyFrom(pickedMesh.scaling);
-            hlMesh.rotation.copyFrom(pickedMesh.rotation);
-        } else {
+          console.log(pickedMesh.position);
+        }
+      case BABYLON.PointerEventTypes.POINTERMOVE:
+        var result = scene.pick(scene.pointerX, scene.pointerY);
+        if (
+          result.hit &&
+          result.pickedMesh !== pickedMesh &&
+          result.pickedMesh !== hlMesh
+        ) {
+          if (pickedMesh) {
             pickedMesh.setEnabled(true);
-            hlMesh.setEnabled(false);
+            pickedMesh.position.copyFrom(hlMesh.position);
+            pickedMesh.scaling.copyFrom(hlMesh.scaling);
+            pickedMesh.rotation.copyFrom(hlMesh.rotation);
+          }
+
+          pickedMesh = result.pickedMesh;
+          pickedMesh.setEnabled(false);
+
+          hlMesh.setEnabled(true);
+          hlMesh.position.copyFrom(pickedMesh.position);
+          hlMesh.scaling.copyFrom(pickedMesh.scaling);
+          hlMesh.rotation.copyFrom(pickedMesh.rotation);
+        } else if (!result.hit && pickedMesh) {
+          pickedMesh.setEnabled(true);
+          hlMesh.setEnabled(false);
+          pickedMesh = null;
         }
     }
   });
@@ -288,13 +287,14 @@ function renderRepresentation(representation) {
           scene
         );
 
+        root_sphere.material = material;
+        root_sphere.registerInstancedBuffer("color", 4);
+
         const hl = new BABYLON.HighlightLayer("h1", scene);
         hlMesh = root_sphere.clone("hlMesh");
         hl.addMesh(hlMesh, BABYLON.Color3.Blue());
         hlMesh.setEnabled(false);
 
-        root_sphere.material = material;
-        root_sphere.registerInstancedBuffer("color", 4);
         root_sphere.isVisible = false;
 
         for (let [sphere, sphere_color] of zip([spheres, sphere_colors])) {

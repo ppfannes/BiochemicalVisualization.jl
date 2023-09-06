@@ -163,10 +163,6 @@ function display_model(ac::Union{AbstractAtomContainer, Observable{<:AbstractAto
 
 	app = App() do session, request
 		width = 500; height = 500
-		close_button = DOM.span("×", class="close-button", style="float: right; width: 1.5rem; line-height: 1.5rem; text-align: center; cursor: pointer; border-radius: 0.25rem; background-color: lightgray;")
-		i_frame = DOM.div(id="modal-iframe", style="opacity: 1; visibility: visible; transform: scaleX(1) scaleY(1); transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;")
-		content = DOM.div(class="modal-content", close_button, i_frame, style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background-color: white; padding: 1rem 1.5rem; width: 60%; height: 60%; border-radius: 0.5rem; z-index: 99000 !important;")
-		modal = DOM.div(class="modal", content, style="position: fixed; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.5); opacity: 0; visibility: hidden; transform: scaleX(1.1) scaleY(1.1); transition: visibility 0s linear 0.25s, opacity 0.25s 0s, transform 0.25s; font-family: sans-serif;")
 		dom = DOM.canvas(width=width, height=height, style="height: 100%; width: 100%; display: block; overflow: hidden; top: 0; bottom: 0; left: 0; right: 0;")
 		JSServe.onload(session, dom, js"""
 			function (container){
@@ -195,7 +191,7 @@ function display_model(ac::Union{AbstractAtomContainer, Observable{<:AbstractAto
 				)"""), session, or)
 		end
 
-		return DOM.div(modal, dom)
+		return dom
 	end
 
 end
@@ -203,10 +199,6 @@ end
 function display_mesh(vertices::AbstractVector{T}, indices::AbstractVector{U}) where {T, U <: Real}
 	app = App() do session, request
 		width = 500; height = 500
-		close_button = DOM.span(×, class="close_button")
-		i_frame = DOM.div(id="modal-iframe")
-		content = DOM.div(class="modal-content", close_button, i_frame, style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background-color: white; padding: 1rem 1.5rem; width: 60%; height: 60%; border-radius: 0.5rem; z-index: 99000 !important;")
-		modal = DOM.div(class="modal", content, style="position: fixed; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.5); opacity: 0; visibility: hidden; transform: scaleX(1.1) scaleY(1.1); transition: visibility 0s linear 0.25s, opacity 0.25s 0s, transform 0.25s; font-family: sans-serif;")
 		dom = DOM.canvas(width=width, height=height; style="height: 100%; width: 100%; display: block; overflow: hidden; top: 0; bottom: 0; left: 0; right: 0;")
 		JSServe.onload(session, dom, js"""
 			function (container) {
@@ -223,7 +215,7 @@ function display_mesh(vertices::AbstractVector{T}, indices::AbstractVector{U}) w
 			}
 		""")
 
-		return JSServe.record_states(session, modal, dom)
+		return dom
 	end
 end
 
