@@ -159,17 +159,20 @@ function display_model(ac::Union{AbstractAtomContainer, Observable{<:AbstractAto
 
 	# compute the center of mass of the geometry
 	focus_point = mean(center.(reduce(vcat, values(r.primitives))))
-	modal_style = JSServe.Asset(joinpath(@__DIR__, "..", "assets", "modal_style.css"))
+	modal_style = JSServe.Asset(joinpath(@__DIR__, "../", "../", "modal_style.css"))
 
 	app = App() do session, request
-		width = 500; height = 500
-		dom = DOM.canvas(width=width, height=height, style="height: 100%; width: 100%; display: block; overflow: hidden; top: 0; bottom: 0; left: 0; right: 0;")
+		dom = DOM.canvas(id="renderCanvas")
+		modal_iframe = DOM.div(id="modal-iframe")
+		close_button = DOM.span(id="close-button", "x")
+		modal_content = DOM.div(id="modal-content", close_button, modal_iframe)
+		modal = DOM.div(id="modal", modal_content)
 		JSServe.onload(session, dom, js"""
 			function (container){
 				$(VISUALIZE).then(VISUALIZE => {
 					container.width = window.innerWidth;
 					container.height = window.innerHeight;
-					VISUALIZE.setup(container, $width, $height);
+					VISUALIZE.setup(container);
 
 					VISUALIZE.camera.setTarget(new BABYLON.Vector3($focus_point[0], $focus_point[1], $focus_point[2]));
 
@@ -191,7 +194,7 @@ function display_model(ac::Union{AbstractAtomContainer, Observable{<:AbstractAto
 				)"""), session, or)
 		end
 
-		return dom
+		return DOM.div(modal_style, modal, dom)
 	end
 
 end

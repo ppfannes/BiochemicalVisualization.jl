@@ -1,23 +1,10 @@
-import { TextBlock } from "./babylon.gui.js";
-import { BABYLON } from "./babylon.js";
+import BABYLON from "./babylon.js";
 
 let meshes = [];
 let scene = null;
 let engine = null;
 let camera = null;
 let hlMesh = null;
-
-// Create GUI + modal box and style it.
-// console.log(AdvancedDynamicTexture);
-// let GUITexture = GUI.AdvancedDynamicTexture.CreateFullscreenUI("UI");
-let modalBox = new TextBlock();
-// modalBox.text = "This is a modal...";
-// modalBox.color = "white";
-// modalBox.fontSize = 24;
-// modalBox.height = "40px";
-// modalBox.verticalAlignment = 0;
-// modalBox.isVisible = false;
-// GUITexture.addControl(modalBox);
 
 // TODO: Create API funtions for frontent (experimental GUI for testing).
 // TODO: Create base functionality for animations.
@@ -73,9 +60,10 @@ function create_SSAO2() {
   return ssao;
 }
 
-function setup(container, width, height) {
+function setup(container) {
   engine = new BABYLON.Engine(container);
   scene = new BABYLON.Scene(engine);
+
   scene.clearColor = BABYLON.Color3.White();
   camera = new BABYLON.ArcRotateCamera(
     "camera",
@@ -98,6 +86,7 @@ function setup(container, width, height) {
     scene
   );
   light2.intensity = 0.8;
+
   window.addEventListener("resize", function () {
     engine.resize();
   });
@@ -109,6 +98,19 @@ function setup(container, width, height) {
     camera
   );
 
+  const modal_content = document.getElementById("modal-iframe");
+  const modal = document.getElementById("modal");
+  const close_button = document.getElementById("close-button");
+  modal_content.innerHTML = "This is some really long info text to see if text wrapping is working or not for this info box.";
+  window.addEventListener("click", function (event) {
+    if (event.target === modal) {
+      modal.classList.toggle("m-showModal");
+    }
+  });
+  close_button.addEventListener("click", function () {
+    modal.classList.toggle("m-showModal");
+  });
+
   let pickedMesh = null;
 
   scene.onPointerObservable.add((pointerInfo) => {
@@ -116,7 +118,10 @@ function setup(container, width, height) {
       case BABYLON.PointerEventTypes.POINTERUP:
         var result = scene.pick(scene.pointerX, scene.pointerY);
         if (result.hit) {
-          console.log(pickedMesh.position);
+          modal.classList.toggle("m-showModal");
+          modal_content.innerHTML = pickedMesh.position;
+        } else if (!result.hit && modal.classList.contains("m-showModal")) {
+          modal.classList.toggle("m-showModal");
         }
       case BABYLON.PointerEventTypes.POINTERMOVE:
         var result = scene.pick(scene.pointerX, scene.pointerY);
@@ -400,5 +405,6 @@ export {
   render,
   scene,
   setup,
-  updateRepresentation,
+  updateRepresentation
 };
+
