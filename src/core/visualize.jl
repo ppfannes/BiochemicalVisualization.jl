@@ -163,10 +163,78 @@ function display_model(ac::Union{AbstractAtomContainer, Observable{<:AbstractAto
 
 	app = App() do session, request
 		dom = DOM.canvas(id="renderCanvas")
+
+		# modal elements
 		modal_iframe = DOM.div(id="modal-iframe")
 		close_button = DOM.span(id="close-button", "x")
 		modal_content = DOM.div(id="modal-content", close_button, modal_iframe)
 		modal = DOM.div(id="modal", modal_content)
+
+		# impromptu menu buttons
+		button_VDW = JSServe.Button("Change to VDW", class="button")
+		button_ball_and_stick = JSServe.Button("Change to Ball and Stick", class="button")
+		button_stick = JSServe.Button("Change to Stick", class="button")
+		button_group = DOM.div(class="button-group", button_VDW, button_ball_and_stick, button_stick)
+
+		# scene debug elements
+		active_meshes_eval_time = DOM.div(class="scene-debug-element", id="active-meshes-eval")
+		render_targets_render_time = DOM.div(class="scene-debug-element", id="render-targets")
+		render_time = DOM.div(class="scene-debug-element", id="render-time")
+		frame_time = DOM.div(class="scene-debug-element", id="frame-time")
+		draw_calls = DOM.div(class="scene-debug-element", id="draw-calls")
+		scene_debug_group = DOM.div(class="scene-debug-group", active_meshes_eval_time, render_targets_render_time, render_time, frame_time, draw_calls)
+
+		on(button_VDW) do click
+			updated_repr = prepare_model(ac; type="VAN_DER_WAALS")
+			JSServe.evaljs(session, js"""
+				$(VISUALIZE).then(VISUALIZE => {
+					$dom.width = window.innerWidth;
+					$dom.height = window.innerHeight;
+					VISUALIZE.setup($dom);
+
+					VISUALIZE.camera.setTarget(new BABYLON.Vector3($focus_point[0], $focus_point[1], $focus_point[2]));
+
+					VISUALIZE.updateRepresentation(0, $updated_repr);
+
+					VISUALIZE.render();
+				})
+			""")
+		end
+
+		on(button_ball_and_stick) do click
+			updated_repr = prepare_model(ac; type="BALL_AND_STICK")
+			JSServe.evaljs(session, js"""
+				$(VISUALIZE).then(VISUALIZE => {
+					$dom.width = window.innerWidth;
+					$dom.height = window.innerHeight;
+					VISUALIZE.setup($dom);
+
+					VISUALIZE.camera.setTarget(new BABYLON.Vector3($focus_point[0], $focus_point[1], $focus_point[2]));
+
+					VISUALIZE.updateRepresentation(0, $updated_repr);
+
+					VISUALIZE.render();
+				})
+			""")
+		end
+
+		on(button_stick) do click
+			updated_repr = prepare_model(ac; type="STICK")
+			JSServe.evaljs(session, js"""
+				$(VISUALIZE).then(VISUALIZE => {
+					$dom.width = window.innerWidth;
+					$dom.height = window.innerHeight;
+					VISUALIZE.setup($dom);
+
+					VISUALIZE.camera.setTarget(new BABYLON.Vector3($focus_point[0], $focus_point[1], $focus_point[2]));
+
+					VISUALIZE.updateRepresentation(0, $updated_repr);
+
+					VISUALIZE.render();
+				})
+			""")
+		end
+
 		JSServe.onload(session, dom, js"""
 			function (container){
 				$(VISUALIZE).then(VISUALIZE => {
@@ -194,7 +262,7 @@ function display_model(ac::Union{AbstractAtomContainer, Observable{<:AbstractAto
 				)"""), session, or)
 		end
 
-		return DOM.div(modal_style, modal, dom)
+		return DOM.div(modal_style, button_group, scene_debug_group, modal, dom)
 	end
 
 end

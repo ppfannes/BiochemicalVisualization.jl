@@ -59,3 +59,49 @@ html, body {
   visibility: visible;
   transform: scaleX(1) scaleY(1);
 }
+
+.button-group {
+  position: absolute;
+  top: 20%;
+  right: 10%;
+}
+
+.button-group button {
+  border: 1px solid red;
+  text-align: center;
+  border-radius: 0.25rem;
+  background-color: lightgray;
+  cursor: pointer;
+  padding: 10px 24px;
+}
+
+.button-group:after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.button-group button:hover {
+  background-color: darkgray;
+}
+
+.button-group button:not(:last-child) {
+  border-right: none;
+}
+
+.scene-debug-group {
+  position: absolute;
+  top: 10%;
+  left: 10%;
+}
+
+.scene-debug-element {
+  background-color: lightgray;
+  text-align: center;
+  width: 250px;
+  height: 40px;
+  color: blue;
+  border: 1px solid red;
+  border-radius: 0.25rem;
+  display: block;
+}

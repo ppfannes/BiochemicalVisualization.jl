@@ -18,6 +18,7 @@ function prepare_ball_and_stick_model(
         map(s -> (element_color(s[1].element), element_color(s[2].element)), sticks)))
 
     println(length(spheres))
+    println(length(cylinders))
 
     Representation{T}(primitives=Dict("spheres" => spheres, "cylinders" => cylinders), colors=Dict("sphere_colors" => sphere_colors, "cylinder_colors" => cylinder_colors))
 end
