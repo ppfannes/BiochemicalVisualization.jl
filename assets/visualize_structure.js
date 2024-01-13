@@ -5,6 +5,7 @@ let scene = null;
 let engine = null;
 let camera = null;
 let hlMesh = null;
+let assetManager = null;
 
 // TODO: Create base functionality for animations.
 
@@ -176,7 +177,8 @@ function debug_scene(scene) {
 
 function setup(container) {
   engine = new BABYLON.Engine(container);
-  scene = new BABYLON.Scene(engine, {useClonedMeshMap: true, useGeometryUniqueIdsMap: true, useMaterialMeshMap: true});
+  scene = new BABYLON.Scene(engine);
+  assetManager = new BABYLON.AssetsManager(scene);
   scene.clearColor = BABYLON.Color3.White();
 
   camera = new BABYLON.ArcRotateCamera(
@@ -244,6 +246,15 @@ function setup(container) {
     }
   });
 
+  assetManager.onTaskSuccessObservable.add((task) => {
+    let mesh = task.loadedMeshes[0];
+    console.log("Task successful...", task, mesh);
+  });
+
+  assetManager.onTaskErrorObservable.add((task) => {
+    console.log("Task failed...", task.errorObject.message, task.errorObject.exception);
+  });
+
   window.addEventListener("keydown", function (event) {
     console.log(event.key);
     if (event.key === "1") {
@@ -269,6 +280,14 @@ function addRepresentation(r) {
   mesh.children.forEach((child) => {
     scene.addMesh(child);
   });
+  scene.freezeMaterials();
+  scene.meshes.forEach((m) => {
+    m.alwaysSelectAsActiveMesh = true;
+    m.freezeWorldMatrix();
+  });
+  setTimeout(() => {
+    scene.freezeActiveMeshes(true);
+  }, 1000);
   meshes.push(mesh);
 }
 
@@ -305,13 +324,38 @@ function addTube(splinePoints) {
 function updateRepresentation(i, r) {
   let old_geo = meshes[i];
   let new_geo = renderRepresentation(r);
-  scene.blockfreeActiveMeshesAndRenderingGroups = true;
   old_geo.children.forEach(c => {
       c.dispose();
+      c = null;
   });
-  scene.blockfreeActiveMeshesAndRenderingGroups = false;
   new_geo.children.forEach(c => scene.addMesh(c));
+  scene.freezeMaterials();
+  scene.meshes.forEach((m) => {
+    m.alwaysSelectAsActiveMesh = true;
+    m.freezeWorldMatrix();
+  });
+  setTimeout(() => {
+    scene.freezeActiveMeshes(true);
+  }, 1000);
   meshes[i] = new_geo;
+}
+
+function removeMeshFromScene(i) {
+  let mesh = meshes[i]
+  mesh.children.forEach(c => {
+    c.dispose();
+    c = null;
+  });
+}
+
+function loadGLTFMesh(files) {
+  let fileName = files[0].name;
+  let blob = new Blob([files[0]]);
+
+  BABYLON.FilesInput.FilesToLoad[fileName.toLowerCase()] = blob;
+
+  assetManager.addMeshTask("GLTFModel", "", "file:", fileName.toLowerCase());
+  assetManager.load();
 }
 
 function renderRepresentation(representation) {
@@ -443,6 +487,8 @@ export {
   render,
   scene,
   setup,
-  updateRepresentation
+  updateRepresentation,
+  removeMeshFromScene,
+  loadGLTFMesh,
 };
 

@@ -184,6 +184,9 @@ function display_model(ac::Union{AbstractAtomContainer, Observable{<:AbstractAto
 		draw_calls = DOM.div(class="scene-debug-element", id="draw-calls")
 		scene_debug_group = DOM.div(class="scene-debug-group", active_meshes_eval_time, render_targets_render_time, render_time, frame_time, draw_calls)
 
+		# file selector
+		file_selector = DOM.input(type="file", class="button", id="file-selector", accept=".gltf, .glb")
+
 		on(button_VDW) do click
 			updated_repr = prepare_model(ac; type="VAN_DER_WAALS")
 			JSServe.evaljs(session, js"""
@@ -234,12 +237,25 @@ function display_model(ac::Union{AbstractAtomContainer, Observable{<:AbstractAto
 				})
 			""")
 		end
+		
 
 		JSServe.onload(session, dom, js"""
 			function (container){
+				// asynchrone loader funktion
 				$(VISUALIZE).then(VISUALIZE => {
+					let script = document.createElement("script");
+					script.src = "https://cdn.babylonjs.com/loaders/babylonjs.loaders.min.js";
+					document.getElementsByTagName("head")[0].appendChild(script);
+
 					container.width = window.innerWidth;
 					container.height = window.innerHeight;
+					file_selector_button = document.getElementById("file-selector");
+
+					file_selector_button.addEventListener("change", (event) => {
+					 	const files = event.target.files;
+					 	VISUALIZE.loadGLTFMesh(files);
+					});
+
 					VISUALIZE.setup(container);
 
 					VISUALIZE.camera.setTarget(new BABYLON.Vector3($focus_point[0], $focus_point[1], $focus_point[2]));
@@ -262,7 +278,7 @@ function display_model(ac::Union{AbstractAtomContainer, Observable{<:AbstractAto
 				)"""), session, or)
 		end
 
-		return DOM.div(modal_style, button_group, scene_debug_group, modal, dom)
+		return DOM.div(modal_style, button_group, scene_debug_group, modal, file_selector, dom)
 	end
 
 end
