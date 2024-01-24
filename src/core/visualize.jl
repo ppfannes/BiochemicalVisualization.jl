@@ -1,6 +1,6 @@
 export element_color, ball_and_stick, stick, van_der_waals, backbone_mesh, backbone_mesh_tube
 
-const VISUALIZE = ES6Module(asset_path("visualize_structure.js"))::Asset
+const VISUALIZE = ES6Module(normpath(joinpath(@__DIR__, "frontend", "dist", "main.js")))::Asset
 
 sp = Base.source_path()
 
@@ -159,127 +159,127 @@ function display_model(ac::Union{AbstractAtomContainer, Observable{<:AbstractAto
 
 	# compute the center of mass of the geometry
 	focus_point = mean(center.(reduce(vcat, values(r.primitives))))
-	modal_style = JSServe.Asset(joinpath(@__DIR__, "../", "../", "modal_style.css"))
+	# modal_style = JSServe.Asset(joinpath(@__DIR__, "../", "../", "modal_style.css"))
 
-	app = App() do session, request
-		dom = DOM.canvas(id="renderCanvas")
+	# app = App() do session, request
+	# 	dom = DOM.canvas(id="renderCanvas")
 
-		# modal elements
-		modal_iframe = DOM.div(id="modal-iframe")
-		close_button = DOM.span(id="close-button", "x")
-		modal_content = DOM.div(id="modal-content", close_button, modal_iframe)
-		modal = DOM.div(id="modal", modal_content)
+		# # modal elements
+		# modal_iframe = DOM.div(id="modal-iframe")
+		# close_button = DOM.span(id="close-button", "x")
+		# modal_content = DOM.div(id="modal-content", close_button, modal_iframe)
+		# modal = DOM.div(id="modal", modal_content)
 
-		# impromptu menu buttons
-		button_VDW = JSServe.Button("Change to VDW", class="button")
-		button_ball_and_stick = JSServe.Button("Change to Ball and Stick", class="button")
-		button_stick = JSServe.Button("Change to Stick", class="button")
-		button_group = DOM.div(class="button-group", button_VDW, button_ball_and_stick, button_stick)
+		# # impromptu menu buttons
+		# button_VDW = JSServe.Button("Change to VDW", class="button")
+		# button_ball_and_stick = JSServe.Button("Change to Ball and Stick", class="button")
+		# button_stick = JSServe.Button("Change to Stick", class="button")
+		# button_group = DOM.div(class="button-group", button_VDW, button_ball_and_stick, button_stick)
 
-		# scene debug elements
-		active_meshes_eval_time = DOM.div(class="scene-debug-element", id="active-meshes-eval")
-		render_targets_render_time = DOM.div(class="scene-debug-element", id="render-targets")
-		render_time = DOM.div(class="scene-debug-element", id="render-time")
-		frame_time = DOM.div(class="scene-debug-element", id="frame-time")
-		draw_calls = DOM.div(class="scene-debug-element", id="draw-calls")
-		scene_debug_group = DOM.div(class="scene-debug-group", active_meshes_eval_time, render_targets_render_time, render_time, frame_time, draw_calls)
+		# # scene debug elements
+		# active_meshes_eval_time = DOM.div(class="scene-debug-element", id="active-meshes-eval")
+		# render_targets_render_time = DOM.div(class="scene-debug-element", id="render-targets")
+		# render_time = DOM.div(class="scene-debug-element", id="render-time")
+		# frame_time = DOM.div(class="scene-debug-element", id="frame-time")
+		# draw_calls = DOM.div(class="scene-debug-element", id="draw-calls")
+		# scene_debug_group = DOM.div(class="scene-debug-group", active_meshes_eval_time, render_targets_render_time, render_time, frame_time, draw_calls)
 
-		# file selector
-		file_selector = DOM.input(type="file", class="button", id="file-selector", accept=".gltf, .glb")
+		# # file selector
+		# file_selector = DOM.input(type="file", class="button", id="file-selector", accept=".gltf, .glb")
 
-		on(button_VDW) do click
-			updated_repr = prepare_model(ac; type="VAN_DER_WAALS")
-			JSServe.evaljs(session, js"""
-				$(VISUALIZE).then(VISUALIZE => {
-					$dom.width = window.innerWidth;
-					$dom.height = window.innerHeight;
-					VISUALIZE.setup($dom);
+		# on(button_VDW) do click
+		# 	updated_repr = prepare_model(ac; type="VAN_DER_WAALS")
+		# 	JSServe.evaljs(session, js"""
+		# 		$(VISUALIZE).then(VISUALIZE => {
+		# 			$dom.width = window.innerWidth;
+		# 			$dom.height = window.innerHeight;
+		# 			VISUALIZE.setup($dom);
 
-					VISUALIZE.camera.setTarget(new BABYLON.Vector3($focus_point[0], $focus_point[1], $focus_point[2]));
+		# 			VISUALIZE.camera.setTarget(new BABYLON.Vector3($focus_point[0], $focus_point[1], $focus_point[2]));
 
-					VISUALIZE.updateRepresentation(0, $updated_repr);
+		# 			VISUALIZE.updateRepresentation(0, $updated_repr);
 
-					VISUALIZE.render();
-				})
-			""")
-		end
+		# 			VISUALIZE.render();
+		# 		})
+		# 	""")
+		# end
 
-		on(button_ball_and_stick) do click
-			updated_repr = prepare_model(ac; type="BALL_AND_STICK")
-			JSServe.evaljs(session, js"""
-				$(VISUALIZE).then(VISUALIZE => {
-					$dom.width = window.innerWidth;
-					$dom.height = window.innerHeight;
-					VISUALIZE.setup($dom);
+		# on(button_ball_and_stick) do click
+		# 	updated_repr = prepare_model(ac; type="BALL_AND_STICK")
+		# 	JSServe.evaljs(session, js"""
+		# 		$(VISUALIZE).then(VISUALIZE => {
+		# 			$dom.width = window.innerWidth;
+		# 			$dom.height = window.innerHeight;
+		# 			VISUALIZE.setup($dom);
 
-					VISUALIZE.camera.setTarget(new BABYLON.Vector3($focus_point[0], $focus_point[1], $focus_point[2]));
+		# 			VISUALIZE.camera.setTarget(new BABYLON.Vector3($focus_point[0], $focus_point[1], $focus_point[2]));
 
-					VISUALIZE.updateRepresentation(0, $updated_repr);
+		# 			VISUALIZE.updateRepresentation(0, $updated_repr);
 
-					VISUALIZE.render();
-				})
-			""")
-		end
+		# 			VISUALIZE.render();
+		# 		})
+		# 	""")
+		# end
 
-		on(button_stick) do click
-			updated_repr = prepare_model(ac; type="STICK")
-			JSServe.evaljs(session, js"""
-				$(VISUALIZE).then(VISUALIZE => {
-					$dom.width = window.innerWidth;
-					$dom.height = window.innerHeight;
-					VISUALIZE.setup($dom);
+		# on(button_stick) do click
+		# 	updated_repr = prepare_model(ac; type="STICK")
+		# 	JSServe.evaljs(session, js"""
+		# 		$(VISUALIZE).then(VISUALIZE => {
+		# 			$dom.width = window.innerWidth;
+		# 			$dom.height = window.innerHeight;
+		# 			VISUALIZE.setup($dom);
 
-					VISUALIZE.camera.setTarget(new BABYLON.Vector3($focus_point[0], $focus_point[1], $focus_point[2]));
+		# 			VISUALIZE.camera.setTarget(new BABYLON.Vector3($focus_point[0], $focus_point[1], $focus_point[2]));
 
-					VISUALIZE.updateRepresentation(0, $updated_repr);
+		# 			VISUALIZE.updateRepresentation(0, $updated_repr);
 
-					VISUALIZE.render();
-				})
-			""")
-		end
+		# 			VISUALIZE.render();
+		# 		})
+		# 	""")
+		# end
 		
 
-		JSServe.onload(session, dom, js"""
-			function (container){
-				// asynchrone loader funktion
-				$(VISUALIZE).then(VISUALIZE => {
-					let script = document.createElement("script");
-					script.src = "https://cdn.babylonjs.com/loaders/babylonjs.loaders.min.js";
-					document.getElementsByTagName("head")[0].appendChild(script);
+		# JSServe.onload(session, dom, js"""
+		# 	function (container){
+		# 		// asynchrone loader funktion
+		# 		$(VISUALIZE).then(VISUALIZE => {
+		# 			let script = document.createElement("script");
+		# 			script.src = "https://cdn.babylonjs.com/loaders/babylonjs.loaders.min.js";
+		# 			document.getElementsByTagName("head")[0].appendChild(script);
 
-					container.width = window.innerWidth;
-					container.height = window.innerHeight;
-					file_selector_button = document.getElementById("file-selector");
+		# 			container.width = window.innerWidth;
+		# 			container.height = window.innerHeight;
+		# 			file_selector_button = document.getElementById("file-selector");
 
-					file_selector_button.addEventListener("change", (event) => {
-					 	const files = event.target.files;
-					 	VISUALIZE.loadGLTFMesh(files);
-					});
+		# 			file_selector_button.addEventListener("change", (event) => {
+		# 			 	const files = event.target.files;
+		# 			 	VISUALIZE.loadGLTFMesh(files);
+		# 			});
 
-					VISUALIZE.setup(container);
+		# 			VISUALIZE.setup(container);
 
-					VISUALIZE.camera.setTarget(new BABYLON.Vector3($focus_point[0], $focus_point[1], $focus_point[2]));
+		# 			VISUALIZE.camera.setTarget(new BABYLON.Vector3($focus_point[0], $focus_point[1], $focus_point[2]));
 
-					VISUALIZE.addRepresentation($r);
+		# 			VISUALIZE.addRepresentation($r);
 
-					VISUALIZE.render();
+		# 			VISUALIZE.render();
 					
-				})
-			}
-		""")
+		# 		})
+		# 	}
+		# """)
 
-		if ac isa Observable
-			on(r -> JSServe.evaljs(session, js"""
-				$(VISUALIZE).then(
-					VISUALIZE => {
-						VISUALIZE.updateRepresentation(0, $r);
-						VISUALIZE.render();
-					}
-				)"""), session, or)
-		end
+		# if ac isa Observable
+		# 	on(r -> JSServe.evaljs(session, js"""
+		# 		$(VISUALIZE).then(
+		# 			VISUALIZE => {
+		# 				VISUALIZE.updateRepresentation(0, $r);
+		# 				VISUALIZE.render();
+		# 			}
+		# 		)"""), session, or)
+		# end
 
-		return DOM.div(modal_style, button_group, scene_debug_group, modal, file_selector, dom)
-	end
+	# end
+	return r, focus_point
 
 end
 
