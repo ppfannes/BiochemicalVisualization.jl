@@ -1,4 +1,4 @@
-export element_color, ball_and_stick, stick, van_der_waals, backbone_mesh, backbone_mesh_tube
+export element_color, ball_and_stick, stick, van_der_waals, backbone_mesh, backbone_mesh_tube, ball_and_stick_intern, stick_intern, van_der_waals_intern
 
 const VISUALIZE = ES6Module(normpath(joinpath(@__DIR__, "frontend", "dist", "main.js")))::Asset
 

@@ -3,10 +3,7 @@ function prepare_van_der_waals_model(
 
     # todo: get vdw radii
     spheres = map(a -> Sphere(a.r, max(a.radius, T(1.0))), atoms(ac))
-    filtered_spheres = filter(a -> occursin("C", a.name), atoms(ac))
-    println(length(spheres))
-    println(length(filtered_spheres))
-    sphere_colors = [element_color(e) for e in atoms_df(ac).element]
+    sphere_colors = [element_color(atom.element) for atom in eachatom(ac)]
 
     Representation{T}(primitives=Dict("spheres" => spheres), colors=Dict("sphere_colors" => sphere_colors))
 end

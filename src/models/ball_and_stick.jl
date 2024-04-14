@@ -4,7 +4,7 @@ function prepare_ball_and_stick_model(
         stick_radius=T(0.2)) where {T<:Real}
 
     spheres = map(a -> Sphere(a.r, sphere_radius), atoms(ac))
-    sphere_colors = [element_color(e) for e in atoms_df(ac).element]
+    sphere_colors = [element_color(atom.element) for atom in eachatom(ac)]
 
     sticks = [(atom_by_idx(ac, b.a1), 
             atom_by_idx(ac, b.a2)) for b in bonds(ac)]
@@ -16,9 +16,6 @@ function prepare_ball_and_stick_model(
         Cylinder(m, s[2].r, stick_radius)), zip(sticks, midpoints))))
     cylinder_colors = collect(Iterators.flatten(
         map(s -> (element_color(s[1].element), element_color(s[2].element)), sticks)))
-
-    println(length(spheres))
-    println(length(cylinders))
 
     Representation{T}(primitives=Dict("spheres" => spheres, "cylinders" => cylinders), colors=Dict("sphere_colors" => sphere_colors, "cylinder_colors" => cylinder_colors))
 end
