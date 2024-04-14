@@ -4,7 +4,7 @@ function prepare_ball_and_stick_model(
         stick_radius=T(0.2)) where {T<:Real}
 
     spheres = map(a -> Sphere(a.r, sphere_radius), atoms(ac))
-    sphere_colors = [element_color(atom.element) for atom in eachatom(ac)]
+    sphere_colors = [element_color(e) for e in atoms(ac).element]
 
     sticks = [(atom_by_idx(ac, b.a1), 
             atom_by_idx(ac, b.a2)) for b in bonds(ac)]
