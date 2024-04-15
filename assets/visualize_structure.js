@@ -175,8 +175,9 @@ function debug_scene(scene) {
   });
 }
 
-function setup(container) {
+function setup(container, width, height) {
   engine = new BABYLON.Engine(container);
+  engine.setSize(width, height);
   scene = new BABYLON.Scene(engine);
   assetManager = new BABYLON.AssetsManager(scene);
   scene.clearColor = BABYLON.Color3.White();

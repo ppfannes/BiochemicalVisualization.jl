@@ -4,7 +4,7 @@ using BiochemicalAlgorithms
 
 using Colors
 using GeometryBasics
-using JSServe
+using Bonito
 using LinearAlgebra
 using MsgPack
 using Statistics

@@ -165,11 +165,11 @@ function display_model(ac::Union{AbstractAtomContainer, Observable{<:AbstractAto
 	focus_point = mean(center.(reduce(vcat, values(r.primitives))))
 
 	app = App() do session, request
-		JSServe.onload(session, dom, js"""
+		Bonito.onload(session, dom, js"""
 			function (container){
 				// asynchrone loader funktion
 				$(VISUALIZE_NOTEBOOK).then(VISUALIZE_NOTEBOOK => {
-					VISUALIZE_NOTEBOOK.setup(container);
+					VISUALIZE_NOTEBOOK.setup(container, $width, $height);
 
 					VISUALIZE_NOTEBOOK.camera.setTarget(new BABYLON.Vector3($focus_point[0], $focus_point[1], $focus_point[2]));
 
@@ -182,7 +182,7 @@ function display_model(ac::Union{AbstractAtomContainer, Observable{<:AbstractAto
 		""")
 
 		if ac isa Observable
-			on(r -> JSServe.evaljs(session, js"""
+			on(r -> Bonito.evaljs(session, js"""
 				$(VISUALIZE_NOTEBOOK).then(
 					VISUALIZE_NOTEBOOK => {
 						VISUALIZE_NOTEBOOK.updateRepresentation(0, $r);
