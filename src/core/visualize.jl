@@ -1,6 +1,7 @@
 export element_color, ball_and_stick, stick, van_der_waals, backbone_mesh, backbone_mesh_tube, ball_and_stick_intern, stick_intern, van_der_waals_intern
 
 const VISUALIZE = ES6Module(normpath(joinpath(@__DIR__, "frontend", "dist", "main.js")))::Asset
+const VISUALIZE_NOTEBOOK = ES6Module(asset_path("visualize_structure.js"))::Asset
 
 sp = Base.source_path()
 
@@ -167,14 +168,14 @@ function display_model(ac::Union{AbstractAtomContainer, Observable{<:AbstractAto
 		JSServe.onload(session, dom, js"""
 			function (container){
 				// asynchrone loader funktion
-				$(VISUALIZE).then(VISUALIZE => {
-					VISUALIZE.setup(container);
+				$(VISUALIZE_NOTEBOOK).then(VISUALIZE_NOTEBOOK => {
+					VISUALIZE_NOTEBOOK.setup(container);
 
-					VISUALIZE.camera.setTarget(new BABYLON.Vector3($focus_point[0], $focus_point[1], $focus_point[2]));
+					VISUALIZE_NOTEBOOK.camera.setTarget(new BABYLON.Vector3($focus_point[0], $focus_point[1], $focus_point[2]));
 
-					VISUALIZE.addRepresentation($r);
+					VISUALIZE_NOTEBOOK.addRepresentation($r);
 
-					VISUALIZE.render();
+					VISUALIZE_NOTEBOOK.render();
 					
 				})
 			}
@@ -182,10 +183,10 @@ function display_model(ac::Union{AbstractAtomContainer, Observable{<:AbstractAto
 
 		if ac isa Observable
 			on(r -> JSServe.evaljs(session, js"""
-				$(VISUALIZE).then(
-					VISUALIZE => {
-						VISUALIZE.updateRepresentation(0, $r);
-						VISUALIZE.render();
+				$(VISUALIZE_NOTEBOOK).then(
+					VISUALIZE_NOTEBOOK => {
+						VISUALIZE_NOTEBOOK.updateRepresentation(0, $r);
+						VISUALIZE_NOTEBOOK.render();
 					}
 				)"""), session, or)
 		end
