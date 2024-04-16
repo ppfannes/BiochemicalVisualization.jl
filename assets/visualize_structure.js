@@ -5,7 +5,7 @@ let scene = null;
 let engine = null;
 let camera = null;
 let hlMesh = null;
-let assetManager = null;
+// let assetManager = null;
 
 // TODO: Create base functionality for animations.
 
@@ -18,47 +18,47 @@ function* zip(arrays) {
   }
 }
 
-function create_SSAO() {
-  const ssaoRatio = {
-    ssaoRatio: 0.5,
-    combineRatio: 1.0,
-  };
-  var ssao = new BABYLON.SSAORenderingPipeline(
-    "ssao",
-    scene,
-    ssaoRatio,
-    null,
-    false
-  );
-  ssao.maxZ = 500;
-  ssao.totalStrength = 1.3;
-  ssao.radius = 6e-4;
-  ssao.area = 1.0;
-  ssao.fallOff = 1e-6;
-  ssao.base = 0.5;
-  return ssao;
-}
+// function create_SSAO() {
+//   const ssaoRatio = {
+//     ssaoRatio: 0.5,
+//     combineRatio: 1.0,
+//   };
+//   var ssao = new BABYLON.SSAORenderingPipeline(
+//     "ssao",
+//     scene,
+//     ssaoRatio,
+//     null,
+//     false
+//   );
+//   ssao.maxZ = 500;
+//   ssao.totalStrength = 1.3;
+//   ssao.radius = 6e-4;
+//   ssao.area = 1.0;
+//   ssao.fallOff = 1e-6;
+//   ssao.base = 0.5;
+//   return ssao;
+// }
 
-function create_SSAO2() {
-  const ssaoRatio = {
-    ssaoRatio: 0.5,
-    blurRatio: 0.5,
-  };
-  var ssao = new BABYLON.SSAO2RenderingPipeline(
-    "ssao",
-    scene,
-    ssaoRatio,
-    null,
-    false
-  );
-  ssao.maxZ = 500;
-  ssao.radius = 12.0;
-  ssao.totalStrength = 1.3;
-  ssao.expensiveBlur = false;
-  ssao.samples = 16;
-  scene.prePassRenderer.samples = 16;
-  return ssao;
-}
+// function create_SSAO2() {
+//   const ssaoRatio = {
+//     ssaoRatio: 0.5,
+//     blurRatio: 0.5,
+//   };
+//   var ssao = new BABYLON.SSAO2RenderingPipeline(
+//     "ssao",
+//     scene,
+//     ssaoRatio,
+//     null,
+//     false
+//   );
+//   ssao.maxZ = 500;
+//   ssao.radius = 12.0;
+//   ssao.totalStrength = 1.3;
+//   ssao.expensiveBlur = false;
+//   ssao.samples = 16;
+//   scene.prePassRenderer.samples = 16;
+//   return ssao;
+// }
 
 function update_mesh(mesh1, mesh2) {
   mesh1.setEnabled(true);
@@ -73,107 +73,107 @@ function disable_highlight(pickedMesh, hlMesh) {
   pickedMesh = null;
 }
 
-function create_modal() {
-  const modal_content = document.getElementById("modal-iframe");
-  const modal = document.getElementById("modal");
-  const close_button = document.getElementById("close-button");
-  modal_content.innerHTML = "This is some really long info text to see if text wrapping is working or not for this info box.";
+// function create_modal() {
+//   const modal_content = document.getElementById("modal-iframe");
+//   const modal = document.getElementById("modal");
+//   const close_button = document.getElementById("close-button");
+//   modal_content.innerHTML = "This is some really long info text to see if text wrapping is working or not for this info box.";
 
-  window.addEventListener("click", function (event) {
-    if (event.target === modal) {
-      modal.classList.toggle("m-showModal");
-    }
-  });
-  close_button.addEventListener("click", function () {
-    modal.classList.toggle("m-showModal");
-  });
+//   window.addEventListener("click", function (event) {
+//     if (event.target === modal) {
+//       modal.classList.toggle("m-showModal");
+//     }
+//   });
+//   close_button.addEventListener("click", function () {
+//     modal.classList.toggle("m-showModal");
+//   });
 
-  return [modal, modal_content];
-}
+//   return [modal, modal_content];
+// }
 
-function attach_SSAO(ssao) {
-  console.log("Attaching SSAO....");
-  scene.postProcessRenderPipelineManager.attachCamerasToRenderPipeline(
-    "ssao",
-    camera
-  );
-  scene.postProcessRenderPipelineManager.enableEffectInPipeline(
-    "ssao",
-    ssao.SSAOCombineRenderEffect,
-    camera
-  );
+// function attach_SSAO(ssao) {
+//   console.log("Attaching SSAO....");
+//   scene.postProcessRenderPipelineManager.attachCamerasToRenderPipeline(
+//     "ssao",
+//     camera
+//   );
+//   scene.postProcessRenderPipelineManager.enableEffectInPipeline(
+//     "ssao",
+//     ssao.SSAOCombineRenderEffect,
+//     camera
+//   );
 
-  return true;
-}
+//   return true;
+// }
 
-function detach_SSAO(ssao) {
-  console.log("Detaching SSAO....");
-  scene.postProcessRenderPipelineManager.detachCamerasFromRenderPipeline(
-    "ssao",
-    camera
-  );
-  scene.postProcessRenderPipelineManager.disableEffectInPipeline(
-    "ssao",
-    ssao.SSAOCombineRenderEffect,
-    camera
-  );
+// function detach_SSAO(ssao) {
+//   console.log("Detaching SSAO....");
+//   scene.postProcessRenderPipelineManager.detachCamerasFromRenderPipeline(
+//     "ssao",
+//     camera
+//   );
+//   scene.postProcessRenderPipelineManager.disableEffectInPipeline(
+//     "ssao",
+//     ssao.SSAOCombineRenderEffect,
+//     camera
+//   );
 
-  return false;
-}
+//   return false;
+// }
 
-function draw_effect_SSAO(isAttached, ssao) {
-  console.log("Draw SSAO effect...");
-  if (!isAttached) {
-    isAttached = true;
-    scene.postProcessRenderPipelineManager.attachCamerasToRenderPipeline(
-      "ssao",
-      camera
-    );
-  }
-  scene.postProcessRenderPipelineManager.disableEffectInPipeline(
-    "ssao",
-    ssao.SSAOCombineRenderEffect,
-    camera
-  );
-}
+// function draw_effect_SSAO(isAttached, ssao) {
+//   console.log("Draw SSAO effect...");
+//   if (!isAttached) {
+//     isAttached = true;
+//     scene.postProcessRenderPipelineManager.attachCamerasToRenderPipeline(
+//       "ssao",
+//       camera
+//     );
+//   }
+//   scene.postProcessRenderPipelineManager.disableEffectInPipeline(
+//     "ssao",
+//     ssao.SSAOCombineRenderEffect,
+//     camera
+//   );
+// }
 
-function create_and_attach_SSAO(isAttached, ssao, pipeline_name) {
-  if (isAttached) {
-      isAttached = detach_SSAO(ssao);
-  }
+// function create_and_attach_SSAO(isAttached, ssao, pipeline_name) {
+//   if (isAttached) {
+//     isAttached = detach_SSAO(ssao);
+//   }
 
-  if (pipeline_name === "SSAO1") {
-    console.log("Creating + attaching SSAO1...");
-    ssao = create_SSAO();
-  } else if (pipeline_name === "SSAO2") {
-    console.log("Creating + attaching SSAO2...");
-    ssao = create_SSAO2();
-  }
+//   if (pipeline_name === "SSAO1") {
+//     console.log("Creating + attaching SSAO1...");
+//     ssao = create_SSAO();
+//   } else if (pipeline_name === "SSAO2") {
+//     console.log("Creating + attaching SSAO2...");
+//     ssao = create_SSAO2();
+//   }
 
-  isAttached = attach_SSAO(ssao);
-}
+//   isAttached = attach_SSAO(ssao);
+// }
 
-function debug_scene(scene) {
-  const instrumentation = new BABYLON.SceneInstrumentation(scene);
-  var active_meshes_eval = document.getElementById("active-meshes-eval");
-  var render_targets = document.getElementById("render-targets");
-  var frame_time = document.getElementById("frame-time");
-  var render_time = document.getElementById("render-time");
-  var draw_calls = document.getElementById("draw-calls");
+// function debug_scene(scene) {
+//   const instrumentation = new BABYLON.SceneInstrumentation(scene);
+//   var active_meshes_eval = document.getElementById("active-meshes-eval");
+//   var render_targets = document.getElementById("render-targets");
+//   var frame_time = document.getElementById("frame-time");
+//   var render_time = document.getElementById("render-time");
+//   var draw_calls = document.getElementById("draw-calls");
 
-  instrumentation.captureActiveMeshesEvaluationTime = true;
-  instrumentation.captureRenderTargetsRenderTime = true;
-  instrumentation.captureFrameTime = true;
-  instrumentation.captureRenderTime = true;
+//   instrumentation.captureActiveMeshesEvaluationTime = true;
+//   instrumentation.captureRenderTargetsRenderTime = true;
+//   instrumentation.captureFrameTime = true;
+//   instrumentation.captureRenderTime = true;
 
-  scene.onAfterRenderObservable.add(() => {
-    active_meshes_eval.innerHTML = (instrumentation.activeMeshesEvaluationTimeCounter.current * 0.000001).toFixed(2) + " ms";
-    render_targets.innerHTML = (instrumentation.renderTargetsRenderTimeCounter.current + 0.000001).toFixed(2) + " ms";
-    frame_time.innerHTML = instrumentation.frameTimeCounter.current;
-    render_time.innerHTML = (instrumentation.renderTimeCounter.current).toFixed(2) + " FPS";
-    draw_calls.innerHTML = instrumentation.drawCallsCounter.current;
-  });
-}
+//   scene.onAfterRenderObservable.add(() => {
+//     active_meshes_eval.innerHTML = (instrumentation.activeMeshesEvaluationTimeCounter.current * 0.000001).toFixed(2) + " ms";
+//     render_targets.innerHTML = (instrumentation.renderTargetsRenderTimeCounter.current + 0.000001).toFixed(2) + " ms";
+//     frame_time.innerHTML = instrumentation.frameTimeCounter.current;
+//     render_time.innerHTML = (instrumentation.renderTimeCounter.current).toFixed(2) + " FPS";
+//     draw_calls.innerHTML = instrumentation.drawCallsCounter.current;
+//   });
+// }
 
 function setup(container, width, height) {
   engine = new BABYLON.Engine(container);
@@ -209,23 +209,23 @@ function setup(container, width, height) {
     engine.resize();
   });
 
-  var ssao = create_SSAO();
-  const [modal, modal_content] = create_modal();
-  var isAttached = attach_SSAO(ssao);
+  // var ssao = create_SSAO();
+  // const [modal, modal_content] = create_modal();
+  // var isAttached = attach_SSAO(ssao);
 
-  debug_scene(scene);
+  // debug_scene(scene);
 
   let pickedMesh = null;
   scene.onPointerObservable.add((pointerInfo) => {
     switch (pointerInfo.type) {
-      case BABYLON.PointerEventTypes.POINTERUP:
-        var result = scene.pick(scene.pointerX, scene.pointerY);
-        if (result.hit) {
-          modal.classList.toggle("m-showModal");
-          modal_content.innerHTML = pickedMesh.position;
-        } else if (!result.hit && modal.classList.contains("m-showModal")) {
-          modal.classList.toggle("m-showModal");
-        }
+      // case BABYLON.PointerEventTypes.POINTERUP:
+      //   var result = scene.pick(scene.pointerX, scene.pointerY);
+      //   if (result.hit) {
+      //     modal.classList.toggle("m-showModal");
+      //     modal_content.innerHTML = pickedMesh.position;
+      //   } else if (!result.hit && modal.classList.contains("m-showModal")) {
+      //     modal.classList.toggle("m-showModal");
+      //   }
       case BABYLON.PointerEventTypes.POINTERMOVE:
         var result = scene.pick(scene.pointerX, scene.pointerY);
         if (
@@ -247,33 +247,33 @@ function setup(container, width, height) {
     }
   });
 
-  assetManager.onTaskSuccessObservable.add((task) => {
-    let mesh = task.loadedMeshes[0];
-    console.log("Task successful...", task, mesh);
-  });
+  // assetManager.onTaskSuccessObservable.add((task) => {
+  //   let mesh = task.loadedMeshes[0];
+  //   console.log("Task successful...", task, mesh);
+  // });
 
-  assetManager.onTaskErrorObservable.add((task) => {
-    console.log("Task failed...", task.errorObject.message, task.errorObject.exception);
-  });
+  // assetManager.onTaskErrorObservable.add((task) => {
+  //   console.log("Task failed...", task.errorObject.message, task.errorObject.exception);
+  // });
 
-  window.addEventListener("keydown", function (event) {
-    console.log(event.key);
-    if (event.key === "1") {
-      if (!isAttached) {
-        isAttached = attach_SSAO(ssao);
-      }
-    } else if (event.key === "2") {
-      if (isAttached) {
-        isAttached = detach_SSAO(ssao);
-      }
-    } else if (event.key === "3") {
-      draw_effect_SSAO(isAttached, ssao);
-    } else if (event.key === "9") {
-      create_and_attach_SSAO(isAttached, ssao, "SSAO1");
-    } else if (event.key === "0") {
-      create_and_attach_SSAO(isAttached, ssao, "SSAO2");
-    }
-  });
+  // window.addEventListener("keydown", function (event) {
+  //   console.log(event.key);
+  //   if (event.key === "1") {
+  //     if (!isAttached) {
+  //       isAttached = attach_SSAO(ssao);
+  //     }
+  //   } else if (event.key === "2") {
+  //     if (isAttached) {
+  //       isAttached = detach_SSAO(ssao);
+  //     }
+  //   } else if (event.key === "3") {
+  //     draw_effect_SSAO(isAttached, ssao);
+  //   } else if (event.key === "9") {
+  //     create_and_attach_SSAO(isAttached, ssao, "SSAO1");
+  //   } else if (event.key === "0") {
+  //     create_and_attach_SSAO(isAttached, ssao, "SSAO2");
+  //   }
+  // });
 }
 
 function addRepresentation(r) {
@@ -326,8 +326,8 @@ function updateRepresentation(i, r) {
   let old_geo = meshes[i];
   let new_geo = renderRepresentation(r);
   old_geo.children.forEach(c => {
-      c.dispose();
-      c = null;
+    c.dispose();
+    c = null;
   });
   new_geo.children.forEach(c => scene.addMesh(c));
   scene.freezeMaterials();
@@ -349,15 +349,15 @@ function removeMeshFromScene(i) {
   });
 }
 
-function loadGLTFMesh(files) {
-  let fileName = files[0].name;
-  let blob = new Blob([files[0]]);
+// function loadGLTFMesh(files) {
+//   let fileName = files[0].name;
+//   let blob = new Blob([files[0]]);
 
-  BABYLON.FilesInput.FilesToLoad[fileName.toLowerCase()] = blob;
+//   BABYLON.FilesInput.FilesToLoad[fileName.toLowerCase()] = blob;
 
-  assetManager.addMeshTask("GLTFModel", "", "file:", fileName.toLowerCase());
-  assetManager.load();
-}
+//   assetManager.addMeshTask("GLTFModel", "", "file:", fileName.toLowerCase());
+//   assetManager.load();
+// }
 
 function renderRepresentation(representation) {
   console.log("Start rendering....");
@@ -475,7 +475,7 @@ function render() {
   });
 }
 
-function animate() {}
+function animate() { }
 
 export {
   addMesh,
@@ -490,6 +490,6 @@ export {
   setup,
   updateRepresentation,
   removeMeshFromScene,
-  loadGLTFMesh,
+  // loadGLTFMesh,
 };
 
