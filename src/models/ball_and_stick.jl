@@ -9,8 +9,6 @@ function prepare_ball_and_stick_model(
     sticks = [(atom_by_idx(ac, b.a1), 
             atom_by_idx(ac, b.a2)) for b in bonds(ac)]
 
-    println(sticks)
-
     midpoints = map(s -> (s[1].r + T(0.5)*(s[2].r - s[1].r)), sticks)
 
     cylinders = collect(Iterators.flatten(map(((s,m),) -> (
