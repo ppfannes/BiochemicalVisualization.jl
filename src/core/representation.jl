@@ -3,6 +3,7 @@ export Representation
 struct Representation{T <: Real}
     primitives::Dict{String, AbstractVector{GeometryPrimitive{3, T}}}
     vertices::AbstractVector{T}
+    meta_data::AbstractVector{NTuple{3, Any}}
     connections::AbstractVector{Int}
     colors::Dict{String, AbstractVector{String}}
 
