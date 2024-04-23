@@ -6,7 +6,7 @@ function prepare_ball_and_stick_model(
     spheres = map(a -> Sphere(a.r, sphere_radius), atoms(ac))
     sphere_colors = [element_color(e) for e in atoms(ac).element]
 
-    meta_data = [(at.name, String(at.element), at.number) for at in atoms(ac)]
+    meta_data = [(at.name, String(Symbol(at.element)), at.number) for at in atoms(ac)]
 
     sticks = [(atom_by_idx(ac, b.a1), 
             atom_by_idx(ac, b.a2)) for b in bonds(ac)]
