@@ -9,9 +9,10 @@ struct Representation{T <: Real}
     function Representation{T}(;
             primitives=Dict{String, Vector{GeometryPrimitive{3, T}}}(),
             vertices=Vector{T}(),
+            meta_data=Vector{NTuple{3, Any}}(),
             connections=Vector{Int}(),
             colors=Dict{String, Vector{String}}()) where {T}
-        new(primitives, vertices, connections, colors)
+        new(primitives, vertices, meta_data, connections, colors)
     end
 end
 
