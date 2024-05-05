@@ -3,14 +3,14 @@ export Representation
 struct Representation{T <: Real}
     primitives::Dict{String, AbstractVector{GeometryPrimitive{3, T}}}
     vertices::AbstractVector{T}
-    meta_data::AbstractVector{NTuple{3, Any}}
+    meta_data::AbstractVector{AbstractVector{Union{AbstractString, Int}}}
     connections::AbstractVector{Int}
-    colors::Dict{String, AbstractVector{String}}
+    colors::Dict{String, AbstractVector{AbstractString}}
 
     function Representation{T}(;
             primitives=Dict{String, Vector{GeometryPrimitive{3, T}}}(),
             vertices=Vector{T}(),
-            meta_data=Vector{NTuple{3, Any}}(),
+            meta_data=Vector{Vector{Union{String, Int}}}(),
             connections=Vector{Int}(),
             colors=Dict{String, Vector{String}}()) where {T}
         new(primitives, vertices, meta_data, connections, colors)
