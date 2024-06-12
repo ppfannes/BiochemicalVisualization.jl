@@ -8,7 +8,7 @@ function prepare_ball_and_stick_model(
 
     meta_data = [[at.name,
                   String(Symbol(at.element)),
-                  at.number,
+                  isnothing(at.molecule_idx) ? "N/A" : at.molecule_idx,
                   isnothing(at.chain_idx) ? "N/A" : at.chain_idx,
                   isnothing(at.fragment_idx) ? "N/A" : at.fragment_idx,
                   isnothing(at.nucleotide_idx) ? "N/A" : at.nucleotide_idx,
