@@ -7,7 +7,7 @@ function prepare_van_der_waals_model(
 
     meta_data = [[at.name,
                   String(Symbol(at.element)),
-                  isnothing(at.molecule_idx) ? "N/A" : at.molecule_idx,
+                  at.idx,
                   isnothing(at.chain_idx) ? "N/A" : at.chain_idx,
                   isnothing(at.fragment_idx) ? "N/A" : at.fragment_idx,
                   isnothing(at.nucleotide_idx) ? "N/A" : at.nucleotide_idx,
